@@ -1,0 +1,24 @@
+:root {
+    --white: #FFF5EA;
+    --black: #222;
+    --blue: #0f5a5e;
+    --grey: #363535;
+    --light-blue:#c3f2f5;
+    --light-grey: #555353;
+    --dark-grey: #303030;
+    --bg-dark: #272727;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+  }
+  
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, supported by most modern browsers */
+}
