@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">  
-    <script type="text/javascript"  src="js/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript"  src="src/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div id="warning">
@@ -17,10 +17,15 @@
         <button id="btnReset">Reset</button>
         <button id="btnStart">Start</button>
         <button id="btnStop">Stop</button>
-        <button id="btnSpeed">Speed</button>
+        <br><br>
+        <label for="set-carrierSpeed">Carrier Speed: </label>
+        <input type="text" id="set-carrierSpeed" name="set-carrierSpeed">
+        <button id="btnSpeed">Confirm</button>
+        <label id="act-speed"></label>
+        <br><br>
     </div>
     
-    <script type="module" src="js/app/app.js"></script>
-    <script type="text/javascript" src="js/commands/btn-reset.js"></script>
+    <script type="module" src="src/app.js"></script>
+    <script type="text/javascript" src="js/commands/writeData.js"></script>
 </body>
 </html>
