@@ -1,23 +1,23 @@
 var objectList = [
     {
         id: 'btnReset',
-        url: "data/write/IOWriteReset.html",
+        url: "src/config/write/IOWriteReset.html",
         name: '"HMI_PLC".FromHMI.Command.Reset'
     },
     {
         id: 'btnStart',
-        url: "data/write/IOWriteStart.html",
+        url: "src/config/write/IOWriteStart.html",
         name: '"HMI_PLC".FromHMI.Command.Start'
     },
     {
         id: 'btnStop',
-        url: "data/write/IOWriteStop.html",
+        url: "src/config/write/IOWriteStop.html",
         name: '"HMI_PLC".FromHMI.Command.Stop'
     }
     ,
     {
         id: 'btnSpeed',
-        url: "data/write/IOWriteCarrierSpeed.html",
+        url: "src/config/write/IOWriteCarrierSpeed.html",
         name: '"HMI_PLC".FromHMI.Setting.Carrier.Speed'
     }
 ];

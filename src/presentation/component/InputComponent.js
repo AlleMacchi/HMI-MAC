@@ -6,8 +6,8 @@ class InputComponent {
       this.input = document.getElementById('set-carrierSpeed');
       
   
-      this.element.addEventListener('mousedown', this.onTouchSetValue.bind(this));
-      this.element.addEventListener('touchstart', this.onTouchSetValue.bind(this));
+      this.element.addEventListener('click', this.onTouchSetValue.bind(this));
+      // this.element.addEventListener('touchstart', this.onTouchSetValue.bind(this));
     }
   
     onTouchSetValue(event) {
