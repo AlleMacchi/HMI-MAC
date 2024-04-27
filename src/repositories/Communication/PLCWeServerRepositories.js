@@ -1,6 +1,7 @@
 import { PLCCommunicationInterface } from '../../interfaces/Communication/PLCCommunicationInterface.js';
 import { DataMapper } from './PLCWebServerDataMapper.js';
 import { objectList } from '../../config/Communication/PLCWebserver/DataWrite.js';
+var ioReadCounter = 1;
 
 class PLCWebServer  extends PLCCommunicationInterface {
   constructor() {
@@ -19,15 +20,27 @@ class PLCWebServer  extends PLCCommunicationInterface {
     });
   }
 
+  
+
   fetchData(){ 
-    $.getJSON("src/config/read/IORead.html", function(data){
-      const mappedData = DataMapper.mapDataToObject(data);
-      console.log(mappedData);
+    $.getJSON("src/config/Communication/PLCWebserver/read/IORead_" + ioReadCounter + ".html", function(data){
+      // const mappedData = DataMapper.mapDataToObject(data);
+      // console.log(mappedData);
+      console.log(data);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       console.error("Error fetching data from PLC: " + textStatus);
       reject(errorThrown);
     });
+
+    // Increment counter for next iteration
+    ioReadCounter++;
+
+    // Reset counter to 1 if it exceeds the maximum desired value
+    if (ioReadCounter > 3) {
+        ioReadCounter = 1;
+    }
+
   }
 
   sendData(id, value) {
