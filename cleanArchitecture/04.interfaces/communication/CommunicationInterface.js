@@ -1,4 +1,4 @@
-class PLCCommunicationInterface {
+class CommunicationInterface {
     init() {
       throw new Error("init method must be implemented");
     }
@@ -16,4 +16,4 @@ class PLCCommunicationInterface {
     }
   }
   
-  export { PLCCommunicationInterface };
+  export { CommunicationInterface };

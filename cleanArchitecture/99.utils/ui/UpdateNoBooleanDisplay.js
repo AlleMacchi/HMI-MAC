@@ -1,4 +1,4 @@
-export function UpdateNoBolleanDisplay(value, displayId) {
+export function UpdateNoBooleanDisplay(value, displayId) {
     const displayElement = document.getElementById(displayId);
     if (displayElement) {
         displayElement.innerText = value; 

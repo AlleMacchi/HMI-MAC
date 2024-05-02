@@ -1,20 +1,20 @@
 var DataReadList = [
     {
         id: 1,
-        url: "src/config/Communication/PLCWebserver/write/IOWriteReset.html"
+        url: "cleanArchitecture/00.config/data/webserver/read/PLCvariables/IOReadReset.html"
     },
     {
         id: 2,
-        url: "src/config/Communication/PLCWebserver/write/IOWriteStart.html"
+        url: "cleanArchitecture/00.config/data/webserver/read/PLCvariables/IOReadStart.html"
     },
     {
         id: 3,
-        url: "src/config/Communication/PLCWebserver/write/IOWriteStop.html"
+        url: "cleanArchitecture/00.config/data/webserver/read/PLCvariables/IOReadStop.html"
     }
     ,
     {
         id: 4,
-        url: "src/config/Communication/PLCWebserver/write/IOWriteCarrierSpeed.html"
+        url: "cleanArchitecture/00.config/data/webserver/read/PLCvariables/IOReadCarrierSpeed.html"
     }
 ];
 

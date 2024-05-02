@@ -1,6 +1,5 @@
 class InputComponent {
-    constructor(setValue, elementId = 'btnSpeed') {
-      this.setValue = setValue;
+    constructor( elementId = 'btnSpeed') {
       this.id = elementId;
       this.element = document.getElementById(elementId);
       this.input = document.getElementById('set-carrierSpeed');

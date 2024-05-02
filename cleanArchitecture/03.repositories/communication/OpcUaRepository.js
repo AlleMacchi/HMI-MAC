@@ -1,6 +1,6 @@
 import { CommunicationInterface } from '../../04.interfaces/communication/CommunicationInterface.js';
 
-class PLCWebServer  extends CommunicationInterface {
+class OPCUACommunication  extends CommunicationInterface {
   constructor() {
     super();
     this.dataToWrite =  DataWriteList;
@@ -42,4 +42,4 @@ class PLCWebServer  extends CommunicationInterface {
 
 }
 
-export { PLCWebServer };
+export { OPCUACommunication };
