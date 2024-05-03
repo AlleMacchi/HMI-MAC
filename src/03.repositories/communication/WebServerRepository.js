@@ -4,6 +4,8 @@ import { DataMapperInit } from '../../05.adapters/webserver/DataMapperInit.js';
 import { DataWriteList } from '../../00.config/data/webserver/write/DataWriteList.js';
 import { DataReadList } from '../../00.config/data/webserver/read/DataReadList.js';
 
+import { UpdateDisplayInit } from '../../06.ui/component/UpdateDisplayInit.js';
+
 
 async function fetchDataFromURL(url) {
     return new Promise((resolve, reject) => {
@@ -34,25 +36,11 @@ class PLCWebServer extends CommunicationInterface {
         this.url_Read = "src/00.config/data/webserver/read/PLCvariables/IORead.html"
     }
    
-    // async init() {
-    //     try {
-    //         // Fetch data from URL and map it
-    //         const data = await fetchDataFromURL(this.url_Init);
-    //         console.log(data);
-    
-    //         // Call findAll() after data retrieval
-    //         await this.findAll();
-    //         return Promise.resolve(); // Resolve the outer promise
-    //     } catch (error) {
-    //         console.error("Error initializing: " + error);
-    //         return Promise.reject(error); // Reject the outer promise if any error occurs
-    //     }
-    // }
     async init() {
         try {
             const data = await fetchDataFromURL(this.url_Init);
             const mappedData = DataMapperInit.mapDataToObject(data);
-            console.log(mappedData);
+            UpdateDisplayInit(mappedData);
             return mappedData;
         } catch (error) {
             console.error("Error initializing: " + error);
@@ -64,7 +52,6 @@ class PLCWebServer extends CommunicationInterface {
         try {
             const data = await fetchDataFromURL(this.url_Read);
             const mappedData = DataMapper.mapDataToObject(data);
-            console.log(mappedData);
             return mappedData;
         } catch (error) {
             console.error("Error finding all data: " + error);

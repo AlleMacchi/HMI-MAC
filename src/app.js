@@ -1,6 +1,5 @@
-import { plcCommunicationManager } from './02.usecases/communication/PLCcommunication.js'; 
-import { UpdateDisplay } from './06.ui/component/DisplayUpdate.js'
-import { InitDisplayUpdate } from './06.ui/component/InitDisplayUpdate.js';
+import { plcCommunicationManager } from './02.usecases/communication/PLCcommunication.js'
+import { UpdateDisplay } from './06.ui/component/UpdateDisplay.js'
 
 import { CarrierSpeedInput } from './06.ui/component/CarrierSpeedInput.js'
 import { ResetButton } from './06.ui/component/ResetButton.js'
@@ -11,10 +10,10 @@ import { StopButton } from './06.ui/component/StopButton.js'
 
 const App = {
     init: function(){
-        InitDisplayUpdate();
+        plcCommunicationManager.init();
     },
     readData: function(){
-        setInterval(async function() {           
+        setInterval(async function() {          
             UpdateDisplay();
         },1000);   
     },
