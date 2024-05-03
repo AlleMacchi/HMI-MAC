@@ -1,4 +1,4 @@
-import { readBits, decodedString } from '../../global/dataUtils.js';
+import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 
 const WebServerDataMapper = {
     mapDataToObject: function(data) {

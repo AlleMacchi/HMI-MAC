@@ -9,6 +9,6 @@ export function CarrierSpeedInput(){
     const displayId = 'act-speed'; // Id of label 
     const entity = new CarrierSpeed();
 
-    const input = new InputFieldWithLabel(id, inputId, elementId, displayId, entity);
+    const input = new InputFieldWithLabel(id, inputId, elementId, displayId, entity);    
     return input;
 }

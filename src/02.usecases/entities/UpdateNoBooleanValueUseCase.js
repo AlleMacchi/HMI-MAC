@@ -12,14 +12,14 @@ class UpdateNoBooleanValueUseCase{
         this.entity.value = value;
 
         const errors = this.entity.validate();
-    if (errors.length > 0) {
-        const errorMessage = errors.join('<br>');
-        ShowPopup(errorMessage);
-        return;
-    } else {
-        this.repository.update(id, value);
+      if (errors.length > 0) {
+          const errorMessage = errors.join('<br>');
+          ShowPopup(errorMessage);
+          return;
+      } else {
+          this.repository.update(id, value);
+      }
     }
-  }
 
   
 }

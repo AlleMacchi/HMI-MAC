@@ -19,7 +19,7 @@ class OPCUACommunication  extends CommunicationInterface {
   }
 
   findAll(){ 
-    console.log(' OPC-UA: findAll Data');
+    console.log(' OPC-UA: findAll Data ');
   }
 
   findOne(id){ 

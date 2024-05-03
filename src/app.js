@@ -1,18 +1,21 @@
-import { plcCommunicationManager } from './02.usecases/communication/PLCcommunication.js';  
+import { plcCommunicationManager } from './02.usecases/communication/PLCcommunication.js'; 
+import { UpdateDisplay } from './06.ui/component/DisplayUpdate.js'
+import { InitDisplayUpdate } from './06.ui/component/InitDisplayUpdate.js';
 
-import { CarrierSpeedInput } from './05.ui/component/CarrierSpeedInput.js'
-import { ResetButton } from './05.ui/component/ResetButton.js'
-import { StartButton } from './05.ui/component/StartButton.js'
-import { StopButton } from './05.ui/component/StopButton.js'
+import { CarrierSpeedInput } from './06.ui/component/CarrierSpeedInput.js'
+import { ResetButton } from './06.ui/component/ResetButton.js'
+import { StartButton } from './06.ui/component/StartButton.js'
+import { StopButton } from './06.ui/component/StopButton.js'
+
 
 
 const App = {
     init: function(){
-        plcCommunicationManager.init();
+        InitDisplayUpdate();
     },
     readData: function(){
-        setInterval(function() {            
-            plcCommunicationManager.findAll();
+        setInterval(async function() {           
+            UpdateDisplay();
         },1000);   
     },
     components: function(){
@@ -24,8 +27,7 @@ const App = {
     
 }
 
-$(document).ready(function(){
-    $.ajaxSetup({ cache: false });
+document.addEventListener('DOMContentLoaded', () => {
     App.init();
     App.readData();
     App.components();

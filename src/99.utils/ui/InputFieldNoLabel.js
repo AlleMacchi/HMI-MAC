@@ -2,12 +2,11 @@ import { UpdateNoBooleanValueUseCase } from '../../02.usecases/entities/UpdateNo
 import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValueRepository.js';
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
-class InputFieldWithLabel {
-  constructor(id, inputId, elementId, displayId, entity) {
+class InputFieldNoLabel {
+  constructor(id, inputId, elementId, entity) {
     this.id = id;
     this.inputId = inputId;
     this.elementId = elementId;
-    this.displayId = displayId;
     this.entity = entity;
     this.repository = new UpdateValueRepository(plcCommunicationManager);
     this.usecase = new UpdateNoBooleanValueUseCase(this.repository, this.entity);
@@ -39,4 +38,4 @@ class InputFieldWithLabel {
 
 }
 
-export { InputFieldWithLabel };
+export { InputFieldNoLabel };
