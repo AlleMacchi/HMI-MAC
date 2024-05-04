@@ -1,6 +1,8 @@
 body{
     height: 100vh;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 60px 1fr; */
+    background-color: #1c1f23;
+    overflow: scroll;
 }

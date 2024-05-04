@@ -12,7 +12,7 @@
     </div> -->
 <!-- 
     <div id="contents" class="bg-dark text-white text-small"> -->
-        <header class="header"></header>
+        <!-- <header class="header"></header>
         <section class="sidebar"></section>
         <main class="main">
             <div class="card"></div>
@@ -36,20 +36,132 @@
             <div class="card"></div>
 
 
-        </main>
+        </main> -->
     <!-- </div> -->
-    <div class="popup" id="popup">
+    <!-- <div class="popup" id="popup">
         <p id="popupMessage"></p>
         <button onclick="closePopup()">Close</button>
+    </div> -->
+    <div id="container">
+        <div id="gridContainer"></div>
     </div>
 
-
-    <script type="module" src="src/app.js"></script>
+    <!-- <script type="module" src="src/app.js"></script> -->
     <script>
-        function closePopup() {
-        const popup = document.getElementById('popup');
-        popup.style.display = 'none';
-        }
+        // function closePopup() {
+        // const popup = document.getElementById('popup');
+        // popup.style.display = 'none';
+        // }
+
+// Create the grid
+const container = document.getElementById("container");
+const gridContainer = document.getElementById("gridContainer");
+for (let i = 0; i < 38 * 38; i++) {
+  const square = document.createElement("div");
+  square.className = "square";
+  gridContainer.appendChild(square);
+}
+
+// Function to highlight the specified square
+function highlightSquare(row, col) {
+  const index = row * 38 + col;
+  const squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    if (i == index) {
+        squares[i].classList.add("red");
+    } else {
+        squares[i].classList.remove("red");
+    }
+    
+  }
+//   squares[index].classList.add("red");
+  
+
+// Variables to track mouse movement
+let isLook = false;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+// Get the specific div where you want to enable click-and-drag scrolling
+const scrollableDiv = document.getElementById("container");
+
+// Add mousedown event listener
+scrollableDiv.addEventListener("mousedown", function(event) {
+  isDragging = true;
+  startX = event.clientX;
+  startY = event.clientY;
+});
+
+// Add mousemove event listener
+scrollableDiv.addEventListener("mousemove", function(event) {
+  if (isDragging) {
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+    scrollableDiv.scrollLeft -= deltaX;
+    scrollableDiv.scrollTop -= deltaY;
+    startX = event.clientX;
+    startY = event.clientY;
+  }
+});
+
+// Add mouseup event listener
+scrollableDiv.addEventListener("mouseup", function() {
+  isDragging = false;
+});
+
+
+
+
+  // Scroll the page if the highlighted square is outside the viewport
+  const highlightedSquare = squares[index];
+  const squareRect = highlightedSquare.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
+  if (isLook) {
+    if (squareRect.top < 0 || squareRect.bottom > containerRect.height) {
+        container.scrollTo(0, highlightedSquare.offsetTop - containerRect.height / 2);
+    }
+    if (squareRect.left < 0 || squareRect.right > containerRect.width) {
+        container.scrollTo(highlightedSquare.offsetLeft - containerRect.width / 2, 0);
+    }
+  }
+}
+
+// Simulation of shuttle moving downwards
+let currentRow = 0;
+let currentCol = 0;
+
+function moveShuttleDown() {
+  currentRow++;
+  if (currentRow >= 38) {
+    currentRow = 0;
+    window.scrollBy(0, 40); // Scroll by the height of one square
+  }
+}
+
+function moveShuttleHorizontally() {
+  currentCol++;
+  if (currentCol >= 38) {
+    currentCol = 0;
+    window.scrollBy(40, 0); // Scroll by the width of one square
+   }
+    // highlightSquare(currentRow, currentCol);
+  }
+
+// Simulate shuttle movement every 500 milliseconds (adjust as needed)
+
+setInterval(function(){
+    currentCol = 0;
+    currentRow = 0;
+    highlightSquare(1, 7)
+}
+    , 500);
+
+
+
+
+
+
     </script>
 </body>
 </html>
