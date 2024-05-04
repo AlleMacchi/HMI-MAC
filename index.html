@@ -7,29 +7,42 @@
     <link rel="stylesheet" href="src/06.ui/css/main.css">  
 </head>
 <body>
-    <div id="warning">
+    <!-- <div id="warning">
         Please rotate your device to landscape mode for the best experience.
-    </div>
+    </div> -->
+<!-- 
+    <div id="contents" class="bg-dark text-white text-small"> -->
+        <header class="header"></header>
+        <section class="sidebar"></section>
+        <main class="main">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">
+                Contents
+                <button id="btnReset">Reset</button>
+                <button id="btnStart">Start</button>
+                <button id="btnStop">Stop</button>
+                <br><br>
+                <label for="set-carrierSpeed">Carrier Speed: </label>
+                <input type="text" id="set-carrierSpeed" name="set-carrierSpeed">
+                <button id="btnSpeed">Confirm</button>
+                <label id="act-speed"></label>
+                <br><br>
+                Actual Step:
+                <label id="act-step"></label>    
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
 
-    <div id="contents" class="bg-dark text-white text-small">
-        Contents
-        <button id="btnReset">Reset</button>
-        <button id="btnStart">Start</button>
-        <button id="btnStop">Stop</button>
-        <br><br>
-        <label for="set-carrierSpeed">Carrier Speed: </label>
-        <input type="text" id="set-carrierSpeed" name="set-carrierSpeed">
-        <button id="btnSpeed">Confirm</button>
-        <label id="act-speed"></label>
-        <br><br>
-        Actual Step:
-        <label id="act-step"></label>
-    </div>
 
+        </main>
+    <!-- </div> -->
     <div class="popup" id="popup">
         <p id="popupMessage"></p>
         <button onclick="closePopup()">Close</button>
     </div>
+
 
     <script type="module" src="src/app.js"></script>
     <script>

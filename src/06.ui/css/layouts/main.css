@@ -1,0 +1,16 @@
+.main{
+    background-color: #c3c5ca;
+    padding: 25px;
+    grid-column: 2 / 3;
+    grid-row:  2 / 3;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "c1 c2 c3"
+        "c4 c4 c5"
+        "c4 c4 c6"
+    ;
+    gap: 20px;
+}

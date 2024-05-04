@@ -2,6 +2,8 @@ import { CommunicationInterface } from '../../04.interfaces/communication/Commun
 import { DataWriteList } from '../../00.config/data/opcua/write/DataWriteList.js';
 import { DataReadList } from '../../00.config/data/opcua/read/DataReadList.js';
 
+import { UpdateDisplayInit } from '../../06.ui/component/UpdateDisplayInit.js';
+
 
 class OPCUACommunication  extends CommunicationInterface {
   constructor() {
@@ -11,15 +13,28 @@ class OPCUACommunication  extends CommunicationInterface {
   }
 
   async init() {
-    return new Promise((resolve, reject) => {      
-      this.findAll()
-      console.log('OPC-UA: Init Data')
-      resolve()
-    });
+    try {
+      const mappedData = {
+        PLC_CarrierSpeed: 10
+      };
+      UpdateDisplayInit(mappedData);
+      return mappedData;
+  } catch (error) {
+      console.error("Error initializing: " + error);
+      throw error;
+  }
   }
 
   findAll(){ 
-    console.log(' OPC-UA: findAll Data ');
+    try {
+      const mappedData = {
+        ActualStep: 5
+      };
+      return mappedData;
+  } catch (error) {
+      console.error("Error reading: " + error);
+      throw error;
+  }
   }
 
   findOne(id){ 
