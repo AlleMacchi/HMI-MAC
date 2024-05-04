@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
 
         // Variables to track mouse movement
-let isLook = false;
+let isLook = true;
 let isDragging = false;
 let startX = 0;
 let startY = 0;
@@ -45,9 +45,12 @@ const scrollableDiv = document.getElementById("container");
 
 // Add mousedown event listener
 scrollableDiv.addEventListener("mousedown", function(event) {
-  isDragging = true;
-  startX = event.clientX;
-  startY = event.clientY;
+  if (!isLook) {
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+}
+
 });
 
 // Add mousemove event listener
@@ -97,11 +100,11 @@ scrollableDiv.addEventListener("mouseup", function() {
       }
 
       function moveShuttleRight() {
-        currentCol++;
-        if (currentCol > 19) {
-          currentCol = 1;
-          window.scrollBy(21, 0); // Scroll by the width of one square
-         }
+          currentCol++;
+          if (currentCol > 19) {
+            currentCol = 1;
+            window.scrollBy(21, 0); // Scroll by the width of one square
+          }
           highlightSquare(1, currentCol);
         }
 
@@ -113,11 +116,9 @@ scrollableDiv.addEventListener("mouseup", function() {
 
         // Add event listener to each cell
         tbody.querySelectorAll("td").forEach((cell, index) => {
-        //   const rowIndex = Math.floor(index / 19) + 1; // Calculate row index
-        //   const colIndex = (index % 19); // Calculate column index
 
-            const rowIndex = Math.floor(index / 19) + 1; // Calculate row index
-            const colIndex = index; // Calculate column index
+            const rowIndex = Math.floor(index / 20) + 1; // Calculate row index
+            const colIndex = index - ((rowIndex -1)*20); // Calculate column index
       
           cell.addEventListener("click", () => {
             console.log(`Clicked cell at Row: ${rowIndex}, Column: ${colIndex}`);
