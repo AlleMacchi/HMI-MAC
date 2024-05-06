@@ -1,10 +1,11 @@
 :root {
-    --white: #FFF5EA;
+    --white: #EDEDEE;
     --black: #222;
     --blue: #0f5a5e;
     --grey: #363535;
+    --red: #a00101;
     --light-blue:#c3f2f5;
-    --light-grey: #555353;
+    --light-grey: #818286;
     --dark-grey: #303030;
     --bg-dark: #272727;
     --text-shadow:0 0 5px #0f5a5e,
@@ -14,15 +15,21 @@
                 0 15px 25px rgba(0,0,0,0.35);
     --box-shadow-selected:  inset 0 2px 2px rgba(0,0,0,0.35),
                             inset 0 5px 5px rgba(0,0,0,0.5),
-                            inset 0 15px 25px rgba(0,0,0,0.35);              
+                            inset 0 15px 25px rgba(0,0,0,0.35);    
+    --card-shadow: inset 0 2px 1px rgba(0,0,0,0.15),
+                0 2px 2px rgba(0,0,0,0.35),
+                0 15px 25px rgba(0,0,0,0.15);          
     --gradient: linear-gradient(#555353, #363535, #303030);
     --filter-blue: invert(100%) sepia(15%) saturate(7345%) hue-rotate(169deg) brightness(92%) contrast(111%)
                     drop-shadow(0 0 5px #0f5a5e) drop-shadow(0 0 8px #0f5a5e);
     --filter-white: invert(100%) sepia(69%) saturate(2%) hue-rotate(205deg) brightness(105%) contrast(101%);
+    --filter-grey: invert(44%) sepia(13%) saturate(155%) hue-rotate(194deg) brightness(92%) contrast(89%);
+    
 }
 
 *, ::after, ::before {
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
 *{

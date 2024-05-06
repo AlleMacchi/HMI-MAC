@@ -3,6 +3,6 @@ export function ShowPopup(message) {
     const popupMessage = document.getElementById('popupMessage');
 
     popupMessage.innerHTML = message;
-    popup.style.display = 'block';
-
+    popup.classList.add("open");
+    
 };

@@ -9,3 +9,12 @@
 .text-large{
     font-size: clamp(1rem, 0.5342rem + 1.1173vw, 1.875rem);
 }
+
+.text-grey{
+    color: var(--light-grey);
+}
+
+.text-blue{
+    color: var(--white);
+    text-shadow: var(--text-shadow);
+}

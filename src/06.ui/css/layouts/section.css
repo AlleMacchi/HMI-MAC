@@ -1,0 +1,16 @@
+.section{
+    background: rgb(48,50,60);
+    background: linear-gradient(180deg, rgba(48,50,60,1) 0%, rgba(22,23,28,1) 100%);
+    position: relative;
+    height: 100vh;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    padding-top: calc((100vh / 100 * 7) + 25px);
+}
+
+.card{
+    background: rgb(48,50,60);
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+}

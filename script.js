@@ -35,11 +35,35 @@ document.addEventListener("DOMContentLoaded", function() {
         
 
         // Variables to track mouse movement
+
+        // Disable scrolling
+function disableScroll() {
+  var body = document.getElementById("container");
+
+  // Disable scrolling by setting overflow to hidden
+  body.style.overflow = 'hidden';
+}
+
+// Enable scrolling
+function enableScroll() {
+  var body = document.getElementById("container");
+
+  // Disable scrolling by setting overflow to hidden
+  body.style.overflow = 'scroll';
+}
+
+
 let isLook = true;
 let isDragging = false;
 let startX = 0;
 let startY = 0;
 
+
+if (isLook) {
+  disableScroll();
+} else {
+  enableScroll();
+}
 // Get the specific div where you want to enable click-and-drag scrolling
 const scrollableDiv = document.getElementById("container");
 
@@ -108,7 +132,7 @@ scrollableDiv.addEventListener("mouseup", function() {
           highlightSquare(1, currentCol);
         }
 
-        setInterval(moveShuttleRight, 500);
+        setInterval(moveShuttleDown, 500);
 
 
 

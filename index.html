@@ -4,159 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="src/06.ui/css/style.css">  
+    <link rel="stylesheet" href="src/06.ui/css/main.css">  
 </head>
 <body>
-    <!-- <div id="warning">
+    <div id="warning">
         Please rotate your device to landscape mode for the best experience.
-    </div> -->
-<!-- 
-    <div id="contents" class="bg-dark text-white text-small"> -->
-        <!-- <header class="header"></header>
-        <section class="sidebar"></section>
-        <main class="main">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card">
-                Contents
-                <button id="btnReset">Reset</button>
-                <button id="btnStart">Start</button>
-                <button id="btnStop">Stop</button>
-                <br><br>
-                <label for="set-carrierSpeed">Carrier Speed: </label>
-                <input type="text" id="set-carrierSpeed" name="set-carrierSpeed">
-                <button id="btnSpeed">Confirm</button>
-                <label id="act-speed"></label>
-                <br><br>
-                Actual Step:
-                <label id="act-step"></label>    
-            </div>
-            <div class="card"></div>
-            <div class="card"></div>
-
-
-        </main> -->
-    <!-- </div> -->
-    <!-- <div class="popup" id="popup">
-        <p id="popupMessage"></p>
-        <button onclick="closePopup()">Close</button>
-    </div> -->
-    <div id="container">
-        <div id="gridContainer"></div>
     </div>
 
-    <!-- <script type="module" src="src/app.js"></script> -->
-    <script>
-        // function closePopup() {
-        // const popup = document.getElementById('popup');
-        // popup.style.display = 'none';
-        // }
+    <div id="contents">
+        <header class="header flex-container">
+          <div class="flex-item-4col" id="logo">
+            <img class="logo-img" src="src/06.ui/assets/img/logoName.png">
+          </div>
+          <div class="container-mode-status flex-item-4col">
+            <div class="container-Mode">
+              <div class="text-grey">Mode:&nbsp</div>
+              <p class="text-blue" id="Mode">Automatic</p>&nbsp
+            </div>
+            <div class="container-status">
+              <div class="text-grey">Status:&nbsp</div>
+              <p class="text-blue" id="Status">Execute</p>
+            </div>
+          </div>
+          <div class="container-login-alarm flex-item-4col">
+            <button type="button" class="buttonAlarms" id="buttonOpenAlarmsPage">
+              <img src="src/06.ui/assets/icons/notification.png" alt="Icon" class="btn-icon">
+              <span class="badge"></span>
+            </button>
+            
+            <button class="buttonLogIn text-medium text-grey" id="buttonOpenLogin">
+              Operator
+              <img src="src/06.ui/assets/icons/user.png" alt="Icon" class="btn-icon">
+            </button>
+          </div>
+        </header>
+        <section class="sidebar">
+          <button class="buttonNavToPages selected" id="buttonSection1">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
+            Home
+          </button>
+          <button class="buttonNavToPages" id="buttonSection2">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
+            Machine
+          </button>
+          <button class="buttonNavToPages" id="buttonSection3">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
+            Positions
+          </button>
+          <button class="buttonNavToPages" id="buttonSection4">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
+            Setting
+          </button>
+          <!-- <button class="buttonNavToPages" id="buttonSection5">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
+            Alarms
+          </button>
+          <button class="buttonNavToPages" id="buttonSection6">
+            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">  
+            Section 6
+          </button> -->
+        </section>
+        <main class="main">
+          <section class="section" id="section1" >
+            <div class="card">
+              <div class="machine-img">
+                <img class="shuttle-img" src="src/06.ui/assets/img/agv-Baby.webp">
+                <div class="sensor" id="sensor-Before-Cargo-side-A">C</div>
+              </div>
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>       
+            <div class="card"></div>  
+          </section>
+          <section class="section" id="section2" >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">Section #2</div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </section>
+          <section class="section" id="section3" >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">Section #3</div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </section>
+          <section class="section" id="section4" >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">Section #4</div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </section>
+          <section class="section" id="section5" >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">Section #5</div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </section>
+          <section class="section" id="section6" >
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card">Section #6</div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </section>
 
-// Create the grid
-const container = document.getElementById("container");
-const gridContainer = document.getElementById("gridContainer");
-for (let i = 0; i < 38 * 38; i++) {
-  const square = document.createElement("div");
-  square.className = "square";
-  gridContainer.appendChild(square);
-}
+        </main>
+    </div>
 
-// Function to highlight the specified square
-function highlightSquare(row, col) {
-  const index = row * 38 + col;
-  const squares = document.getElementsByClassName("square");
-  for (let i = 0; i < squares.length; i++) {
-    if (i == index) {
-        squares[i].classList.add("red");
-    } else {
-        squares[i].classList.remove("red");
-    }
-    
-  }
-//   squares[index].classList.add("red");
-  
+    <div class="popup open" id="popup">
+      <div class="inner-popup">
+        <h2 class="text-large">WARNING</h2>
+        <p id="popupMessage"></p>
+        <button id="buttonClosePopup">Close</button>
+      </div>
+    </div>
 
-// Variables to track mouse movement
-let isLook = false;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
+    <div class="popup" id="login">
+      <div class="inner-popup">
+        <h2>Login</h2>
+            <div class="inputbox"> 
+                <input type="text" required>
+                <label>User</label>
+            </div>
+            <div class="inputbox">
+              <input type="password" required> 
+              <label>Password</label> 
+            </div>
+            <button>Log In</button>
+            <button id="buttonCloseLogin">Close</button>
+      </div>
+    </div>
 
-// Get the specific div where you want to enable click-and-drag scrolling
-const scrollableDiv = document.getElementById("container");
-
-// Add mousedown event listener
-scrollableDiv.addEventListener("mousedown", function(event) {
-  isDragging = true;
-  startX = event.clientX;
-  startY = event.clientY;
-});
-
-// Add mousemove event listener
-scrollableDiv.addEventListener("mousemove", function(event) {
-  if (isDragging) {
-    const deltaX = event.clientX - startX;
-    const deltaY = event.clientY - startY;
-    scrollableDiv.scrollLeft -= deltaX;
-    scrollableDiv.scrollTop -= deltaY;
-    startX = event.clientX;
-    startY = event.clientY;
-  }
-});
-
-// Add mouseup event listener
-scrollableDiv.addEventListener("mouseup", function() {
-  isDragging = false;
-});
-
-
-
-
-  // Scroll the page if the highlighted square is outside the viewport
-  const highlightedSquare = squares[index];
-  const squareRect = highlightedSquare.getBoundingClientRect();
-  const containerRect = container.getBoundingClientRect();
-  if (isLook) {
-    if (squareRect.top < 0 || squareRect.bottom > containerRect.height) {
-        container.scrollTo(0, highlightedSquare.offsetTop - containerRect.height / 2);
-    }
-    if (squareRect.left < 0 || squareRect.right > containerRect.width) {
-        container.scrollTo(highlightedSquare.offsetLeft - containerRect.width / 2, 0);
-    }
-  }
-}
-
-// Simulation of shuttle moving downwards
-let currentRow = 0;
-let currentCol = 0;
-
-function moveShuttleDown() {
-  currentRow++;
-  if (currentRow >= 38) {
-    currentRow = 0;
-    window.scrollBy(0, 40); // Scroll by the height of one square
-  }
-}
-
-function moveShuttleHorizontally() {
-  currentCol++;
-  if (currentCol >= 38) {
-    currentCol = 0;
-    window.scrollBy(40, 0); // Scroll by the width of one square
-   }
-    // highlightSquare(currentRow, currentCol);
-  }
-
-// Simulate shuttle movement every 500 milliseconds (adjust as needed)
-
-setInterval(function(){
-    currentCol = 0;
-    currentRow = 0;
-    highlightSquare(1, 7)
-}
-    , 500);
-
-    </script>
+    <script type="module" src="src/app.js"></script>
+    <script type="module" src="src/06.ui/js/mainUI.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 @import url("base/global.css");
+@import url("base/columns-size.css");
 @import url("base/orientation-control.css");
 @import url("utilities/scrollbar.css");
 @import url("utilities/colors.css");
@@ -7,37 +8,24 @@
 @import url("layouts/header.css");
 @import url("layouts/sidebar.css");
 @import url("layouts/main.css");
-@import url("layouts/card.css");
+@import url("layouts/section.css");
+@import url("layouts/section1.css");
+@import url("layouts/section2.css");
+@import url("layouts/section3.css");
+@import url("layouts/section4.css");
+@import url("layouts/section5.css");
+@import url("layouts/section6.css");
+@import url("pages/section1.css");
+@import url("pages/section2.css");
+@import url("pages/section3.css");
+@import url("pages/section4.css");
+@import url("pages/section5.css");
+@import url("pages/section6.css");
 @import url("components/popup.css");
+@import url("components/button.css");
 
 
-/* Style for the container div */
-#container {
-    width: 750px;
-    height: 750px;
-    overflow: auto; /* Enable scrolling */
-  }
-  
-  /* Style for the grid container */
-  #gridContainer {
-    display: grid;
-    grid-template-columns: repeat(38, 40px); /* Adjust size of each square */
-    grid-template-rows: repeat(38, 40px); /* Adjust size of each square */
-    gap: 2px; /* Adjust gap between squares */
-  }
-  
-  /* Style for each individual square */
-  .square {
-    width: 40px; /* Adjust size of each square */
-    height: 40px; /* Adjust size of each square */
-    background-color: white; /* Default color */
-    border: 1px solid black; /* Add border for clarity */
-  }
-  
-  /* Style for the red square */
-  .square.red {
-    background-color: red;
-  }
+
   
   
   
