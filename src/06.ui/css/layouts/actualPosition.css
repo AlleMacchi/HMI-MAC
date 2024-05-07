@@ -10,6 +10,8 @@
         "c2 c3"
     ;
     gap: 0;
+    padding: 0 30px 30px 0;
+
 }
 
 .title-column{
@@ -38,10 +40,9 @@
 
 .actual-position{
     grid-area: c3;
-    border: solid 1px var(--white);
-    box-shadow: var(--text-shadow);
+    box-shadow: 0 0 5px #0f5a5e,
+                0 0 5px #0f5a5e;
     border-radius: 5px;
-
     overflow:scroll;
 }
 

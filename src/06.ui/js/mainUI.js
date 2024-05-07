@@ -4,7 +4,7 @@ import {LoginButtonUI} from './LoginButtonUI.js'
 import {AlarmsButtonUI} from './AlarmsButtonUI.js' 
 import {ActualPositionUI} from './ActualPositionUI.js' 
 
-ActualPositionUI();
+// ActualPositionUI();
 ScrollIntoPages();
 ButtonClosePopup();
 AlarmsButtonUI();
