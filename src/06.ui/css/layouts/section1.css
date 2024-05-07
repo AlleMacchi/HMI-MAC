@@ -1,21 +1,15 @@
 #section1{
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-        "c1 c1 c1 c1 c1 c1 c1 c3 c3 c3"
-        "c1 c1 c1 c1 c1 c1 c1 c3 c3 c3"
-        "c1 c1 c1 c1 c1 c1 c1 c3 c3 c3"
-        "c1 c1 c1 c1 c1 c1 c1 c3 c3 c3"
-        "c2 c2 c2 c2 c2 c2 c2 c4 c4 c4"
-        "c2 c2 c2 c2 c2 c2 c2 c4 c4 c4"
-        "c2 c2 c2 c2 c2 c2 c2 c4 c4 c4"
+        "c1 c2"
+        "c1 c3"
     ;
     gap: 5px;
 }
 
 #section1>.card:nth-child(1){
-    position: relative;
     grid-area: c1;
 }
 
@@ -25,10 +19,6 @@
 
 #section1>.card:nth-child(3){
     grid-area: c3;
-}
-
-#section1>.card:nth-child(4){
-    grid-area: c4;
 }
 
 
