@@ -14,3 +14,8 @@
     background: rgb(48,50,60);
     background: linear-gradient(180deg, rgba(48,50,60,1) 0%, rgba(29,30,33,1) 100%);
 }
+
+.sidebar>button{
+    margin: 5px;
+    text-align: center
+;}

@@ -1,13 +1,18 @@
 export class MapActualPosition {
-    constructor(tableId, containerId) {
+    constructor(tableId, containerId, rowElementId, colElementId) {
         this.tableId = tableId;
         this.container = containerId;
+        this.rowElementId = rowElementId;
+        this.colElementId = colElementId;
         this.isLook = true;
         this.isDragging = false;
         this.startX = 0;
         this.startY = 0;
         this.RowSelected = 0;
         this.ColSelected = 0;
+        this.qtRow = 32;
+        this.qtCol = 34;
+
 
         this.initPromise = new Promise((resolve) => {
             document.addEventListener("DOMContentLoaded", () => {
@@ -23,9 +28,9 @@ export class MapActualPosition {
     
     async initializeChessboard() {
         const tbody = document.querySelector(`#${this.tableId} tbody`);
-        for (let i = 1; i <= 38; i++) {
+        for (let i = 1; i <= this.qtRow; i++) {
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${i}</td>` + "<td></td>".repeat(38);
+            row.innerHTML = `<td>${i}</td>` + "<td></td>".repeat(this.qtCol);
             tbody.appendChild(row);
         }
 
@@ -34,31 +39,40 @@ export class MapActualPosition {
                 
                     cell.addEventListener("click", () => {
                         if (!this.isLook) {
-                        const rowIndex = Math.floor(index / 39) + 1;
-                        const colIndex = index - ((rowIndex - 1) * 39);
-                        console.log(`Clicked cell at Row: ${rowIndex}, Column: ${colIndex}`);
-
-                        const txtRow = document.getElementById('row');
-                        const txtCol = document.getElementById('col');
-                        txtRow.innerHTML = rowIndex;
-                        txtCol.innerHTML = colIndex;
-
-                        const cell = document.querySelector(`#${this.tableId}  tbody tr:nth-child(${rowIndex}) td:nth-child(${colIndex + 1})`);
-                        const allCells = document.querySelectorAll(`#${this.tableId}  tbody tr td`);
-
-                        allCells.forEach(cell => {
-                            cell.style.border = "1px solid rgba(255,255,255,0.1)"
-                            });
-                        if ((this.RowSelected !== rowIndex) || (this.ColSelected !== colIndex)) {
-                            cell.style.border = "2px solid yellow";
-                            this.RowSelected = rowIndex;
-                            this.ColSelected = colIndex; 
-                        }else if ((this.RowSelected == rowIndex) && (this.ColSelected == colIndex)){
-                            this.RowSelected = 0;
-                            this.ColSelected = 0; 
-                            txtRow.innerHTML = '';
-                            txtCol.innerHTML = '';
+                            
+                        const rowIndex = Math.floor(index / (this.qtCol+1)) + 1;
+                        const colIndex = index - ((rowIndex - 1) * (this.qtCol+1));
+                        
+                        if (colIndex !== 0) {
+                            const txtRow = document.getElementById(this.rowElementId);
+                            if (txtRow) {
+                                txtRow.innerHTML = rowIndex;
+                            }
+                            
+                            const txtCol = document.getElementById(this.colElementId);
+                            if (txtCol) {
+                                txtCol.innerHTML = colIndex;
+                            }
+                            
+    
+                            const cell = document.querySelector(`#${this.tableId}  tbody tr:nth-child(${rowIndex}) td:nth-child(${colIndex + 1})`);
+                            const allCells = document.querySelectorAll(`#${this.tableId}  tbody tr td`);
+    
+                            allCells.forEach(cell => {
+                                cell.style.border = "1px solid rgba(255,255,255,0.1)"
+                                });
+                            if ((this.RowSelected !== rowIndex) || (this.ColSelected !== colIndex)) {
+                                cell.style.border = "2px solid yellow";
+                                this.RowSelected = rowIndex;
+                                this.ColSelected = colIndex; 
+                            }else if ((this.RowSelected == rowIndex) && (this.ColSelected == colIndex)){
+                                this.RowSelected = 0;
+                                this.ColSelected = 0; 
+                                txtRow.innerHTML = '';
+                                txtCol.innerHTML = '';
+                            }
                         }
+
                     }
                     });
             });
@@ -105,8 +119,12 @@ export class MapActualPosition {
         const firstColumn = document.querySelectorAll(`#${this.tableId}  tbody td:first-child`);
         const cell = document.querySelector(`#${this.tableId}  tbody tr:nth-child(${row}) td:nth-child(${col + 1})`);
         const cellMother = document.querySelector(`#${this.tableId} tbody tr:nth-child(${rowMother}) td:nth-child(${colMother + 1})`);
-        const cellRowActive = document.querySelectorAll(`#${this.tableId} tbody tr:nth-child(${row}) td`);
-        const cellMotherColumn = document.querySelectorAll(`#${this.tableId} tbody td:nth-child(${colMother + 1})`);
+        // const cellRowActive = document.querySelectorAll(`#${this.tableId} tbody tr:nth-child(${row}) td`);
+        const cellRowActive = document.querySelector(`#${this.tableId} tbody tr:nth-child(${row}) td`);
+           const cellMotherColumn = document.querySelectorAll(`#${this.tableId} tbody td:nth-child(${colMother + 1})`);
+
+           const headerInColumnAll = document.querySelectorAll(`#${this.tableId} thead tr th`);
+           const headerInColumn = document.querySelector(`#${this.tableId} thead tr th:nth-child(${col + 1})`);
 
         // Reset background of all cells to white
         allCells.forEach(cell => {
@@ -134,16 +152,27 @@ export class MapActualPosition {
             cellMother.style.backgroundPosition = "center";
         }
 
+        // =================================================================================
+        // Color backgorund of first column of row line
         firstColumn.forEach(cell => {
             cell.style.backgroundColor = "rgb(48,50,60)";
         })
-
-        cellRowActive.forEach(cell=>{
-            cell.style.backgroundColor = "rgba(255,222,0,0.3)";
-        })
-
+        // Color the active row
+        cellRowActive.style.backgroundColor = "rgba(255,222,0,0.3)";
+        // =================================================================================
+        // =================================================================================
+        // Color background of line column
+        headerInColumnAll.forEach(cell => {
+            cell.style.backgroundImage = "none";
+                cell.style.backgroundColor = "rgb(59,62,79)";
+            });
+        // Color the active column
+        headerInColumn.style.backgroundColor = "rgba(255,222,0,0.3)";
+        // =================================================================================
+        // =================================================================================
+        // Color the sqaure of column Mother
         cellMotherColumn.forEach(cell=>{
-            cell.style.backgroundColor = "rgba(166,248,255,0.3)";
+            cell.style.backgroundColor = "rgba(192,192,192,0.2)";
         }) 
 
 
@@ -161,11 +190,11 @@ export class MapActualPosition {
         const squareRect = cell.getBoundingClientRect();
 
         if (this.isLook) {
-            if (squareRect.top < 0 || squareRect.bottom > containerRect.height) {
+            if (squareRect.top < 40 || squareRect.bottom > containerRect.height) {
                 const offsetY = highlightedSquare.offsetTop - containerRect.height / 2;
                 container.scrollTo({ top: offsetY, behavior: 'smooth' });
             }
-            if (squareRect.left < 0 || squareRect.right > containerRect.width) {
+            if (squareRect.left < 40 || squareRect.right > containerRect.width) {
                 const offsetX = highlightedSquare.offsetLeft - containerRect.width / 2;
                 container.scrollTo({ left: offsetX, behavior: 'smooth' });
             }  

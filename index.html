@@ -40,19 +40,15 @@
         </header>
         <section class="sidebar">
           <button class="buttonNavToPages selected" id="buttonSection1">
-            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
             Home
           </button>
           <button class="buttonNavToPages" id="buttonSection2">
-            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
             Machine
           </button>
           <button class="buttonNavToPages" id="buttonSection3">
-            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
             Positions
           </button>
           <button class="buttonNavToPages" id="buttonSection4">
-            <img src="src/06.ui/assets/icons/home.png" alt="Icon" class="btn-icon">
             Setting
           </button>
         </section>
@@ -67,6 +63,14 @@
                   <table id="chessboard">
                     <thead>
                       <tr>
+                        <div class="container-area text-light-grey">                        
+                          <div>A</div>
+                          <div>B</div>
+                          <div>C</div>
+                          <div>D</div>
+                          <div>E</div>
+                          <div>F</div>
+                        </div>
                         <th></th>
                         <th>1</th>
                         <th>2</th>
@@ -102,10 +106,10 @@
                         <th>32</th>
                         <th>33</th>
                         <th>34</th>
-                        <th>35</th>
+                        <!-- <th>35</th>
                         <th>36</th>
                         <th>37</th>
-                        <th>38</th>
+                        <th>38</th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -115,11 +119,57 @@
               </div>
             </div>
             <div class="card">
-              <p>Row: <span id="row"></span></p>
-              <p>Column:<span id="col"></span></p>
-              
+                <h5 class="text-medium text-light-grey"> GENERAL COMMANDS</h5>
+                <div class="container-general-command-btn">
+                  <!-- Command START  -->
+                  <div class="btn_cmd_container">
+                      <div id="btn_circle_out_START" class="btn_circle_outlet " >
+                          <div class="btn_circle_inlet">
+                              <button id="buttonStart" class="btn_cmd text-small text-grey">
+                                  START
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Command STOP  -->
+                  <div class="btn_cmd_container ">
+                      <div id="btn_circle_out_STOP"  class="btn_circle_outlet" >
+                          <div class="btn_circle_inlet">
+                              <button id="buttonStop" class="btn_cmd text-small text-grey">
+                                  STOP
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+       
+              <!-- Command RESET  -->
+              <div class="container-reset">
+                  <button id="buttonReset" class="text-small btn-normal text-grey">
+                      RESET
+                  </button>
+              </div>
             </div>
-            <div class="card"></div>       
+            <div class="card">
+              <h5>Task Active: <span>Pickup</span></h5>
+              <h5>Current Step: <span>Step 0: Init</span></h5>
+
+              <div class="btn-group dropup">
+                <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-small dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                  Steps
+                </button>
+                <div id="SelectionSteps" class="dropdown-menu">
+                  <a href="#" onclick="selectOption('5')">Step 5: Go to Mother</a>
+                  <a href="#" onclick="selectOption('4')">Step 4: Go to First Position</a>
+                  <a href="#" onclick="selectOption('3')">Step 3: Lift Up</a>
+                  <a href="#" onclick="selectOption('2')">Step 2: Go to position</a>
+                  <a href="#" onclick="selectOption('1')">Step 1: Lift Down</a>
+                  <a href="#" onclick="selectOption('0')">Step 0: Init</a>
+                </div>
+              </div>
+
+
+            </div>       
           </section>
           <section class="section" id="section2" >
             <div class="card"></div>

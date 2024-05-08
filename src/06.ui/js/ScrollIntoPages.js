@@ -1,18 +1,18 @@
 import {MapActualPosition} from './MapActualPosition.js'
 
-const actualPositionUI = new MapActualPosition('chessboard','actual-position');
+const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col');
 
 // Simulation 
-var currentCol=0;
+var currentCol=9;
     setInterval(()=>{
         currentCol++;
-        if (currentCol > 9) {
-            currentCol = 1;
+        if (currentCol > 28) {
+            currentCol = 10;
         }
-        actualPositionUI.update(currentCol,9,currentCol, 9);  
+        actualPositionUI.update(6,currentCol,6, 10);  
     }, 500);
 
-    actualPositionUI.update(1, 20, 1, 28);  
+ //   actualPositionUI.update(1, 20, 1, 28);  
 
 
 function scrollToSection(sectionId, callback) {
@@ -54,9 +54,9 @@ export function ScrollIntoPages(){
     
     document.getElementById("buttonSection1").addEventListener("click", function() {
         scrollToSection("section1", function() {
-      //       actualPositionUI.enableAutoScroll();
-             actualPositionUI.disableAutoScroll();
-             actualPositionUI.update(1, 20, 1, 28); 
+       //      actualPositionUI.enableAutoScroll();
+            actualPositionUI.disableAutoScroll();
+       //      actualPositionUI.update(1, 20, 1, 28); 
         });
         
         // scrollToSection("section1");
