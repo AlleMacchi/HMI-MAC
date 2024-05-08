@@ -151,26 +151,28 @@
               </div>
             </div>
             <div class="card">
-              <h5>Task Active: <span>Pickup</span></h5>
-              <h5>Current Step: <span>Step 0: Init</span></h5>
-
-              <div class="btn-group dropup">
-                <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-small dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                  Steps&nbsp<span class="caret">&nbsp<img src="src/06.ui/assets/icons/up-arrow.png"></span>
-                </button>
-                <div id="SelectionSteps" class="dropdown-menu">
-                  <a href="#" data-option="5">Step 5: Go to Mother</a>
-                  <a href="#" data-option="4">Step 4: Go to First Position</a>
-                  <a href="#" data-option="3">Step 3: Lift Up</a>
-                  <a href="#" data-option="2">Step 2: Go to position</a>
-                  <a href="#" data-option="1">Step 1: Lift Down</a>
-                  <a href="#" data-option="0">Step 0: Init</a>
+              <div class="steps-container">
+                <div style="border-bottom: 1px solid grey; width: 60%;">
+                  <h5 class="text-grey text-medium">Current Task: <span class="text-blue">Pickup</span></h5>
                 </div>
-                <input type="text" id="selectedOption" class="form-control" placeholder="0" readonly>   
+                <h5  class="text-grey text-medium" >Current Step: <span class="text-blue">Step 0: Init</span></h5>
+
+                <div class="btn-group dropup">
+                  <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-medium dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    Steps&nbsp<span class="caret">&nbsp<img src="src/06.ui/assets/icons/up-arrow.png"></span>
+                  </button>
+                  <div id="SelectionSteps" class="dropdown-menu">
+                    <a href="#" data-option="5">Step 5: Go to Mother</a>
+                    <a href="#" data-option="4">Step 4: Go to First Position</a>
+                    <a href="#" data-option="3">Step 3: Lift Up</a>
+                    <a href="#" data-option="2">Step 2: Go to position</a>
+                    <a href="#" data-option="1">Step 1: Lift Down</a>
+                    <a href="#" data-option="0">Step 0: Init</a>
+                  </div>
+                  <input type="text" id="selectedOption" class="form-control text-medium" placeholder="0" readonly>   
+                  <button id="buttonChangeStepConfirm" class="btn-normal text-grey text-small">Confirm</button>
+                </div>
               </div>
-              
-
-
             </div>       
           </section>
           <section class="section" id="section2" >
