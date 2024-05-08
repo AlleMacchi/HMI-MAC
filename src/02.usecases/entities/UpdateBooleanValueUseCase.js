@@ -1,5 +1,3 @@
-
-
 class UpdateBooleanValueUseCase{
   constructor(repository, entity){
       this.repository = repository;

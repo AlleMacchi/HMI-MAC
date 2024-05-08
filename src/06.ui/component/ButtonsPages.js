@@ -1,4 +1,4 @@
-import {MapActualPosition} from './MapActualPosition.js'
+import {MapActualPosition} from '../js/MapActualPosition.js'
 
 const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col');
 
@@ -36,7 +36,7 @@ function scrollToSection(sectionId, callback) {
 }
 
 
-export function ScrollIntoPages(){
+export function ButtonsPages(){
     document.querySelectorAll(".buttonNavToPages").forEach(button => {
         button.addEventListener("click", function() {
             // Add "selected" class to the clicked button

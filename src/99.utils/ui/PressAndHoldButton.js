@@ -3,8 +3,9 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
 export class PressAndHoldButton {
-    constructor(id,elementId,entity) {
+    constructor(id,elementId,entity, elementUI) {
         this.element = document.getElementById(elementId);
+        this.elementUI = elementUI;
         this.pressed = false;
         this.id = id;
         this.entity = entity;
@@ -26,16 +27,19 @@ export class PressAndHoldButton {
     handleMouseDown(event) {
         event.preventDefault();
         this.setValue(true);
+        this.elementUI.showPressed();
     }
 
     handleMouseUp(event) {
         event.preventDefault();
         this.setValue(false);
+        this.elementUI.showUnpressed();
     }
 
     handleMouseLeave(event) {
         if (this.pressed) {
             this.setValue(false);
+            this.elementUI.showUnpressed();
         }
     }
 

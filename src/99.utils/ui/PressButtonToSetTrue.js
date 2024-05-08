@@ -3,8 +3,9 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
 export class PressButtonToSetTrue {
-    constructor(id,elementId,entity) {
+    constructor(id,elementId,entity, elementUI) {
         this.element = document.getElementById(elementId);
+        this.elementUI = elementUI;
         this.id = id;
         this.entity = entity;
 
@@ -20,6 +21,7 @@ export class PressButtonToSetTrue {
     handleMouseDown(event) {
         event.preventDefault();
         this.setValue(true);
+        this.elementUI.showPressed();
     }
 
     setValue(value) {

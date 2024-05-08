@@ -1,6 +1,7 @@
 import {CarrierSpeed} from '../../01.entities/carrier-speed/CarrierSpeed.js'
 
 export function UpdateDisplayInit(mappedData) {
+
     const entity = new CarrierSpeed(4,mappedData.PLC_CarrierSpeed);
 
     const carrierSpeedElement = document.getElementById('act-speed');

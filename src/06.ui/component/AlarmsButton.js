@@ -1,4 +1,4 @@
-export function AlarmsButtonUI(){
+export function AlarmsButton(){
     var button = document.getElementById("buttonOpenAlarmsPage")
     button.addEventListener("click", function() {
         var section = document.getElementById("section5");

@@ -8,7 +8,7 @@ function closeLogin() {
     login.classList.remove("open");   
 }
 
-export function LoginButtonUI(){
+export function LoginButton(){
     document.getElementById("buttonOpenLogin").addEventListener("click", function() {
         openLogin();
     });
