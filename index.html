@@ -153,9 +153,9 @@
             <div class="card">
               <div class="steps-container">
                 <div style="border-bottom: 1px solid grey; width: 60%;">
-                  <h5 class="text-grey text-medium">Current Task: <span class="text-blue">Pickup</span></h5>
+                  <h5 class="text-grey text-medium">Current Task: <span id="current-task" class="text-blue">Pickup</span></h5>
                 </div>
-                <h5  class="text-grey text-medium" >Current Step: <span class="text-blue">Step 0: Init</span></h5>
+                <h5 class="text-grey text-medium" >Current Step: <span id="current-step" class="text-blue">Step 0: Init</span></h5>
 
                 <div class="btn-group dropup">
                   <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-medium dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -169,7 +169,8 @@
                     <a href="#" data-option="1">Step 1: Lift Down</a>
                     <a href="#" data-option="0">Step 0: Init</a>
                   </div>
-                  <input type="text" id="selectedOption" class="form-control text-medium" placeholder="0" readonly>   
+                  <input type="text" id="selectedOption" class="form-control text-medium" placeholder="" readonly> 
+                  <input type="text" id="selectedStep" class="invisible" placeholder="" readonly>  
                   <button id="buttonChangeStepConfirm" class="btn-normal text-grey text-small">Confirm</button>
                 </div>
               </div>
@@ -244,21 +245,5 @@
     </div>
 
     <script type="module" src="src/app.js"></script>
-    <script type="module" src="src/06.ui/js/mainUI.js"></script>
-    <!-- <script>
-          function selectOption(option) {
-      var selectedOption = document.getElementById('selectedOption');
-      var dropdownMenu = document.getElementById('SelectionSteps');
-      var options = dropdownMenu.getElementsByTagName('a');
-      
-      for (var i = 0; i < options.length; i++) {
-        if (options[i].getAttribute('onclick') === 'selectOption(\'' + option + '\')') {
-          var text = options[i].innerText;
-          selectedOption.value = option + ': ' + text.substring(text.indexOf(':') + 2);
-          break;
-        }
-      }
-    }
-    </script> -->
 </body>
 </html>

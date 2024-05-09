@@ -41,6 +41,7 @@ class PLCWebServer extends CommunicationInterface {
             const data = await fetchDataFromURL(this.url_Init);
             const mappedData = DataMapperInit.mapDataToObject(data);
             UpdateDisplayInit(mappedData);
+            console.log(mappedData);
             return mappedData;
         } catch (error) {
             console.error("Error initializing: " + error);
@@ -52,6 +53,7 @@ class PLCWebServer extends CommunicationInterface {
         try {
             const data = await fetchDataFromURL(this.url_Read);
             const mappedData = DataMapper.mapDataToObject(data);
+            console.log(mappedData);
             return mappedData;
         } catch (error) {
             console.error("Error finding all data: " + error);

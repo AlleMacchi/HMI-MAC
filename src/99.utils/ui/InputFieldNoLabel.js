@@ -14,7 +14,10 @@ class InputFieldNoLabel {
     this.SetValue = this.SetValue.bind(this);
     
     this.element = document.getElementById(this.elementId);
-    this.element.addEventListener('click', this.SetValue);
+   // this.element.addEventListener('click', this.SetValue);
+
+    this.element.addEventListener('mousedown', this.SetValue);
+    this.element.addEventListener('touchstart', this.SetValue);
 
   }
 

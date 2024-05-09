@@ -3,35 +3,121 @@ import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 const WebServerDataMapper = {
     mapDataToObject: function(data) {
         const decodedArray2 = decodedString(data.Array_2);
-        const bits = readBits(decodedArray2);
+        const bitArr2 = readBits(decodedArray2);
 
-        const decodedArray3 = decodedString(data.Array_3);
+        const decodedArray8 = decodedString(data.Array_8);
+        const bitArr8 = readBits(decodedArray8);
+
+        const decodedArray9 = decodedString(data.Array_9);
+        const bitArr9 = readBits(decodedArray9);
+
+        const decodedArray10 = decodedString(data.Array_10);
+        const bitArr10 = readBits(decodedArray10);
+
+        const decodedArray11 = decodedString(data.Array_11);
+        const bitArr11 = readBits(decodedArray11);
     
         return {
-        Array_1: data.Array_1,
+        StatusMachine: decodedString(data.Array_1),
         Array_2: {
-            StatusMode: bits[0],
-            CarrierInPosition: bits[1],
-            CarrierIsMoving: bits[2],
-            CarrierIsFault: bits[3],
-            LifterInPositionUp: bits[4],
-            LifterInPositionDown: bits[5],
-            LifterIsMoving: bits[6],
-            LifterIsFault: bits[7],
-            BabyOnBoard: bits[8],
-            BabyLimitLeft: bits[9],
-            BabyLimitRight: bits[10],
-            ModeSwitch: bits[11],
-            PalletStopLeft: bits[12],
-            PalletStopRight: bits[13],
-            PalletLimitLeft: bits[14],
-            PalletLimitRight: bits[15]
+            StatusMode: bitArr2[0],
+            CarrierInPosition: bitArr2[1],
+            CarrierIsMoving: bitArr2[2],
+            CarrierIsFault: bitArr2[3],
+            LifterInPositionUp: bitArr2[4],
+            LifterInPositionDown: bitArr2[5],
+            LifterIsMoving: bitArr2[6],
+            LifterIsFault: bitArr2[7],
+            BabyOnBoard: bitArr2[8],
+            BabyLimitLeft: bitArr2[9],
+            BabyLimitRight: bitArr2[10],
+            ModeSwitch: bitArr2[11],
+            PalletStopLeft: bitArr2[12],
+            PalletStopRight: bitArr2[13],
+            PalletLimitLeft: bitArr2[14],
+            PalletLimitRight: bitArr2[15]
         },
-        ActualStep: decodedArray3,
-        Array_4: data.Array_4,
-        Array_5: data.Array_5,
-        Array_6: data.Array_6,
-        Array_7: data.Array_7
+        ActualStep: decodedString(data.Array_3),
+        StatusCarrierActPositon_logicalRow: decodedString(data.Array_4),
+        StatusCarrierActPositon_logicalCol: decodedString(data.Array_5),
+        StatusCarrierActPositon_logicalDir: decodedString(data.Array_6),
+        PositionResult: decodedString(data.Array_7),
+        Array_8: {
+            Alarm_Controller_000:  bitArr8[0],
+            Alarm_Controller_001: bitArr8[1],
+            Alarm_Controller_002: bitArr8[2],
+            Alarm_Controller_003: bitArr8[3],
+            Alarm_Controller_004: bitArr8[4],
+            Alarm_Controller_005: bitArr8[5],
+            Alarm_Controller_006: bitArr8[6],
+            Alarm_Controller_007: bitArr8[7],
+            Alarm_Controller_008: bitArr8[8],
+            Alarm_Controller_009: bitArr8[9],
+            Alarm_Controller_010: bitArr8[10],
+            Alarm_Controller_011: bitArr8[11],
+            Alarm_Controller_012: bitArr8[12],
+            Alarm_Controller_013: bitArr8[13],
+            Alarm_Controller_014: bitArr8[14],
+            Alarm_Controller_015: bitArr8[15]
+        },
+        Array_9: {
+            Alarm_Controller_100:  bitArr9[0],
+            Alarm_Controller_101: bitArr9[1],
+            Alarm_Controller_102: bitArr9[2],
+            Alarm_Controller_103: bitArr9[3],
+            Alarm_Controller_104: bitArr9[4],
+            Alarm_Controller_105: bitArr9[5],
+            Alarm_Controller_106: bitArr9[6],
+            Alarm_Controller_107: bitArr9[7],
+            Alarm_Controller_108: bitArr9[8],
+            Alarm_Controller_109: bitArr9[9],
+            Alarm_Controller_110: bitArr9[10],
+            Alarm_Controller_111: bitArr9[11],
+            Alarm_Controller_112: bitArr9[12],
+            Alarm_Controller_113: bitArr9[13],
+            Alarm_Controller_114: bitArr9[14],
+            Alarm_Controller_115: bitArr9[15]
+        },
+        Array_10: {
+            Alarm_Carrier_000:  bitArr10[0],
+            Alarm_Carrier_001: bitArr10[1],
+            Alarm_Carrier_002: bitArr10[2],
+            Alarm_Carrier_003: bitArr10[3],
+            Alarm_Carrier_004: bitArr10[4],
+            Alarm_Carrier_005: bitArr10[5],
+            Alarm_Carrier_006: bitArr10[6],
+            Alarm_Carrier_007: bitArr10[7],
+            Alarm_Carrier_008: bitArr10[8],
+            Alarm_Carrier_009: bitArr10[9],
+            Alarm_Carrier_010: bitArr10[10],
+            Alarm_Carrier_011: bitArr10[11],
+            Alarm_Carrier_012: bitArr10[12],
+            Alarm_Carrier_013: bitArr10[13],
+            Alarm_Carrier_014: bitArr10[14],
+            Alarm_Carrier_015: bitArr10[15]
+        },
+        Array_11: {
+            Alarm_Lifter_000:  bitArr11[0],
+            Alarm_Lifter_001: bitArr11[1],
+            Alarm_Lifter_002: bitArr11[2],
+            Alarm_Lifter_003: bitArr11[3],
+            Alarm_Lifter_004: bitArr11[4],
+            Alarm_Lifter_005: bitArr11[5],
+            Alarm_Lifter_006: bitArr11[6],
+            Alarm_Lifter_007: bitArr11[7],
+            Alarm_Lifter_008: bitArr11[8],
+            Alarm_Lifter_009: bitArr11[9],
+            Alarm_Lifter_010: bitArr11[10],
+            Alarm_Lifter_011: bitArr11[11],
+            Alarm_Lifter_012: bitArr11[12],
+            Alarm_Lifter_013: bitArr11[13],
+            Alarm_Lifter_014: bitArr11[14],
+            Alarm_Lifter_015: bitArr11[15]
+        },
+        CarrierActSpeed: decodedString(data.Array_12),
+        CarrierActPosition_mm: decodedString(data.Array_13),
+        Position_mm: decodedString(data.Array_14),
+        TaskNumber: decodedString(data.Array_15)
         };
     }
 };

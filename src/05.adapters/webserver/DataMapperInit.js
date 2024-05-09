@@ -5,7 +5,9 @@ const WebServerDataMapper = {
         const decodedArray1 = decodedString(data.PLC_CarrierSpeed);
     
         return {
-            PLC_CarrierSpeed: decodedArray1
+            PLC_CarrierSpeed: decodedArray1,
+            SelPhysicalLogical: decodedString(data.SelPhysicalLogical),
+            BabyNo: data.AGV_No
         };
     }
 };

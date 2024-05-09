@@ -3,7 +3,7 @@ import { InputFieldWithLabel } from '../../99.utils/ui/InputFieldWithLabel.js';
 
 export function CarrierSpeedInput(){
         
-    const id = 4; // Id use for config DataWriteList.js
+    const id = 16; // Id use for config DataWriteList.js
     const inputId = 'set-carrierSpeed'; // Id of Input Field 
     const elementId = 'btnSpeed'; // Id of confirm button 
     const displayId = 'act-speed'; // Id of label 

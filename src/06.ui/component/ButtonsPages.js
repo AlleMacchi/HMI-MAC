@@ -52,10 +52,19 @@ export function ButtonsPages(){
     });
     
     
+    document.getElementById("buttonOpenAlarmsPage").addEventListener("click", function() {
+        actualPositionUI.disableAutoScroll();
+        scrollToSection("section5");
+        document.querySelectorAll(".buttonNavToPages").forEach(button => {
+            button.classList.remove("selected");
+        });
+    });
+
+
     document.getElementById("buttonSection1").addEventListener("click", function() {
         scrollToSection("section1", function() {
-       //      actualPositionUI.enableAutoScroll();
-            actualPositionUI.disableAutoScroll();
+             actualPositionUI.enableAutoScroll();
+        //    actualPositionUI.disableAutoScroll();
        //      actualPositionUI.update(1, 20, 1, 28); 
         });
         
