@@ -1,0 +1,66 @@
+.container-shuttle-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-img{
+    height: 50%;
+    width: 80%;
+    border: solid 1px red;
+    position: relative;
+}
+.border{
+    height: 1px;
+    border-top: solid 1px var(--light-grey) ;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.container-img>img{
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.BabyShuttle{
+    height: 100%;
+}
+
+.BabyShuttleLateral{
+    width: 60%;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.sensor{
+    height: clamp(0.625rem, 0.2923rem + 0.7981vw, 1.25rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: grey;
+    border: solid 1px black;
+    text-align: center;
+    font-size: clamp(0.375rem, 0.1754rem + 0.4789vw, 0.75rem);
+}
+
+.green{
+    background: green;
+}
+
+/* POSITION SENSORS */
+#sensor-Before-Cargo-side-A{
+    position: absolute;
+    top: 21%;
+    left: 10%;
+    z-index: 999;
+}
