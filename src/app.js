@@ -6,14 +6,14 @@ import { InitButtonsPages } from './06.ui/js/InitButtonsPages.js'
 import { UpdateDisplay } from './06.ui/component/UpdateDisplay.js'
 
 // Components Section:
-import { ResetButton } from './06.ui/component/ResetButton.js'
-import { StartButton } from './06.ui/component/StartButton.js'
-import { StopButton } from './06.ui/component/StopButton.js'
-import { StepSelection } from './06.ui/component/StepSelection.js'
-import { StepConfirmButton } from './06.ui/component/StepConfirmButton.js'
+import { ResetButton } from './06.ui/component/ButtonReset.js'
+import { StartButton } from './06.ui/component/ButtonStart.js'
+import { StopButton } from './06.ui/component/ButtonStop.js'
+import { StepSelection } from './06.ui/component/DropupStepSelection.js'
+import { StepConfirmButton } from './06.ui/component/ButtonStepConfirm.js'
 
 import { ButtonsPages} from './06.ui/component/ButtonsPages.js'
-import { LoginButton } from './06.ui/component/LoginButton.js' 
+import { LoginButton } from './06.ui/component/ButtonLogin.js' 
 import { ButtonClosePopup } from './06.ui/component/ButtonClosePopup.js' 
 
 

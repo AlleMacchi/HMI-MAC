@@ -42,6 +42,7 @@
     flex-direction: row;
     padding-left: 10%;
     font-size: clamp(0.625rem, 0.1592rem + 1.1173vw, 1.5rem);
+    height: 100%;
 }
 
 .container-status{
@@ -50,6 +51,7 @@
     flex-direction: row;
     padding-right: 10%;
     font-size: clamp(0.625rem, 0.1592rem + 1.1173vw, 1.5rem);
+    height: 100%;
 }
 
 .container-login-alarm{
@@ -58,4 +60,7 @@
     justify-content: end;
     padding-right: 25px;
     padding-top: 2%;
+}
+.container-fix-110px{
+    width: 110px;
 }
