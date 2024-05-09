@@ -6,17 +6,33 @@
 }
 
 .container-img{
-    height: 50%;
-    width: 80%;
-    border: solid 1px red;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+}
+.container-img>span{
+    margin: 5%;
+}
+.container-img-BabyShuttle{
+    height: 70%;
+    aspect-ratio: 4/3;
     position: relative;
 }
+.container-img-BabyShuttle-Lateral{
+    height: 80%;
+    aspect-ratio: 35/9;
+    position: relative;
+}
+
 .border{
     height: 1px;
     border-top: solid 1px var(--light-grey) ;
     width: 80%;
-    margin-top: 10%;
-    margin-left: 10%;
+    margin: 0%;
+    position: relative;
+    top: -1%;
 }
 .container-img>img{
     padding-top: 2.5%;
@@ -28,11 +44,17 @@
 }
 
 .BabyShuttle{
+    width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .BabyShuttleLateral{
-    width: 60%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 .hidden{
@@ -60,7 +82,7 @@
 /* POSITION SENSORS */
 #sensor-Before-Cargo-side-A{
     position: absolute;
-    top: 21%;
-    left: 10%;
+    top: 25%;
+    left: 6%;
     z-index: 999;
 }
