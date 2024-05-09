@@ -17,22 +17,23 @@
 }
 
 #logo{
-    padding: 0.7% 0 0 1%;
+    padding: 2% 0 0 1%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content:flex-start;
-    
+    height: 100%;
 }
 
 .logo-img{
-    height: 100%;
+    width: 100%;
 }
 
 .container-mode-status{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 2%;
 }
 
 .container-Mode{
@@ -56,4 +57,5 @@
     align-items: center;
     justify-content: end;
     padding-right: 25px;
+    padding-top: 2%;
 }

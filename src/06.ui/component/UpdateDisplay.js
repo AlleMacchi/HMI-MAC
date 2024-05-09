@@ -4,6 +4,7 @@ import { GetValuesUseCase } from '../../02.usecases/ui/GetValuesUseCase.js';
 import { stepsObject } from '../../00.config/data/global/Steps.js';
 import { tasksObject } from '../../00.config/data/global/Tasks.js';
 
+
 export async function UpdateDisplay() {
     const GetValues = new GetValuesUseCase(plcCommunicationManager);
     try {
