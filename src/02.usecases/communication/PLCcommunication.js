@@ -62,6 +62,6 @@ class CommunicationFactory {
     }
   }
   
-const plcCommunicationManager = new PLCCommunication(CommunicationFactory.createCommunication("PLCWebServer"));
+const plcCommunicationManager = new PLCCommunication(CommunicationFactory.createCommunication("OPCUA"));
 
 export { plcCommunicationManager };

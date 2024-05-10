@@ -1,0 +1,101 @@
+.joystick {
+  width: 210px;
+  height: 210px;
+  position: absolute;
+  top: 80px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    to bottom,
+    #555353,
+    #303030
+  );   
+  box-shadow: 2px 2px 5px black;
+}
+
+.pressed img{
+  filter: var(--filter-blue);
+}
+
+.joystick-btn {
+  width: 86px;
+  height: 86px;
+
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joystick-btn img{
+  width: 50%;
+  height: 50%;
+}
+
+.btn-top {
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.btn-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.btn-down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+
+  /* ================================ */
+  @media screen and (max-width: 700px){
+    .joystick {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 80px;
+    }
+  
+    .joystick-btn {
+      width: 41px;
+      height: 41px;
+    }
+    .container-manual-btn{
+      top: 230px;
+    }
+  
+  
+  }
+  
+  
+  @media screen and (max-height: 400px){
+  
+    .joystick {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 80px;
+    }
+  
+    .joystick-btn {
+      width: 61px;
+      height: 61px;
+    }
+
+    .container-manual-btn{
+      top: 230px;
+    }
+  
+  }
+

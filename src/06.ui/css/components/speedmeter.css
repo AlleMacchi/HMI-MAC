@@ -1,0 +1,94 @@
+.Widget-row{
+    display: flex;
+    align-items: stretch;
+    width: 90%;  
+    height: 90%;      
+    background: transparent;
+    border-radius: 7px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+    margin: 0%;
+
+}
+
+.Speedometer-circular-progress-bar{
+    height: 100%;
+    width: 100%;
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.CircularProgressbar-path{
+    stroke: var(--light-blue)!important;
+    stroke-linecap: butt;
+}
+
+.Speedometer-Circle-outer{
+    /* width: 52.5%; */
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+	box-shadow: inset 0 5px 5px rgba(231, 231, 231, 0.267),
+                0px 2px 15px rgba(0,0,0,0.3);   
+}
+.Speedometer-Circle-inner{
+    /* width: 37.5%; */
+    width: 55%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #3d3d3d;
+	box-shadow: 0px 10px 15px rgba(0,0,0,0.3),
+                inset 0 5px 5px  rgba(231, 231, 231, 0.267);
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Speedometer{
+    flex-grow: 1;
+    padding-top: 3.5%;
+    padding-bottom: 4.5%;
+    width: 100%;
+    height: 100%;
+}
+
+#Speedometer-text{
+    text-align: center;
+    color: #eee;
+}
+#MySpeedmeter-value{
+    font-weight: 700;
+    font-size: clamp(0.625rem, 0.1592rem + 1.1173vw, 1.5rem);
+}
+#MySpeedmeter-unit{
+    font-size: clamp(0.625rem, 0.1592rem + 1.1173vw, 1.5rem);
+}
+
+#MySpeedmeter-name{
+    font-size: clamp(0.625rem, 0.1592rem + 1.1173vw, 1.5rem);
+    /* color: #eee; */
+}
+
+.Speedometer-Circular-progress{
+    /* width: 42%; */
+    width: 65%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.3),
+    inset 0 5px 5px  rgba(231, 231, 231, 0.267);
+    transform: rotate(-135deg);
+    filter: blur(1px);
+}
+
+#Speedometer-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0%;
+}
