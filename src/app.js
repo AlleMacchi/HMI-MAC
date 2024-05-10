@@ -15,6 +15,7 @@ import { StepConfirmButton } from './06.ui/component/ButtonStepConfirm.js'
 import { ButtonsPages} from './06.ui/component/ButtonsPages.js'
 import { LoginButton } from './06.ui/component/ButtonLogin.js' 
 import { ButtonClosePopup } from './06.ui/component/ButtonClosePopup.js' 
+import { LegendButton } from './06.ui/component/ButtonLegend.js'
 
 
 
@@ -38,6 +39,7 @@ const App = {
          ButtonsPages();
          LoginButton();
          ButtonClosePopup();
+         LegendButton ();
          
     }
     

@@ -1,0 +1,18 @@
+.input{
+    width: 100%;
+    height: clamp(1.5rem, 1rem + 1.3571vw, 5rem);
+    border: none;
+
+    letter-spacing: -0.2px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.5rem, 0.4286rem + 0.3571vw, 1rem);
+    font-weight: 600;
+    border-radius: 320px;
+
+    text-shadow: 1px 1px 0 #212121;
+    padding-left: 1.4rem;
+    box-shadow: inset .2rem .2rem .5rem #141414, 
+                inset -.2rem -.2rem .5rem #212121;
+    background: none;
+    color: white;
+}

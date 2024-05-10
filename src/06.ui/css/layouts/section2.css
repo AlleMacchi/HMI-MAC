@@ -4,8 +4,8 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
         "c1 c2 c3"
-        "c1 c2 c4"
-        "c5 c6 c7"
+        "c1 c2 c3"
+        "c4 c5 c6"
     ;
     gap: 5px;
 }
@@ -34,6 +34,3 @@
     grid-area: c6;
 }
 
-#section2>.card:nth-child(7){
-    grid-area: c7;
-}

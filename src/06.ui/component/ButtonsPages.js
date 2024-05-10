@@ -1,6 +1,7 @@
 import {MapActualPosition} from '../js/MapActualPosition.js'
 
 const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col');
+const actualPositionSection2 = new MapActualPosition('chessboard-section2','actual-position-section2','row', 'col');
 
 // Simulation 
 var currentCol=9;
@@ -10,6 +11,7 @@ var currentCol=9;
             currentCol = 10;
         }
         actualPositionUI.update(6,currentCol,6, 10);  
+        actualPositionSection2.update(6,currentCol,6, 10);  
     }, 500);
 
  //   actualPositionUI.update(1, 20, 1, 28);  
@@ -54,6 +56,7 @@ export function ButtonsPages(){
     
     document.getElementById("buttonOpenAlarmsPage").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
+        actualPositionSection2.disableAutoScroll();
         scrollToSection("section5");
         document.querySelectorAll(".buttonNavToPages").forEach(button => {
             button.classList.remove("selected");
@@ -62,8 +65,11 @@ export function ButtonsPages(){
 
 
     document.getElementById("buttonSection1").addEventListener("click", function() {
+        
+        actualPositionSection2.disableAutoScroll();
         scrollToSection("section1", function() {
              actualPositionUI.enableAutoScroll();
+             
         //    actualPositionUI.disableAutoScroll();
        //      actualPositionUI.update(1, 20, 1, 28); 
         });
@@ -73,16 +79,21 @@ export function ButtonsPages(){
     });
     document.getElementById("buttonSection2").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
+        actualPositionSection2.disableAutoScroll();
         scrollToSection("section2");
+        
+        
     });
     
     document.getElementById("buttonSection3").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
+        actualPositionSection2.disableAutoScroll();
         scrollToSection("section3");
     });
     
     document.getElementById("buttonSection4").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
+        actualPositionSection2.disableAutoScroll();
         scrollToSection("section4");
     });
     

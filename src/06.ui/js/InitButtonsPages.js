@@ -1,6 +1,6 @@
 export function InitButtonsPages(){
 
-    var section = document.getElementById("section2");
+    var section = document.getElementById("section1");
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     document.querySelectorAll(".buttonNavToPages").forEach(button => {
