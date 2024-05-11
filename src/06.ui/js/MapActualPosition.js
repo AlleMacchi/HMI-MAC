@@ -1,9 +1,17 @@
 export class MapActualPosition {
-    constructor(tableId, containerId, rowElementId, colElementId) {
+    constructor(tableId, containerId, rowElementId, colElementId, displayPositionId, callback, direction) {
+        if (typeof callback === 'function') {
+            this.callback = callback;
+        }
+        else{
+            this.callback = () => {};
+        }
         this.tableId = tableId;
         this.container = containerId;
         this.rowElementId = rowElementId;
         this.colElementId = colElementId;
+        this.displayPositionId = displayPositionId;
+        this.direction = direction;
         this.isLook = true;
         this.isDragging = false;
         this.startX = 0;
@@ -25,7 +33,23 @@ export class MapActualPosition {
     // =================================================================================
     //          INIT - GENERATION BOARD LIK CHESSBOARD
     // =================================================================================
+    async clearChessboard(){
+        const allCells = document.querySelectorAll(`#${this.tableId}  tbody tr td`);
     
+        allCells.forEach(cell => {
+            cell.style.border = "1px solid rgba(255,255,255,0.1)"
+            });
+            const txtRow = document.getElementById(this.rowElementId);
+            const txtCol = document.getElementById(this.colElementId);
+            const displayElement = document.getElementById(this.displayPositionId);
+
+            this.RowSelected = 0;
+            this.ColSelected = 0; 
+            txtRow.innerHTML = '';
+            txtCol.innerHTML = '';            
+            displayElement.innerHTML = 'Undefined';
+    
+    }
     async initializeChessboard() {
         const tbody = document.querySelector(`#${this.tableId} tbody`);
         for (let i = 1; i <= this.qtRow; i++) {
@@ -37,7 +61,8 @@ export class MapActualPosition {
             // COPY POSITION ROW AND CLOUMN FROM CHESSBOARD
             tbody.querySelectorAll("td").forEach((cell, index) => {
                 
-                    cell.addEventListener("click", () => {
+                    cell.addEventListener("click", (event) => {
+                        event.stopPropagation(); // Stop event propagation
                         if (!this.isLook) {
                             
                         const rowIndex = Math.floor(index / (this.qtCol+1)) + 1;
@@ -61,6 +86,7 @@ export class MapActualPosition {
                             allCells.forEach(cell => {
                                 cell.style.border = "1px solid rgba(255,255,255,0.1)"
                                 });
+
                             if ((this.RowSelected !== rowIndex) || (this.ColSelected !== colIndex)) {
                                 cell.style.border = "2px solid yellow";
                                 this.RowSelected = rowIndex;
@@ -71,9 +97,23 @@ export class MapActualPosition {
                                 txtRow.innerHTML = '';
                                 txtCol.innerHTML = '';
                             }
-                        }
+                            
 
+                            // Invoke the callback function after handling cell click
+                            if (typeof this.callback === 'function') {
+                                const displayElement = document.getElementById(this.displayPositionId);
+                                if (displayElement) {
+                                    displayElement.innerHTML = this.callback(this.RowSelected, this.ColSelected, this.direction);
+                                    // Exit from click event
+                                    return;
+                                }
+                            }
+
+
+                        }
                     }
+
+
                     });
             });
         
@@ -133,20 +173,20 @@ export class MapActualPosition {
             });
 
         // Only Baby
-        cell.style.backgroundImage = "url('src/06.ui/assets/img/BabySmall.png')";
+        cell.style.backgroundImage = "url('src/06.ui/assets/img/BabySmall.webp')";
         cell.style.backgroundSize = "contain"; 
         cell.style.backgroundRepeat = "no-repeat"; 
         cell.style.backgroundPosition = "center";
 
         // Only Mother
-        cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherSmall.png')";
+        cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherSmall.webp')";
         cellMother.style.backgroundSize = "contain"; 
         cellMother.style.backgroundRepeat = "no-repeat"; 
         cellMother.style.backgroundPosition = "center";
 
         // Mother and Baby together
         if (row == rowMother && col == colMother) {
-            cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherAndBabySmall.png')";
+            cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherAndBabySmall.webp')";
             cellMother.style.backgroundSize = "contain"; 
             cellMother.style.backgroundRepeat = "no-repeat"; 
             cellMother.style.backgroundPosition = "center";

@@ -4,8 +4,9 @@ import { GetValuesUseCase } from '../../02.usecases/ui/GetValuesUseCase.js';
 import { UpdateDisplayStatusMachine} from './UpdateDisplayStatusMachine.js';
 import { UpdateDisplayModeMachine} from './UpdateDisplayModeMachine.js';
 import { UpdateDisplaySteps} from './UpdateDisplaySteps.js';
-import { UpdateDisplayCurrentCarrierSpeed } from './UpdateDisplayCurrentCarrierSpeed.js'
-import { UpdateDisplayBatteryLevel } from './UpdateDisplayBatteryLevel.js'
+import { UpdateDisplayCurrentCarrierSpeed } from './UpdateDisplayCurrentCarrierSpeed.js';
+import { UpdateDisplayBatteryLevel } from './UpdateDisplayBatteryLevel.js';
+import { UpdateSensorLifterUp } from './UpdateSensorLifterUp.js';
 
 export async function UpdateDisplay() {
     const GetValues = new GetValuesUseCase(plcCommunicationManager);
@@ -15,8 +16,9 @@ export async function UpdateDisplay() {
    //     UpdateDisplayModeMachine(data.Array_2.StatusMode);
    //     UpdateDisplayStatusMachine(data.StatusMachine);        
    //     UpdateDisplaySteps(data.TaskNumber,data.ActualStep );
-        UpdateDisplayCurrentCarrierSpeed(100,'%','Carrier Speed');
-        UpdateDisplayBatteryLevel(10, 100);
+        UpdateDisplayCurrentCarrierSpeed(data.CarrierActSpeed,'mm/s','Carrier Speed');
+        UpdateDisplayBatteryLevel(10, data.BatteryLevel);
+        UpdateSensorLifterUp(data.Array_2.LifterInPositionUp);
 
 
     } catch (error) {

@@ -1,7 +1,11 @@
 import {MapActualPosition} from '../js/MapActualPosition.js'
+import { GenerateLogicalPositionString } from '../../99.utils/ui/GenerateLogicalPositionString.js';
+import { Dropdown } from '../js/Dropdown.js';
 
-const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col');
-const actualPositionSection2 = new MapActualPosition('chessboard-section2','actual-position-section2','row', 'col');
+var direction = 0;
+const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col', '');
+const actualPositionSection2 = new MapActualPosition('chessboard-section2','actual-position-section2','section2-row', 'section2-col','section2-logical-position',GenerateLogicalPositionString,direction);
+var dropdown = new Dropdown("dropdown-toggle_Section3", "dropdown-menu_Section3", actualPositionSection2);
 
 // Simulation 
 var currentCol=9;
@@ -13,9 +17,6 @@ var currentCol=9;
         actualPositionUI.update(6,currentCol,6, 10);  
         actualPositionSection2.update(6,currentCol,6, 10);  
     }, 500);
-
- //   actualPositionUI.update(1, 20, 1, 28);  
-
 
 function scrollToSection(sectionId, callback) {
     var section = document.getElementById(sectionId);

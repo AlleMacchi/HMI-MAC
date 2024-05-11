@@ -1,8 +1,12 @@
 .joystick {
-  width: 210px;
-  height: 210px;
-  position: absolute;
-  top: 80px;
+  /* width: 210px;
+  height: 210px; */
+  width: clamp(6.25rem, -0.7367rem + 16.7598vw, 19.375rem);
+  height: clamp(6.25rem, -0.7367rem + 16.7598vw, 19.375rem);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
@@ -19,8 +23,11 @@
 }
 
 .joystick-btn {
-  width: 86px;
-  height: 86px;
+  /* width: 86px;
+  height: 86px; */
+
+  width: clamp(1.9375rem, 0.1076rem + 4.3895vw, 5.375rem);
+  height: clamp(1.9375rem, 0.1076rem + 4.3895vw, 5.375rem);
 
   position: absolute;
   display: flex;
@@ -31,6 +38,7 @@
 .joystick-btn img{
   width: 50%;
   height: 50%;
+  filter: invert(52%) sepia(7%) saturate(164%) hue-rotate(191deg) brightness(97%) contrast(90%);
 }
 
 .btn-top {
@@ -45,57 +53,49 @@ transform: translateX(-50%);
   transform: translateY(-50%);
 }
 
+.btn-right img {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 .btn-down {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
+.btn-down img {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 .btn-left {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
 }
 
+.btn-left img {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
 
-  /* ================================ */
-  @media screen and (max-width: 700px){
-    .joystick {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: 80px;
-    }
-  
-    .joystick-btn {
-      width: 41px;
-      height: 41px;
-    }
-    .container-manual-btn{
-      top: 230px;
-    }
-  
-  
-  }
-  
-  
-  @media screen and (max-height: 400px){
-  
-    .joystick {
-      width: 150px;
-      height: 150px;
-      position: absolute;
-      top: 80px;
-    }
-  
-    .joystick-btn {
-      width: 61px;
-      height: 61px;
-    }
+.btn-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    .container-manual-btn{
-      top: 230px;
-    }
-  
-  }
+#btn_CENTER{
+  font-size: clamp(0.5rem, 0.2338rem + 0.6385vw, 1rem);
+}
+
 

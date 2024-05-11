@@ -355,7 +355,7 @@
 }
 
 .container-logical-positioning{
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -375,11 +375,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 40%;
+    width: 60%;
 }
 
 .container-physical-positioning{
-    width: 50%;
+    width: 100%;
     height: 100%;
 
     display: flex;

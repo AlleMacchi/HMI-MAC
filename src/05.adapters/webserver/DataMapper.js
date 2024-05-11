@@ -117,7 +117,8 @@ const WebServerDataMapper = {
         CarrierActSpeed: decodedString(data.Array_12),
         CarrierActPosition_mm: decodedString(data.Array_13),
         Position_mm: decodedString(data.Array_14),
-        TaskNumber: decodedString(data.Array_15)
+        TaskNumber: decodedString(data.Array_15),
+        BatteryLevel: decodedString(data.Array_16)
         };
     }
 };

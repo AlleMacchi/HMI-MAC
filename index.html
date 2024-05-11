@@ -14,7 +14,7 @@
     <div id="contents">
         <header class="header flex-container">
           <div class="flex-item-3col" id="logo">
-            <img class="logo-img" src="src/06.ui/assets/img/logoNameSmaller.png">
+            <img class="logo-img" src="src/06.ui/assets/img/logoNameSmaller.webp">
           </div>
           <div class="container-mode-status flex-item-5col">
             <div class="container-Mode">
@@ -31,14 +31,18 @@
             </div>
           </div>
           <div class="container-login-alarm flex-item-4col">
+            <div class="text-grey">AGV #:&nbsp</div>
+            <div class="container-fix-110px">
+              <p class="text-blue" id="agv-n">10</p>
+            </div>
             <button type="button" class="buttonAlarms" id="buttonOpenAlarmsPage">
-              <img src="src/06.ui/assets/icons/notification.png" alt="Icon" class="btn-icon">
+              <img src="src/06.ui/assets/icons/notification.webp" alt="Icon" class="btn-icon">
               <span class="badge"></span>
             </button>
             
             <button class="buttonLogIn text-medium text-grey" id="buttonOpenLogin">
               Operator
-              <img src="src/06.ui/assets/icons/user.png" alt="Icon" class="btn-icon">
+              <img src="src/06.ui/assets/icons/user.webp" alt="Icon" class="btn-icon">
             </button>
           </div>
         </header>
@@ -162,10 +166,10 @@
                 <h5 class="text-grey text-medium" >Current Step: <span id="current-step" class="text-blue">Step 0: Init</span></h5>
 
                 <div class="btn-group dropup">
-                  <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-medium dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                    Steps&nbsp<span class="caret">&nbsp<img src="src/06.ui/assets/icons/up-arrow.png"></span>
+                  <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-medium dropup-toggle" aria-haspopup="true" aria-expanded="false">
+                    Steps&nbsp<span class="caret">&nbsp<img src="src/06.ui/assets/icons/up-arrow.webp"></span>
                   </button>
-                  <div id="SelectionSteps" class="dropdown-menu">
+                  <div id="SelectionSteps" class="dropup-menu">
                     <a href="#" data-option="5">Step 5: Go to Mother</a>
                     <a href="#" data-option="4">Step 4: Go to First Position</a>
                     <a href="#" data-option="3">Step 3: Lift Up</a>
@@ -186,7 +190,7 @@
               <div class="container-img">
                 <span class="text-large text-light-grey">A</span>
                 <div class="container-img-BabyShuttle">
-                  <button id="buttonOpenLegend" class="btn-normal"><img class="BabyShuttle" src="src/06.ui/assets/icons/info.png"></button>
+                  <button id="buttonOpenLegend" class="btn-normal"><img class="BabyShuttle" src="src/06.ui/assets/icons/info.webp"></button>
                   <div class="sensor" id="sensor-Before-Cargo-side-A">C</div>
                   <div class="sensor" id="sensor-After-Cargo-side-A">D</div>
                   <div class="sensor" id="sensor-Before-Cargo-side-B">E</div>
@@ -199,7 +203,7 @@
                     <div class="sensorBattery" id="sensorBattery"></div>
                   </div>
 
-                  <img class="BabyShuttle" src="src/06.ui/assets/img/Baby.png">
+                  <img class="BabyShuttle" src="src/06.ui/assets/img/Baby.webp">
                 </div>
                 <span class="text-large text-light-grey">B</span>
               </div>
@@ -218,8 +222,8 @@
                     <div class="sensor" id="sensor-side-Goods-Close-side-A">I</div>
                     <div class="sensor" id="sensor-side-Goods-Close-side-B">L</div>
                     <div class="sensor" id="sensor-On-Mother">M</div>
-                    <img class="BabyShuttleLateral hidden " src="src/06.ui/assets/img/BabyLateralDown.png">
-                    <img class="BabyShuttleLateral   show " src="src/06.ui/assets/img/BabyLateralUp.png">
+                    <img class="BabyShuttleLateral hidden " src="src/06.ui/assets/img/BabyLateralDown.webp">
+                    <img class="BabyShuttleLateral   show " src="src/06.ui/assets/img/BabyLateralUp.webp">
                   </div>
                   <span class="text-large text-light-grey">B</span>
                 </div>
@@ -290,14 +294,14 @@
             </div>
           </div>
             <div class="card">
-              <h5>JOYSTICK</h5>
+              <!-- <h5>JOYSTICK</h5> -->
                 <div id="joystick-section" class="joystick">
 
                     <div class="btn-top joystick-btn">
                         <div id="btn_circle_out_UP" class="btn_circle_outlet" >
                             <div class="btn_circle_inlet">
                                 <button id="btn_UP" class="btn_cmd">
-                                    <img src="assets/icons/up-arrow.png">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
                                 </button>
                             </div>
                         </div>
@@ -307,7 +311,7 @@
                         <div id="btn_circle_out_RIGHT" class="btn_circle_outlet " >
                             <div class="btn_circle_inlet">
                                 <button id="btn_RIGHT" class="btn_cmd ">
-                                    <img src="assets/icons/right-arrow.png">
+                                    <img src="src/06.ui/assets/icons/up-arrow.webp">
                                 </button>
                             </div>
                         </div>
@@ -317,7 +321,7 @@
                         <div id="btn_circle_out_DOWN" class="btn_circle_outlet " >
                             <div class="btn_circle_inlet">
                                 <button id="btn_DOWN" class="btn_cmd ">
-                                    <img src="assets/icons/down-arrow.png">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
                                 </button>
                             </div>
                         </div>
@@ -326,13 +330,26 @@
                     <div class="btn-left joystick-btn">
                         <div id="btn_circle_out_LEFT" class="btn_circle_outlet " >
                             <div class="btn_circle_inlet">
-                                <button id="btn_LEFT" class="btn_cmd ">
-                                    <img src="assets/icons/left-arrow.png">
+                                <button id="btn_LEFT" class="btn_cmd text-small">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
                                 </button>
                             </div>
                         </div>
                     </div>
+
+                    <div class="btn-center joystick-btn">
+                      <div id="btn_circle_out_CENTER" class="btn_circle_outlet " >
+                          <div class="btn_circle_inlet">
+                              <button id="btn_CENTER" class="btn_cmd text-light-grey">
+                                GO
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
                 </div>
+
+                
 
             </div>
             <div class="card">              
@@ -348,7 +365,6 @@
                     <h3>Current Position: <br><span id="current-position" class="text-blue">1233 mm</span></h3>
                     <h3>Current Logical Position: <br><span id="current-logical-position" class="text-blue">LA01R001A03</span></h3>
                     <h3>Status Positioning: <br><span id="status-positioning" class="text-blue">In Position</span></span></h3>
-                    <!-- <h3>Current Battery: <span id="current-battery" class="text-blue">90 %</span></h3> -->
                   </div>
                 </div>
 
@@ -362,10 +378,21 @@
                     Logical
                   </button>
                   <div class="container-logical-positioning-data">
-                    <h3>Row: <span class="text-blue">1</span></h3>
-                    <h3>Column: <span class="text-blue">10</span></h3>
+                    <h3>Direction: <span class="text-blue">
+                      <div class="dropdown">
+                          <button class="dropdown-toggle btn-normal text-blue" type="button" id="dropdown-toggle_Section3" aria-haspopup="true" aria-expanded="false">
+                              A 
+                          </button>
+                          <div class="dropdown-menu" id="dropdown-menu_Section3" aria-labelledby="dropdown-toggle_Section3">
+                            <a class="dropdown-item" href="#" data-value="A">A: Left</a>
+                            <a class="dropdown-item" href="#" data-value="B">B: Right</a>
+                          </div>
+                      </div>
+                    </span></h3>
+                    <h3>Row: <span id="section2-row" class="text-blue"></span></h3>
+                    <h3>Column: <span id="section2-col" class="text-blue"></span></h3>
                   </div>
-                  <h3 class="text-blue">LA01R001A03</h3>
+                  <h3 id="section2-logical-position" class="text-blue">Undefined</h3>
                   <button id="buttonConfirmLogicalPosition" class="btn-normal text-grey ">
                     Confirm
                   </button> 
