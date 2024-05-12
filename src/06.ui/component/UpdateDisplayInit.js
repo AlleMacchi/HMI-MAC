@@ -1,16 +1,21 @@
-import {CarrierSpeed} from '../../01.entities/carrier-speed/CarrierSpeed.js'
+export function UpdateDisplayInit(data) {
+  const AGVnumber = document.getElementById('agv-n');
+  const SelLogical = document.getElementById('buttonSelectionLogicalPosition');
+  const SelPhysical = document.getElementById('buttonSelectionPhysicalPosition');
+  const SetPhysicalPosition = document.getElementById('current-set-position');
+  const SetLogicalPosition = document.getElementById('section2-logical-position');
+  
+  AGVnumber.innerText = data.BabyNo;
 
-export function UpdateDisplayInit(mappedData) {
+  if (data.SelPhysicalLogical) {
+    SelLogical.classList.add('pressed');
+    SelPhysical.classList.remove('pressed');
+  } else {
+    SelLogical.classList.remove('pressed');
+    SelPhysical.classList.add('pressed');
+  }
 
-  //  console.log('From UpdateDisplayInit: ' + mappedData.BabyNo);
-    // const entity = new CarrierSpeed(4,mappedData.PLC_CarrierSpeed);
+  SetPhysicalPosition.innerHTML = data.PositionToReach_mm + 'mm';
+  SetLogicalPosition.innerHTML = data.PositionToReach_logical; 
 
-     const AGVnumber = document.getElementById('agv-n');
-     AGVnumber.innerText = mappedData.BabyNo;
-
-    // if (carrierSpeedElement) {
-    //     carrierSpeedElement.innerText = entity.toString();
-    // } else {
-    //     console.error("Element with id 'act-speed' not found.");
-    // }
 }
