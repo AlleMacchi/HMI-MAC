@@ -18,6 +18,7 @@ class UpdateNoBooleanValueUseCase{
           return;
       } else {
           this.repository.update(id, value);
+          ShowPopup('Set Done','Setting');
       }
     }
 

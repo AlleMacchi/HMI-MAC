@@ -1,32 +1,19 @@
-import { StepConfirm } from '../../01.entities/step-confirm-button/StepConfirm.js';
-import { NewStep} from '../../01.entities/new-step/NewStep.js'
-import { PressAndHoldButton } from '../../99.utils/ui/PressAndHoldButton.js'; 
-import { InputFieldNoLabel } from '../../99.utils/ui/InputFieldNoLabel.js'; 
+import { SetLogicalPosition} from '../../01.entities/set-logical-position/SetLogicalPosition.js'
+import { InputFieldNoLabelString } from '../../99.utils/ui/InputFieldNoLabelString.js'; 
 import { NormalButtonUI } from '../js/NormalButtonUI.js';
 
 export function ButtonLogicalPositionConfirm(){
-    const id = 8; // Id use for config DataWriteList.js
-    const elementId = 'buttonChangeStepConfirm'; // Id of button 
-    const entity = new StepConfirm();
+    const currentPosition = 'current-logical-position';
+    const elementId = 'buttonConfirmLogicalPosition'; // Id of button 
     const elementUI = new NormalButtonUI(elementId);
 
-    const inputId = 13; // Id use for config DataWriteList.js
+    const inputId = 18; // Id use for config DataWriteList.js
     const inputElementId = elementId; // Id of button 
-    const inputField = 'selectedStep';
-    const inputEntity = new NewStep();
+    const inputField = 'section2-logical-position';
+    const inputEntity = new SetLogicalPosition(inputId,inputField,currentPosition,false);
+    const idSavedPosition = 'section2-logical-position-mm';
 
-    const input = new InputFieldNoLabel(inputId, inputField, inputElementId, inputEntity);
+    const input = new InputFieldNoLabelString(inputId, inputField, inputElementId, inputEntity, elementUI,idSavedPosition);
 
-    // Instantiate PressAndHoldButton after InputFieldNoLabel
-    const button = new PressAndHoldButton(id, elementId, entity, elementUI);
-
-    // Attach event listeners for PressAndHoldButton
-    const buttonElement = document.getElementById(elementId);
-    buttonElement.addEventListener('mousedown', button.handleMouseDown);
-    buttonElement.addEventListener('touchstart', button.handleMouseDown);
-    buttonElement.addEventListener('mouseup', button.handleMouseUp);    
-    buttonElement.addEventListener('touchend', button.handleMouseUp);
-    buttonElement.addEventListener('mouseleave', button.handleMouseLeave);
-    
-    return { button, input };
+    return { input };
 }
