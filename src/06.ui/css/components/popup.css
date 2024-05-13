@@ -1,42 +1,3 @@
-/* .popup{
-    background-color: rgba(0,0,0,0.3);
-    opacity: 0;
-    z-index: -999;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.5s ease-in-out;
-
-    background-color: rgba(0, 0, 0, 0.5); 
-    width: 80%; 
-    aspect-ratio: 4/3;
-    max-width: 400px; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup.open{
-    background-color: rgba(0,0,0,0.3);
-    opacity: 1;
-    z-index: 999;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.5s ease-in-out;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 .popup{
     display: none;
     transition: all 0.5s ease-in-out;
@@ -64,7 +25,11 @@
 
     
     width: 80%; 
-    aspect-ratio: 4/3;
+    /* aspect-ratio: 4/3; */
+    min-height: 300px;
+    height: 90%;
+    max-height: 500px;
+
     max-width: 400px; 
     padding: 20px;
     border-radius: 8px;
@@ -74,10 +39,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .popup.open>.inner-popup{
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(192, 192, 192, 0.8); 
     opacity: 1;
     z-index: 999;
     position: fixed;
@@ -91,4 +57,70 @@
     align-items: center;
     justify-content: center;
     filter: blur(0);
+
 }
+.popup.open>.inner-popup>.text-large{
+    color: var(--blue);
+    position: absolute;
+    top: 10%;
+}
+.container-buttons-login{
+    position: absolute;
+    bottom: 10%;
+    width: 60%;
+    height: 15%;
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.container-input-login{
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inner-login{
+    max-height: 300px;
+}
+
+#user,
+#password{
+ height: 30px;
+ width: 100%;   
+}
+
+#popupMessage{
+    color: var(--black);
+    font-size: clamp(0.75rem, 0.6169rem + 0.3192vw, 1rem);
+}
+
+#buttonCloseLogin,
+#buttonLogin{
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+    background: var(--bg-dark);
+    border-radius: 25px;
+    color: var(--light-blue);
+}
+#buttonClosePopup{
+    position: absolute;
+    bottom: 10%;
+    width: 25%;
+    height: 15%;
+    cursor: pointer;
+    background: var(--bg-dark);
+    border-radius: 25px;
+    color: var(--light-blue);
+}
+
+#buttonClosePopup:hover,
+#buttonCloseLogin:hover,
+#buttonLogin:hover{
+    background: var(--light-blue);
+    color: var(--bg-dark); 
+}
+

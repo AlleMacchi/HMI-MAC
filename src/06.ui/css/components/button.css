@@ -169,7 +169,7 @@
   
   }
   
-  .pressed img{
+  .btn_cmd.pressed img{
     filter: var(--filter-blue);
   }
   

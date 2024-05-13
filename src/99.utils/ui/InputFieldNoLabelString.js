@@ -56,6 +56,11 @@ class InputFieldNoLabelString {
         valueToReach.innerHTML = PositionResult_mm.PLC_PositionResult_mm + ' mm';
         this.usecaseReadSavePosition.update(24, false);
         this.request = false;
+
+        const valueIn_mm = decodedString(PositionResult_mm.PLC_PositionResult_mm);
+        if (valueIn_mm === 0) {
+          ShowPopup('The logical position has a physical position of zero. <br> The physical position cannot be zero.');
+        }
       }
     }
 
@@ -80,7 +85,7 @@ class InputFieldNoLabelString {
       this.usecaseReadSavePosition.update(24,true);
       this.request = true;
       this.usecase.update(21, value);
-      
+            
       if (this.elementValuePosition != null) {
         const valueToReach = document.getElementById(this.elementValuePosition);
         valueToReach.innerHTML = '';
@@ -91,12 +96,10 @@ class InputFieldNoLabelString {
         this.elementUI.showUnpressed();
         input.innerHTML = '';
       }
-
-
-
+      
     } catch (error) {
       console.error('Error setting value:', error);
-      ShowPopup('Data Invalid','Alert');
+      ShowPopup('Data Invalid'+ error,'Alert');
     }
 }
 

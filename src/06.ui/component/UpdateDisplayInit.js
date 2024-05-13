@@ -15,7 +15,7 @@ export function UpdateDisplayInit(data) {
     SelPhysical.classList.add('pressed');
   }
 
-  SetPhysicalPosition.innerHTML = data.PositionToReach_mm + 'mm';
+  SetPhysicalPosition.innerHTML = data.PositionToReach_mm + ' mm';
   SetLogicalPosition.innerHTML = data.PositionToReach_logical; 
 
 }

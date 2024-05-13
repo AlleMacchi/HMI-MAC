@@ -41,7 +41,6 @@ const WebServerDataMapper = {
         StatusCarrierActPositon_logicalRow: decodedString(data.Array_4),
         StatusCarrierActPositon_logicalCol: decodedString(data.Array_5),
         StatusCarrierActPositon_logicalDir: decodedString(data.Array_6),
-        PositionResult: decodedString(data.Array_7),
 
         Alarm_Controller_000:  bitArr8[0],
         Alarm_Controller_001: bitArr8[1],
@@ -113,7 +112,6 @@ const WebServerDataMapper = {
 
         CarrierActSpeed: decodedString(data.Array_12),
         CarrierActPosition_mm: decodedString(data.Array_13),
-        Position_mm: decodedString(data.Array_14),
         TaskNumber: decodedString(data.Array_15),
         BatteryLevel: decodedString(data.Array_16)
         };

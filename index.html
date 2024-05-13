@@ -464,27 +464,34 @@
         </main>
     </div>
 
-    <div class="popup" id="popup">
+    <div class="popup " id="popup">
       <div class="inner-popup">
-        <h2 id="popupTitle" class="text-large"></h2>
-        <p id="popupMessage"></p>
+        <h2 id="popupTitle" class="text-large">WARNING</h2>
+        <p id="popupMessage">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         <button id="buttonClosePopup">Close</button>
       </div>
     </div>
 
-    <div class="popup" id="login">
-      <div class="inner-popup">
-        <h2>Login</h2>
-            <div class="inputbox"> 
-                <input type="text" required>
-                <label>User</label>
-            </div>
-            <div class="inputbox">
-              <input type="password" required> 
-              <label>Password</label> 
-            </div>
-            <button>Log In</button>
-            <button id="buttonCloseLogin">Close</button>
+    <div class="popup " id="login">
+      <div class="inner-popup inner-login">
+        <h2  class="text-large">Login</h2>
+
+        <div class="container-input-login">
+          <div class="inputbox"> 
+            <input id="user"  type="text" required>
+            <label>User</label>
+          </div>
+          <div class="inputbox">
+            <input id="password" type="password" required> 
+            <label>Password</label> 
+          </div>
+        </div>
+
+        <div class="container-buttons-login">
+          <button id="buttonLogin">Log In</button>
+          <button id="buttonCloseLogin">Close</button>
+        </div>
+
       </div>
     </div>
 
