@@ -11,17 +11,18 @@ class InputFieldNoLabel {
     this.repository = new UpdateValueRepository(plcCommunicationManager);
     this.usecase = new UpdateNoBooleanValueUseCase(this.repository, this.entity);
     
-    this.SetValue = this.SetValue.bind(this);
+    this.setValue = this.setValue.bind(this);
     
     this.element = document.getElementById(this.elementId);
    // this.element.addEventListener('click', this.SetValue);
 
-    this.element.addEventListener('mousedown', this.SetValue);
-    this.element.addEventListener('touchstart', this.SetValue);
+    this.element.addEventListener('mousedown', this.setValue);
+    this.element.addEventListener('touchstart', this.setValue);
 
   }
 
-  SetValue(event) {
+
+  setValue(event) {
     event.preventDefault();
     const input = document.getElementById(this.inputId);
     const value = parseFloat(input.value);

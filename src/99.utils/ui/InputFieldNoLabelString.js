@@ -4,6 +4,7 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { ReadSavedPosition } from '../../01.entities/read-saved-position/ReadSavedPosition.js';
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 import { ShowPopup } from './Popup.js';
+import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 
 class InputFieldNoLabelString {
   constructor(id, inputId, elementId, entity, elementUI, elementValuePosition=null) {
@@ -21,6 +22,8 @@ class InputFieldNoLabelString {
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.findOne = this.findOne.bind(this);
+    this.request = false;
+    this.intervalId = setInterval(this.updatePosition.bind(this), 1000);
     
     this.element = document.getElementById(this.elementId);
     this.readSavePositionEntity = new ReadSavedPosition();
@@ -43,11 +46,25 @@ class InputFieldNoLabelString {
     }
   }
 
+  async updatePosition() {
+    if (this.request) {
+      const PositionResult = await this.findOne(1);  
+      const Result = decodedString( PositionResult.PLC_PositionResult); 
+      if (Result > 0 && Result < 99) {
+        const PositionResult_mm = await this.findOne(2);
+        const valueToReach = document.getElementById(this.elementValuePosition);
+        valueToReach.innerHTML = PositionResult_mm.PLC_PositionResult_mm + ' mm';
+        this.usecaseReadSavePosition.update(24, false);
+        this.request = false;
+      }
+    }
+
+  }
 
   handleMouseDown(event) {
     event.preventDefault();
     this.elementUI.showPressed();
-
+    this.pressed = true;
   }
 
 
@@ -56,19 +73,17 @@ class InputFieldNoLabelString {
     this.elementUI.showUnpressed();
     const input = document.getElementById(this.inputId);
     const value = input.textContent;
+    this.pressed = false;
     
     try {
       this.usecase.update(this.id, value);
-      this.usecaseReadSavePosition.update(this.id,true);
+      this.usecaseReadSavePosition.update(24,true);
+      this.request = true;
+      this.usecase.update(21, value);
+      
       if (this.elementValuePosition != null) {
         const valueToReach = document.getElementById(this.elementValuePosition);
         valueToReach.innerHTML = '';
-        const PositionResult = await this.findOne(1);
-        const PositionResult_mm = await this.findOne(2);
-        if (PositionResult>0 && PositionResult<99){
-          valueToReach.innerHTML = PositionResult_mm +' mm';
-          this.usecaseReadSavePosition.update(this.id,false);
-        }
       }
 
       const errors = this.entity.validate();
@@ -88,11 +103,11 @@ class InputFieldNoLabelString {
   handleMouseLeave(event) {
       if (this.pressed) {
           this.elementUI.showUnpressed();
+          this.pressed = false;
       }
   }
-
-
-
 }
+
+
 
 export { InputFieldNoLabelString };
