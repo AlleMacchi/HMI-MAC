@@ -27,9 +27,8 @@ import { ButtonClosePopup } from './06.ui/component/ButtonClosePopup.js'
 import { LegendButton } from './06.ui/component/ButtonLegend.js'
 
 
-
-
 const App = {
+    
     init: function(){
         plcCommunicationManager.init();
         InitButtonsPages();
@@ -39,7 +38,7 @@ const App = {
             UpdateDisplay();
         },1000);   
     },
-    components: function(){
+    components: function(data){
          ResetButton();
          StartButton();
          StopButton();
@@ -54,7 +53,7 @@ const App = {
          ButtonJoystickLeft();
          ButtonJoystickRight();
          ButtonJoystickCenter();
-
+      
          ButtonsPages();
          LoginButton();
          ButtonClosePopup();

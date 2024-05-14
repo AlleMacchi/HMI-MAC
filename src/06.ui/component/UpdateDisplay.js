@@ -19,13 +19,13 @@ export async function UpdateDisplay() {
         UpdateDisplayModeMachine(data.StatusMode);
         UpdateDisplayStatusMachine(data.StatusMachine);        
         UpdateDisplaySteps(data.TaskNumber,data.ActualStep );
-        UpdateDisplayCurrentCarrierSpeed(data.CarrierActSpeed,'mm/s','Carrier Speed');
+        const maxCarrierSpeed = 2000;
+        UpdateDisplayCurrentCarrierSpeed(data.CarrierActSpeed,'mm/s','Carrier Speed', maxCarrierSpeed);
         UpdateDisplayBatteryLevel(10, data.BatteryLevel);
         UpdateDisplaySensors(data);
         UpdateDisplayShuttleLateral(data.LifterInPositionUp);
         UpdateDisplayMovements(data);
         UpdateDisplayData(data);
-
 
     } catch (error) {
         // Handle any errors that occur during the process

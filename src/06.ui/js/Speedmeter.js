@@ -1,5 +1,5 @@
-export function createSpeedometer (value, unit, title){
-    const degree = 270 * value / 100;
+export function createSpeedometer (value, unit, title, maxValue){
+    const degree = 270 * value / maxValue;
 
     const divStyleSingle = {
         background: `conic-gradient(var(--light-blue) 0deg, var(--light-blue) ${degree}deg, #3d3d3d ${degree}deg, #3d3d3d 270deg)`

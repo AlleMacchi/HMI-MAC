@@ -1,3 +1,4 @@
+import config from '../../00.config/config.js';
 import { OPCUACommunication } from '../../03.repositories/communication/OpcUaRepository.js';
 import { PLCWebServer } from '../../03.repositories/communication/WebServerRepository.js'; 
 
@@ -62,6 +63,6 @@ class CommunicationFactory {
     }
   }
   
-const plcCommunicationManager = new PLCCommunication(CommunicationFactory.createCommunication("PLCWebServer"));
+const plcCommunicationManager = new PLCCommunication(CommunicationFactory.createCommunication(config.communicationType));
 
 export { plcCommunicationManager };

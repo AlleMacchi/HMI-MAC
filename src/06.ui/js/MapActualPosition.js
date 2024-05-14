@@ -1,5 +1,7 @@
+import config from '../../00.config/config.js';
+
 export class MapActualPosition {
-    constructor(tableId, containerId, rowElementId, colElementId, displayPositionId, callback, direction) {
+    constructor(tableId, containerId, rowElementId, colElementId, displayPositionId, callback, direction, displayStorePositionId) {
         if (typeof callback === 'function') {
             this.callback = callback;
         }
@@ -11,6 +13,7 @@ export class MapActualPosition {
         this.rowElementId = rowElementId;
         this.colElementId = colElementId;
         this.displayPositionId = displayPositionId;
+        this.displayStorePositionId = displayStorePositionId;
         this.direction = direction;
         this.isLook = true;
         this.isDragging = false;
@@ -18,8 +21,8 @@ export class MapActualPosition {
         this.startY = 0;
         this.RowSelected = 0;
         this.ColSelected = 0;
-        this.qtRow = 32;
-        this.qtCol = 34;
+        this.qtRow = config.maxRow;
+        this.qtCol = config.maxColumns;
 
 
         this.initPromise = new Promise((resolve) => {
@@ -42,11 +45,13 @@ export class MapActualPosition {
             const txtRow = document.getElementById(this.rowElementId);
             const txtCol = document.getElementById(this.colElementId);
             const displayElement = document.getElementById(this.displayPositionId);
+            const displayStoreElement = document.getElementById(this.displayStorePositionId);
 
             this.RowSelected = 0;
             this.ColSelected = 0; 
             txtRow.innerHTML = '';
-            txtCol.innerHTML = '';            
+            txtCol.innerHTML = '';    
+            displayStoreElement.innerHTML = '';        
             displayElement.innerHTML = 'Undefined';
     
     }
@@ -67,6 +72,8 @@ export class MapActualPosition {
                             
                         const rowIndex = Math.floor(index / (this.qtCol+1)) + 1;
                         const colIndex = index - ((rowIndex - 1) * (this.qtCol+1));
+                        const displayElement = document.getElementById(this.displayPositionId);
+                        const displayStoreElement = document.getElementById(this.displayStorePositionId);
                         
                         if (colIndex !== 0) {
                             const txtRow = document.getElementById(this.rowElementId);
@@ -91,11 +98,14 @@ export class MapActualPosition {
                                 cell.style.border = "2px solid yellow";
                                 this.RowSelected = rowIndex;
                                 this.ColSelected = colIndex; 
+                                displayStoreElement.innerHTML = '';
                             }else if ((this.RowSelected == rowIndex) && (this.ColSelected == colIndex)){
                                 this.RowSelected = 0;
                                 this.ColSelected = 0; 
                                 txtRow.innerHTML = '';
                                 txtCol.innerHTML = '';
+                                displayElement.innerHTML = 'Undefined';
+                                displayStoreElement.innerHTML = '';
                             }
                             
 
