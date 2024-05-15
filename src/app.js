@@ -20,9 +20,9 @@ import { ButtonJoystickDown } from './06.ui/component/ButtonJoystickDown.js'
 import { ButtonJoystickLeft } from './06.ui/component/ButtonJoystickLeft.js'
 import { ButtonJoystickRight } from './06.ui/component/ButtonJoystickRight.js'
 import { ButtonJoystickCenter } from './06.ui/component/ButtonJoystickCenter.js'
-
+import { configureAccess } from './06.ui/js/ConfigureAccess.js'
 import { ButtonsPages} from './06.ui/component/ButtonsPages.js'
-import { LoginButton } from './06.ui/component/ButtonLogin.js' 
+import { LoginButton } from './06.ui/component/ButtonLogin.js'
 import { ButtonClosePopup } from './06.ui/component/ButtonClosePopup.js' 
 import { LegendButton } from './06.ui/component/ButtonLegend.js'
 
@@ -52,12 +52,12 @@ const App = {
          ButtonJoystickDown();
          ButtonJoystickLeft();
          ButtonJoystickRight();
-         ButtonJoystickCenter();
-      
+         ButtonJoystickCenter();   
          ButtonsPages();
          LoginButton();
          ButtonClosePopup();
          LegendButton ();
+         configureAccess("");
          
     }
     
