@@ -41,9 +41,9 @@
             </button>
             
             <button class="buttonLogIn text-medium text-grey" id="buttonOpenLogin">
-              Operator
-              <img src="src/06.ui/assets/icons/user.webp" alt="Icon" class="btn-icon">
+              User      
             </button>
+            <img src="src/06.ui/assets/icons/user.webp" alt="Icon" class="btn-icon">
           </div>
         </header>
         <section class="sidebar">
@@ -58,6 +58,12 @@
           </button>
           <button class="buttonNavToPages" id="buttonSection4">
             Setting
+          </button>
+          <!-- <button class="buttonNavToPages" id="buttonSection5">
+            Alarms
+          </button> -->
+          <button class="buttonNavToPages" id="buttonSection6">
+            WMS
           </button>
         </section>
         <main class="main">
@@ -159,7 +165,7 @@
               </div>
             </div>
             <div class="card">
-              <div class="steps-container">
+              <div class="steps-container" id="steps-section">
                 <div style="border-bottom: 1px solid grey; width: 60%;">
                   <h5 class="text-grey text-medium">Current Task: <span id="current-task" class="text-blue">Pickup</span></h5>
                 </div>
@@ -371,7 +377,7 @@
               </div>
             </div>
             <div class="card">
-              <div class="container-positioning text-light-grey">
+              <div class="container-positioning text-light-grey" id="commandsLogicalPhysical-sections">
 
                 <div class="container-logical-positioning">
                   <button id="buttonSelectionLogicalPosition" class="btn-normal text-grey">
@@ -456,7 +462,7 @@
             <div class="card"></div>
             <div class="card"></div>
             <div class="card"></div>
-            <div class="card">Section #6</div>
+            <div class="card">WMS</div>
             <div class="card"></div>
             <div class="card"></div>
           </section>
@@ -488,7 +494,7 @@
         </div>
 
         <div class="container-buttons-login">
-          <button id="buttonLogin">Log In</button>
+          <button id="login-logout">Log In</button>
           <button id="buttonCloseLogin">Close</button>
         </div>
 
