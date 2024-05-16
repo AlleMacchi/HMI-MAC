@@ -57,7 +57,7 @@
     border: transparent;
 }
 
-.buttonLogIn .btn-icon {
+.btn-icon {
     width: clamp(0.625rem, 0.2923rem + 0.7981vw, 1.25rem);
     aspect-ratio: 1;
     margin-left: 2px; 
