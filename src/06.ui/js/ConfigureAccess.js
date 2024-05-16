@@ -1,4 +1,4 @@
-import {  controls, controlsToDisable} from '/src/00.config/authConfig.js'
+import {  controls, controlsToDisable} from '../../00.config/authConfig.js'
 export function configureAccess(user) {
     // if no login then operator
     if (user == "") {

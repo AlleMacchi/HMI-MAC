@@ -1,4 +1,4 @@
-import {userLogin} from '/src/00.config/authConfig.js'
+import {userLogin} from '../../00.config/authConfig.js';
 import { configureAccess } from './ConfigureAccess.js';
 
 
