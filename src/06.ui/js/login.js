@@ -1,39 +1,11 @@
 import {userLogin} from '../../00.config/authConfig.js';
 import { configureAccess } from './ConfigureAccess.js';
+import { scrollToSection } from '../component/ButtonsPages.js';
 
 
 //init user and password
 var user = "operator";
 var password = "";
-
-// =================================
-// Initialise accounts and controls
-//==================================
-
-// const userLogin = {
-//   operator: { password: "", user: "operator" },
-//   supervisor: { password: "1221", user: "supervisor" },
-//   maintenance: { password: "3ff4", user: "maintenance" },
-// };
-
-// const controls = [
-//   //sidebars
-//   "setting-section",
-//   "selector-section",
-//   "joystick-section",
-//   //homepage
-//   "steps-section",
-//   //machine
-//   "commands-section",
-//   "btn_Charger",
-//   //positions
-//   "setPosition_toStore",
-//   "btn-copyActPosition",
-//   "btn-setPositionToStore",
-// ];
-
-// var user = "";
-// var password = "";
 
 //===============================================
 // Login function to check user and password
@@ -97,6 +69,8 @@ export function logout() {
   //reset access level
   configureAccess(user);
   //display message
+
+  scrollToSection("section1");
 }
 
 

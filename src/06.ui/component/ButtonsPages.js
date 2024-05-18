@@ -9,7 +9,7 @@ import { actualPositionUI, actualPositionSection2, dropdown } from './UpdateDisp
 
 
 
-function scrollToSection(sectionId, callback) {
+export function scrollToSection(sectionId, callback) {
     var section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
