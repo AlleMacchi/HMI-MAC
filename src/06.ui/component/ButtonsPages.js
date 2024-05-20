@@ -1,9 +1,3 @@
-import config from '../../00.config/config.js';
-import {MapActualPosition} from '../js/MapActualPosition.js';
-import { GenerateLogicalPositionString } from '../../99.utils/ui/GenerateLogicalPositionString.js';
-
-import { plcCommunicationManager } from "../../02.usecases/communication/PLCcommunication.js";
-import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 import { actualPositionUI, actualPositionSection2, dropdown } from './UpdateDisplayData.js';
 
 

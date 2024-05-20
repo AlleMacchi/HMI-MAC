@@ -62,7 +62,7 @@
           <!-- <button class="buttonNavToPages" id="buttonSection5">
             Alarms
           </button> -->
-          <button class="buttonNavToPages" id="buttonSection6">
+          <button class="buttonNavToPages" style="cursor:pointer" id="buttonSection6">
             WMS
           </button>
         </section>
@@ -708,14 +708,76 @@
             <div class="card"></div>
             <div class="card"></div> -->
           </section>
-          <section class="section" id="section6" >
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card">WMS</div>
-            <div class="card"></div>
-            <div class="card"></div>
-          </section>
+          <section class="section" id="section6">
+            <!-- Card 1: WMS to PLC -->
+            <div class="card">
+              <h2 id="title1">WMS to PLC</h2>
+              <form id="form1">
+                  <div id="formGroup1">
+                      <label for="id">Id</label>
+                      <input type="text" id="id">
+                  </div>
+                  <div id="formGroup2">
+                      <label for="taskNumber">Task Number</label>
+                      <input type="text" id="taskNumber">
+                  </div>
+                  <div id="formGroup3">
+                      <label for="coordinate">Coordinate</label>
+                      <div id="coordinateInput">
+                          A-L01R
+                          <input type="text" id="coordinate" placeholder="Row">
+                          <div class="dropdown">
+                            <button class="dropdown-toggle btn-normal text-blue" type="button" id="dropdown-toggle_Section5" aria-haspopup="true" aria-expanded="false">
+                                A 
+                            </button>
+                            <div class="dropdown-menu" id="dropdown-menu_Section5" aria-labelledby="dropdown-toggle_Section5">
+                              <a class="dropdown-item" href="#" data-value="A">A: Left</a>
+                              <a class="dropdown-item" href="#" data-value="B">B: Right</a>
+                            </div>
+                        </div>
+                          <input type="text" id="coordinate" placeholder="Col">
+                      </div>
+                  </div>
+                  <div id="formGroup4">
+                      <label for="echoStatus">ECHOStatus</label>
+                      <input type="text" id="echoStatus">
+                  </div>
+                  <button class="btn-normal text-grey text-small" type="submit" id="WMSConfirmButton">Confirm</button>
+              </form>
+            </div>
+        
+            <!-- Card 2: PLC to WMS -->
+            <div class="card">
+              <h2 id="title2">PLC to WMS</h2>
+              <div id="displayForm">
+              <div id="displayGroup1">
+                  <label>Id</label>
+                  <span>1</span>
+              </div>
+              <div id="displayGroup2">
+                  <label>TaskNumber</label>
+                  <span>2</span>
+              </div>
+              <div id="displayGroup3">
+                  <label>Coordinate</label>
+                  <span>A-L01R001A010</span>
+              </div>
+              <div id="displayGroup4">
+                  <label>Result</label>
+                  <span>99</span>
+              </div>
+              <div id="displayGroup5">
+                  <label>ErrorCode</label>
+                  <span>19</span>
+              </div>
+              <div id="displayGroup6">
+                  <label>TaskStatus</label>
+                  <span>1</span>
+              </div>
+            </div>
+            </div>
+        </section>
+        
 
         </main>
     </div>
