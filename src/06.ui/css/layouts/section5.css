@@ -1,11 +1,11 @@
 #section5{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-        "c1 c1 c2"
-        "c1 c1 c3"
-        "c4 c5 c6"
+    "c1 c1 c2"
+    "c1 c1 c3"
+    "c4 c5 c6"
     ;
     gap: 20px;
 }
@@ -33,3 +33,42 @@
 #section5>.card:nth-child(6){
     grid-area: c6;
 }
+
+
+#alarmTable{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+
+
+#alarmTable th{
+    color: var(--white);
+    text-shadow: var(--text-shadow);
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    /* border-radius: 10px 10px 0px 0px; */
+    text-align: left;
+    background-color: var(--black)
+}
+
+#alarmTable th:first-child{
+    border-radius: 10px 0px 0px 0px;
+}
+
+#alarmTable th:last-child{
+    border-radius: 0px 10px 0px 0px;
+}
+
+#alarmTable td{
+    color: var(--white);
+    text-shadow: white;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    /* box-shadow: var(--card-shadow); */
+    /* border-radius: 0px 0px 10px 10px; */
+}
+

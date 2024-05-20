@@ -46,13 +46,13 @@
     overflow:scroll;
 }
 
-table {
+#chessboard {
     height: 1000px;
     width: 1000px;
     border-collapse: collapse;
   }
   
-  th, td {
+  #chessboard td,th {
     border: 1px solid rgba(255,255,255,0.1);
     padding: 8px;
     text-align: center;
@@ -60,21 +60,57 @@ table {
     min-height: 40px;
     min-width: 40px;
   }
+
   
-  th {
+  #chessboard th {
     position: sticky;
     top: 20px;
     background-color: transparent;
     color: var(--white);
-
   }
   
-  th:first-child {
+  #chessboard th:first-child {
     left: 0;
     z-index: 1;
   }
   
-  td:first-child {
+  #chessboard td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: transparent;
+    color: var(--white);
+  }
+
+
+  #chessboard-section2 {
+    height: 1000px;
+    width: 1000px;
+    border-collapse: collapse;
+  }
+  
+  #chessboard-section2 td,th {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px;
+    text-align: center;
+
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  
+  #chessboard-section2 th {
+    position: sticky;
+    top: 20px;
+    background-color: transparent;
+    color: var(--white);
+  }
+  
+  #chessboard-section2 th:first-child {
+    left: 0;
+    z-index: 1;
+  }
+  
+  #chessboard-section2 td:first-child {
     position: sticky;
     left: 0;
     background-color: transparent;

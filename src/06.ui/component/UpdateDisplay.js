@@ -10,6 +10,7 @@ import { UpdateDisplaySensors } from './UpdateDisplaySensors.js';
 import { UpdateDisplayShuttleLateral } from './UpdateDisplayShuttleLateral.js';
 import { UpdateDisplayMovements } from './UpdateDisplayMovements.js';
 import { UpdateDisplayData } from './UpdateDisplayData.js';
+import { UpdateAlarms } from './UpdateAlarms.js';
 
 export async function UpdateDisplay() {
     const GetValues = new GetValuesUseCase(plcCommunicationManager);
@@ -26,6 +27,7 @@ export async function UpdateDisplay() {
         UpdateDisplayShuttleLateral(data.LifterInPositionUp);
         UpdateDisplayMovements(data);
         UpdateDisplayData(data);
+        UpdateAlarms(data);
 
     } catch (error) {
         // Handle any errors that occur during the process

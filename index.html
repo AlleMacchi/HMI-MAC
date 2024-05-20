@@ -37,7 +37,7 @@
             </div>
             <button type="button" class="buttonAlarms" id="buttonOpenAlarmsPage">
               <img src="src/06.ui/assets/icons/notification.webp" alt="Icon" class="btn-icon">
-              <span class="badge"></span>
+              <span class="badge" id="alarms-badge"></span>
             </button>
             
             <button class="buttonLogIn text-medium text-grey" id="buttonOpenLogin">
@@ -434,14 +434,253 @@
 
 
           </section>
+          
           <section class="section" id="section3" >
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card">Section #3</div>
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card container-shuttle-img">
+              
+              <div class="container-img">
+                <span class="text-large text-light-grey">A</span>
+                <div class="container-img-BabyShuttle">
+                  <button id="buttonOpenLegend" class="btn-normal"><img class="BabyShuttle" src="src/06.ui/assets/icons/info.webp"></button>
+                  <div class="sensor" id="sensor-Before-Cargo-side-A">C</div>
+                  <div class="sensor" id="sensor-After-Cargo-side-A">D</div>
+                  <div class="sensor" id="sensor-Before-Cargo-side-B">E</div>
+                  <div class="sensor" id="sensor-After-Cargo-side-B">F</div>
+                  <div class="sensor" id="sensor-Mother-detects-side-A">G</div>
+                  <div class="sensor" id="sensor-Mother-detects-side-B">H</div>
+                  
+                  <div id="battery-container" class="battery-container">
+                    <h1 id="sensorBatteryLabel"></h1>
+                    <div class="sensorBattery" id="sensorBattery"></div>
+                  </div>
+
+                  <img class="BabyShuttle" src="src/06.ui/assets/img/Baby.webp">
+                </div>
+                <span class="text-large text-light-grey">B</span>
+              </div>
+              
+
+                <div class="border"></div>
+                <div class="container-img">
+                  <span class="text-large text-light-grey">A</span>
+                  <div class="container-img-BabyShuttle-Lateral">
+                    <div class="triangle-up-green" id="movement-lift-up"></div>
+                    <div class="triangle-down" id="movement-lift-down"></div>
+                    <div class="triangle-right-green" id="movement-carrier-bwd"></div>
+                    <div class="triangle-left" id="movement-carrier-fwd"></div>
+                    <div class="sensor green" id="sensor-lift-up">A</div>
+                    <div class="sensor" id="sensor-lift-down">B</div>
+                    <div class="sensor" id="sensor-side-Goods-Close-side-A">I</div>
+                    <div class="sensor" id="sensor-side-Goods-Close-side-B">L</div>
+                    <div class="sensor" id="sensor-On-Mother">M</div>
+                    <img class="BabyShuttleLateral hidden " id="BabyShuttleLateralDown" src="src/06.ui/assets/img/BabyLateralDown.webp">
+                    <img class="BabyShuttleLateral   show " id="BabyShuttleLateralUp" src="src/06.ui/assets/img/BabyLateralUp.webp">
+                  </div>
+                  <span class="text-large text-light-grey">B</span>
+                </div>
+        
+            </div>
+            <div class="card">
+              <div class="container-position">
+              <div class="title-column text-blue"> Columns
+                 </div>
+              <div class="title-row text-blue"> Rows </div>
+              <div id="actual-position-section2" class="actual-position">
+                <table id="chessboard-section2">
+                  <thead>
+                    <tr>
+                      <div class="container-area text-light-grey">                        
+                        <div>A</div>
+                        <div>B</div>
+                        <div>C</div>
+                        <div>D</div>
+                        <div>E</div>
+                        <div>F</div>
+                      </div>
+                      <th></th>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>3</th>
+                      <th>4</th>
+                      <th>5</th>
+                      <th>6</th>
+                      <th>7</th>
+                      <th>8</th>
+                      <th>9</th>
+                      <th>10</th>
+                      <th>11</th>
+                      <th>12</th>
+                      <th>13</th>
+                      <th>14</th>
+                      <th>15</th>
+                      <th>16</th>
+                      <th>17</th>
+                      <th>18</th>
+                      <th>19</th>
+                      <th>20</th>
+                      <th>21</th>
+                      <th>22</th>
+                      <th>23</th>
+                      <th>24</th>
+                      <th>25</th>
+                      <th>26</th>
+                      <th>27</th>
+                      <th>28</th>
+                      <th>29</th>
+                      <th>30</th>
+                      <th>31</th>
+                      <th>32</th>
+                      <th>33</th>
+                      <th>34</th>
+                      <!-- <th>35</th>
+                      <th>36</th>
+                      <th>37</th>
+                      <th>38</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+            <div class="card">
+              <!-- <h5>JOYSTICK</h5> -->
+                <div id="joystick-section" class="joystick">
+
+                    <div class="btn-top joystick-btn">
+                        <div id="btn_circle_out_UP" class="btn_circle_outlet" >
+                            <div class="btn_circle_inlet">
+                                <button id="btn_UP" class="btn_cmd">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="btn-right joystick-btn">
+                        <div id="btn_circle_out_RIGHT" class="btn_circle_outlet " >
+                            <div class="btn_circle_inlet">
+                                <button id="btn_RIGHT" class="btn_cmd ">
+                                    <img src="src/06.ui/assets/icons/up-arrow.webp">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="btn-down joystick-btn">
+                        <div id="btn_circle_out_DOWN" class="btn_circle_outlet " >
+                            <div class="btn_circle_inlet">
+                                <button id="btn_DOWN" class="btn_cmd ">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="btn-left joystick-btn">
+                        <div id="btn_circle_out_LEFT" class="btn_circle_outlet " >
+                            <div class="btn_circle_inlet">
+                                <button id="btn_LEFT" class="btn_cmd text-small">
+                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-center joystick-btn">
+                      <div id="btn_circle_out_CENTER" class="btn_circle_outlet " >
+                          <div class="btn_circle_inlet">
+                              <button id="btn_CENTER" class="btn_cmd text-light-grey">
+                                GO
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                </div>
+
+                
+
+            </div>
+            <div class="card">              
+              <div class="container-data-shuttle  text-light-grey">
+
+                <div id="carrier-speedometer" class="Widget-row text-light-grey" >
+                </div>
+                
+                <div class="border-vertical"></div>
+
+                <div class="Widget-row " >
+                  <div class="container-data-shuttle-text">
+                    <h3>Current Position: <br><span id="current-position" class="text-blue">1233 mm</span></h3>
+                    <h3>Current Logical Position: <br><span id="current-logical-position" class="text-blue">LA01R001A03</span></h3>
+                    <h3>Status Positioning: <br><span id="status-positioning" class="text-blue">In Position</span></span></h3>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="card">
+              <div class="container-positioning text-light-grey" id="commandsLogicalPhysical-sections">
+
+                <div class="container-logical-positioning">
+                  <button id="buttonSelectionLogicalPosition" class="btn-normal text-grey">
+                    Logical
+                  </button>
+                  <div class="container-logical-positioning-data">
+                    <h3>Direction: <span class="text-blue">
+                      <div class="dropdown">
+                          <button class="dropdown-toggle btn-normal text-blue" type="button" id="dropdown-toggle_Section3" aria-haspopup="true" aria-expanded="false">
+                              A 
+                          </button>
+                          <div class="dropdown-menu" id="dropdown-menu_Section3" aria-labelledby="dropdown-toggle_Section3">
+                            <a class="dropdown-item" href="#" data-value="A">A: Left</a>
+                            <a class="dropdown-item" href="#" data-value="B">B: Right</a>
+                          </div>
+                      </div>
+                    </span></h3>
+                    <h3>Row: <span id="section2-row" class="text-blue"></span></h3>
+                    <h3>Column: <span id="section2-col" class="text-blue"></span></h3>
+                  </div>
+                  <h3 id="section2-logical-position" class="text-blue">Undefined</h3>
+                  <button id="buttonConfirmLogicalPosition" class="btn-normal text-grey ">
+                    Confirm
+                  </button> 
+                  <p>Position to reach:</p>
+                  <h3 id="section2-logical-position-mm" class="text-blue"></h3>
+                </div>
+                
+                <div class="container-physical-positioning">
+                  <button id="buttonSelectionPhysicalPosition" class="btn-normal text-grey">
+                    Physical
+                  </button>
+                  <div class="container-physical-positioning-data">
+                    <input 
+                        id="setPositionPhysical"
+                        class="input"
+                        type="number"
+                        placeholder="Set position"
+                    />
+                  </div>
+                  <h3 id="current-set-position" class="text-blue">1234 mm</h3>
+                  <button id="buttonConfirmPhysicalPosition" class="btn-normal text-grey">
+                    Confirm
+                  </button> 
+                </div>
+
+
+              </div>
+
+
+
+            </div>
+
+
+
           </section>
+
+
           <section class="section" id="section4" >
             <div class="card"></div>
             <div class="card"></div>
@@ -451,12 +690,23 @@
             <div class="card"></div>
           </section>
           <section class="section" id="section5" >
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card"> <table id="alarmTable">
+              <thead>
+                <tr>
+                  <th id="alarmIDth">ID</th>
+                  <th id="type">Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Alarms will be inserted here -->
+              </tbody>
+            </table></div>
+            <!-- <div class="card"></div>
             <div class="card"></div>
             <div class="card">Section #5</div>
             <div class="card"></div>
-            <div class="card"></div>
+            <div class="card"></div> -->
           </section>
           <section class="section" id="section6" >
             <div class="card"></div>

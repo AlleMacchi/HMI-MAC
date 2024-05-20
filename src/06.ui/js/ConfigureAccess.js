@@ -5,7 +5,14 @@ export function configureAccess(user) {
       user = "operator";
       document.getElementById("buttonOpenLogin").textContent = user;
     }
-  
+    // Ensureing WMS button hidden for all users exepct PRG
+    if (user != "PRG") {
+      document.getElementById("buttonSection6").style.display = "none";
+    }else
+    {
+      document.getElementById("buttonSection6").style.display = "block";
+    }
+    
     //display in coloe access level
     // console.log("Access level: ", user);
   
@@ -20,37 +27,6 @@ export function configureAccess(user) {
       }
     });
   
-    //Disable controls list based on the user
-    // const controlsToDisable = {
-    //   operator: [
-    //     //sidebars
-    //     "selector-section",
-    //     "joystick-section",
-    //     //homepage
-    //     "steps-section",
-    //     //machine
-    //     "commands-section",
-    //     "btn_Charger",
-    //     //positions
-    //     "setPosition_toStore",
-    //     "btn-copyActPosition",
-    //     "btn-setPositionToStore",
-    //     //settings
-    //     "setting-section"
-        
-    //   ],
-    //   supervisor: [
-    //     //positions
-    //     "setPosition_toStore",
-    //     "btn-copyActPosition",
-    //     "btn-setPositionToStore",
-    //     //machine
-    //     "btn_Charger",
-    //     //settings
-    //     "setting-section"
-    //   ],
-    //   maintenance: [],
-    // };
   
     // Disable buttons based on the user and the realted list
     controlsToDisable[user].forEach((id) => {
