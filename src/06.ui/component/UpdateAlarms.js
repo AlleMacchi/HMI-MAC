@@ -8,7 +8,6 @@ import {
 const tableBody = document.querySelector("#alarmTable tbody");
 const alarmsBadge = document.getElementById("alarms-badge");
 var alarmsConfig;
-var alarmsMapData;
 var activeAlarmsAndWarnings;
 
 export function UpdateAlarms(data) {

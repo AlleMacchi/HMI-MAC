@@ -3,12 +3,13 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
 export class PressAndHoldButton {
-    constructor(id,elementId,entity, elementUI) {
+    constructor(id,elementId,entity, elementUI,timeToHold = 0) {
         this.element = document.getElementById(elementId);
         this.elementUI = elementUI;
         this.pressed = false;
         this.id = id;
         this.entity = entity;
+        this.timeToHold = timeToHold;
 
         const repository = new UpdateValueRepository(plcCommunicationManager);
         this.usecase = new UpdateBooleanValueUseCase(repository, this.entity);
@@ -45,8 +46,10 @@ export class PressAndHoldButton {
 
     setValue(value) {
         try {
-            this.usecase.update(this.id, value);
-            this.pressed = value;
+            setTimeout(() => {
+                this.usecase.update(this.id, value);
+                this.pressed = value;
+            }, this.timeToHold);
         } catch (error) {
             console.error('Error setting:', error);
         }
