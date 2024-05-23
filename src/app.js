@@ -6,9 +6,6 @@ import { InitButtonsPages } from "./06.ui/js/InitButtonsPages.js";
 import { UpdateDisplay } from "./06.ui/component/UpdateDisplay.js";
 
 // Components Section:
-import { ResetButton } from "./06.ui/component/ButtonReset.js";
-import { StartButton } from "./06.ui/component/ButtonStart.js";
-import { StopButton } from "./06.ui/component/ButtonStop.js";
 import { StepSelection } from "./06.ui/component/DropupStepSelection.js";
 import { StepConfirmButton } from "./06.ui/component/ButtonStepConfirm.js";
 import { ButtonLogicalPositionConfirm } from "./06.ui/component/ButtonLogicalPositionConfirm.js";
@@ -26,6 +23,8 @@ import { LoginButton } from "./06.ui/component/ButtonLogin.js";
 import { ButtonClosePopup } from "./06.ui/component/ButtonClosePopup.js";
 import { LegendButton } from "./06.ui/component/ButtonLegend.js";
 import { ButtonWMSConfirm } from "./06.ui/component/ButtonWMSConfirm.js";
+import { ButtonsCommand } from "./06.ui/component/ButtonsCommand.js";
+import { ButtonsJoystick } from "./06.ui/component/ButtonsJoystick.js";
 
 const App = {
   init: function () {
@@ -38,23 +37,16 @@ const App = {
     }, 1000);
   },
   components: function (data) {
-    ResetButton(0);
-    ResetButton(1);
-    StartButton(0);
-    StartButton(1);
-    StopButton(0);
-    StopButton(1);
+    ButtonsCommand(0);
+    ButtonsCommand(1);
+    ButtonsJoystick(0);
+    ButtonsJoystick(1);
     StepSelection();
     StepConfirmButton();
     ButtonLogicalPositionConfirm();
     ButtonPhysicalPositionConfirm();
     ButtonSelectionLogicalPosition();
     ButtonSelectionPhysicalPosition();
-    ButtonJoystickUp();
-    ButtonJoystickDown();
-    ButtonJoystickLeft();
-    ButtonJoystickRight();
-    ButtonJoystickCenter();
     ButtonsPages();
     LoginButton();
     ButtonClosePopup();

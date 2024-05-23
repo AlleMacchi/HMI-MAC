@@ -8,7 +8,8 @@ export function ResetButton(elementN){
     const elementId = 'buttonReset'; // Id of button 
     const entity = new Reset();
     const elementUI = new NormalButtonUI(elementId)
+    const elementClass = 'buttonReset';
 
-    const button = new PressAndHoldButtonByClass(id, elementId,elementN, entity, elementUI );
+    const button = new PressAndHoldButtonByClass(id, elementClass,elementN, entity, elementUI );
     return button;
 }
