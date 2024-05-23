@@ -2,8 +2,9 @@
 // Note: Use the Id provided to add new alarms to the system giving it jsut a type and a description
 
 const alarmsBabyConfig = [
-    { id: "Alarm_Controller_001", type: "Alarm", description: "Emergency not Ok" }, //Controller[0].bit0 Alarm: Emergency not Ok
-    { id: "Alarm_Controller_002", type: "Alarm", description: "Pallet Presence Lost" }, //Controller[0].bit1 Alarm: Pallet Presence Lost
+    { id: "Alarm_Controller_000", type: "Alarm", description: "Emergency not Ok" }, //Controller[0].bit0 Alarm: Emergency not Ok
+    { id: "Alarm_Controller_001", type: "Alarm", description: "Pallet Presence Lost" }, //Controller[0].bit1 Alarm: Pallet Presence Lost
+    { id: "Alarm_Controller_002", type: "", description: "" },
     { id: "Alarm_Controller_003", type: "", description: "" },
     { id: "Alarm_Controller_004", type: "", description: "" },
     { id: "Alarm_Controller_005", type: "", description: "" },

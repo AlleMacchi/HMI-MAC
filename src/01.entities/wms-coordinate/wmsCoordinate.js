@@ -49,12 +49,12 @@ class WMSCoordinate {
 
         // Check the row number range
         if (rowNumber < 0 || rowNumber > config.maxRow) {
-          errors.push(`The row number ${rowNumber} is out of the allowed range (1-38).`);
+          errors.push(`The row number ${rowNumber} is out of the allowed range (1-${config.maxRow}).`);
         }
         
         // Check the column number range
         if (columnNumber < 0 || columnNumber > config.maxColumns) {
-          errors.push(`The column number ${columnNumber} is out of the allowed range (1-38).`);
+          errors.push(`The column number ${columnNumber} is out of the allowed range (1-${config.maxColumns}).`);
         }
       } else {
         // If no numbers are found or the pattern does not match
