@@ -1,242 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="src/06.ui/css/main.css">  
-</head>
-<body>
+    <link rel="stylesheet" href="src/06.ui/css/main.css" />
+  </head>
+  <body>
     <div id="warning">
-        Please rotate your device to landscape mode for the best experience.
+      Please rotate your device to landscape mode for the best experience.
     </div>
 
     <div id="contents">
-        <header class="header flex-container">
-          <div class="flex-item-3col" id="logo">
-            <img class="logo-img" src="src/06.ui/assets/img/logoNameSmaller.webp">
-          </div>
-          <div class="container-mode-status flex-item-5col">
-            <div class="container-Mode">
-              <div class="text-grey">Mode:&nbsp</div>
-              <div class="container-fix-110px">
-                <p class="text-blue" id="Mode"></p>&nbsp
-              </div>
-            </div>
-            <div class="container-status">
-              <div class="text-grey">Status:&nbsp</div>
-              <div class="container-fix-110px">
-                <p class="text-blue" id="Status"></p>
-              </div>
-            </div>
-          </div>
-          <div class="container-login-alarm flex-item-4col">
-            <div class="text-grey">AGV #:&nbsp</div>
+      <header class="header flex-container">
+        <div class="flex-item-3col" id="logo">
+          <img
+            class="logo-img"
+            src="src/06.ui/assets/img/logoNameSmaller.webp"
+          />
+        </div>
+        <div class="container-mode-status flex-item-5col">
+          <div class="container-Mode">
+            <div class="text-grey">Mode:&nbsp</div>
             <div class="container-fix-110px">
-              <p class="text-blue" id="agv-n">10</p>
+              <p class="text-blue" id="Mode"></p>
+              &nbsp
             </div>
-            <button type="button" class="buttonAlarms" id="buttonOpenAlarmsPage">
-              <img src="src/06.ui/assets/icons/notification.webp" alt="Icon" class="btn-icon">
-              <span class="badge" id="alarms-badge"></span>
-            </button>
-            
-            <button class="buttonLogIn text-medium text-grey" id="buttonOpenLogin">
-              User      
-            </button>
-            <img src="src/06.ui/assets/icons/user.webp" alt="Icon" class="btn-icon">
           </div>
-        </header>
-        <section class="sidebar">
-          <button class="buttonNavToPages selected" id="buttonSection1">
-            Home
+          <div class="container-status">
+            <div class="text-grey">Status:&nbsp</div>
+            <div class="container-fix-110px">
+              <p class="text-blue" id="Status"></p>
+            </div>
+          </div>
+        </div>
+        <div class="container-login-alarm flex-item-4col">
+          <div class="text-grey">AGV #:&nbsp</div>
+          <div class="container-fix-110px">
+            <p class="text-blue" id="agv-n">10</p>
+          </div>
+          <button type="button" class="buttonAlarms" id="buttonOpenAlarmsPage">
+            <img
+              src="src/06.ui/assets/icons/notification.webp"
+              alt="Icon"
+              class="btn-icon"
+            />
+            <span class="badge" id="alarms-badge"></span>
           </button>
-          <button class="buttonNavToPages" id="buttonSection2">
-            Machine
+
+          <button
+            class="buttonLogIn text-medium text-grey"
+            id="buttonOpenLogin"
+          >
+            User
           </button>
-          <button class="buttonNavToPages" id="buttonSection3">
-            Positions
-          </button>
-          <button class="buttonNavToPages" id="buttonSection4">
-            Setting
-          </button>
-          <!-- <button class="buttonNavToPages" id="buttonSection5">
+          <img
+            src="src/06.ui/assets/icons/user.webp"
+            alt="Icon"
+            class="btn-icon"
+          />
+        </div>
+      </header>
+      <section class="sidebar">
+        <button class="buttonNavToPages selected" id="buttonSection1">
+          Home
+        </button>
+        <button class="buttonNavToPages" id="buttonSection2">Machine</button>
+        <button class="buttonNavToPages" id="buttonSection3">Positions</button>
+        <button class="buttonNavToPages" id="buttonSection4">Setting</button>
+        <!-- <button class="buttonNavToPages" id="buttonSection5">
             Alarms
           </button> -->
-          <button class="buttonNavToPages" id="buttonSection6">
-            WMS
-          </button>
-        </section>
-        <main class="main">
-          <section class="section" id="section1" >
-            <div class="card">
-                <div class="container-position">
-                <div class="title-column text-blue"> Columns
-                   </div>
-                <div class="title-row text-blue"> Rows </div>
-                <div id="actual-position" class="actual-position">
-                  <table id="chessboard">
-                    <thead>
-                      <tr>
-                        <div class="container-area text-light-grey">                        
-                          <div>A</div>
-                          <div>B</div>
-                          <div>C</div>
-                          <div>D</div>
-                          <div>E</div>
-                          <div>F</div>
-                        </div>
-                        <th></th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                        <th>6</th>
-                        <th>7</th>
-                        <th>8</th>
-                        <th>9</th>
-                        <th>10</th>
-                        <th>11</th>
-                        <th>12</th>
-                        <th>13</th>
-                        <th>14</th>
-                        <th>15</th>
-                        <th>16</th>
-                        <th>17</th>
-                        <th>18</th>
-                        <th>19</th>
-                        <th>20</th>
-                        <th>21</th>
-                        <th>22</th>
-                        <th>23</th>
-                        <th>24</th>
-                        <th>25</th>
-                        <th>26</th>
-                        <th>27</th>
-                        <th>28</th>
-                        <th>29</th>
-                        <th>30</th>
-                        <th>31</th>
-                        <th>32</th>
-                        <th>33</th>
-                        <th>34</th>
-                        <!-- <th>35</th>
+        <button class="buttonNavToPages" id="buttonSection6">WMS</button>
+      </section>
+      <main class="main">
+        <section class="section" id="section1">
+          <div class="card">
+            <div class="container-position">
+              <div class="title-column text-blue">Columns</div>
+              <div class="title-row text-blue">Rows</div>
+              <div id="actual-position" class="actual-position">
+                <table id="chessboard">
+                  <thead>
+                    <tr>
+                      <div class="container-area text-light-grey">
+                        <div>A</div>
+                        <div>B</div>
+                        <div>C</div>
+                        <div>D</div>
+                        <div>E</div>
+                        <div>F</div>
+                      </div>
+                      <th></th>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>3</th>
+                      <th>4</th>
+                      <th>5</th>
+                      <th>6</th>
+                      <th>7</th>
+                      <th>8</th>
+                      <th>9</th>
+                      <th>10</th>
+                      <th>11</th>
+                      <th>12</th>
+                      <th>13</th>
+                      <th>14</th>
+                      <th>15</th>
+                      <th>16</th>
+                      <th>17</th>
+                      <th>18</th>
+                      <th>19</th>
+                      <th>20</th>
+                      <th>21</th>
+                      <th>22</th>
+                      <th>23</th>
+                      <th>24</th>
+                      <th>25</th>
+                      <th>26</th>
+                      <th>27</th>
+                      <th>28</th>
+                      <th>29</th>
+                      <th>30</th>
+                      <th>31</th>
+                      <th>32</th>
+                      <th>33</th>
+                      <th>34</th>
+                      <!-- <th>35</th>
                         <th>36</th>
                         <th>37</th>
                         <th>38</th> -->
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h5 class="text-medium text-light-grey">GENERAL COMMANDS</h5>
+            <div class="container-general-command-btn">
+              <!-- Command START  -->
+              <div class="btn_cmd_container">
+                <div id="btn_circle_out_START" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button
+                      id="buttonStart"
+                      class="btn_cmd text-small text-grey"
+                    >
+                      START
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Command STOP  -->
+              <div class="btn_cmd_container">
+                <div id="btn_circle_out_STOP" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button
+                      id="buttonStop"
+                      class="btn_cmd text-small text-grey"
+                    >
+                      STOP
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="card">
-                <h5 class="text-medium text-light-grey"> GENERAL COMMANDS</h5>
-                <div class="container-general-command-btn">
-                  <!-- Command START  -->
-                  <div class="btn_cmd_container">
-                      <div id="btn_circle_out_START" class="btn_circle_outlet " >
-                          <div class="btn_circle_inlet">
-                              <button id="buttonStart" class="btn_cmd text-small text-grey">
-                                  START
-                              </button>
-                          </div>
+
+            <!-- Command RESET  -->
+            <div class="container-reset">
+              <button id="buttonReset" class="text-small btn-normal text-grey">
+                RESET
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="steps-container" id="steps-section">
+              <div style="border-bottom: 1px solid grey; width: 60%">
+                <h5 class="text-grey text-medium">
+                  Current Task:
+                  <span id="current-task" class="text-blue">Pickup</span>
+                </h5>
+              </div>
+              <h5 class="text-grey text-medium">
+                Current Step:
+                <span id="current-step" class="text-blue">Step 0: Init</span>
+              </h5>
+
+              <div class="btn-group dropup">
+                <button
+                  id="buttonSelectionSteps"
+                  type="button"
+                  class="btn-normal text-grey text-medium dropup-toggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Steps&nbsp<span class="caret"
+                    >&nbsp<img src="src/06.ui/assets/icons/up-arrow.webp"
+                  /></span>
+                </button>
+                <div id="SelectionSteps" class="dropup-menu">
+                  <a href="#" data-option="5">Step 5: Go to Mother</a>
+                  <a href="#" data-option="4">Step 4: Go to First Position</a>
+                  <a href="#" data-option="3">Step 3: Lift Up</a>
+                  <a href="#" data-option="2">Step 2: Go to position</a>
+                  <a href="#" data-option="1">Step 1: Lift Down</a>
+                  <a href="#" data-option="0">Step 0: Init</a>
+                </div>
+                <input
+                  type="text"
+                  id="selectedOption"
+                  class="form-control text-medium"
+                  placeholder=""
+                  readonly
+                />
+                <input
+                  type="text"
+                  id="selectedStep"
+                  class="invisible"
+                  placeholder=""
+                  readonly
+                />
+                <button
+                  id="buttonChangeStepConfirm"
+                  class="btn-normal text-grey text-small"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section" id="section2">
+          <div class="card container-shuttle-img">
+            <div class="container-img">
+              <span class="text-large text-light-grey">A</span>
+              <div class="container-img-BabyShuttle">
+                <button id="buttonOpenLegend" class="btn-normal">
+                  <img
+                    class="BabyShuttle"
+                    src="src/06.ui/assets/icons/info.webp"
+                  />
+                </button>
+                <div class="sensor" id="sensor-Before-Cargo-side-A">C</div>
+                <div class="sensor" id="sensor-After-Cargo-side-A">D</div>
+                <div class="sensor" id="sensor-Before-Cargo-side-B">E</div>
+                <div class="sensor" id="sensor-After-Cargo-side-B">F</div>
+                <div class="sensor" id="sensor-Mother-detects-side-A">G</div>
+                <div class="sensor" id="sensor-Mother-detects-side-B">H</div>
+
+                <div id="battery-container" class="battery-container">
+                  <h1 id="sensorBatteryLabel"></h1>
+                  <div class="sensorBattery" id="sensorBattery"></div>
+                </div>
+
+                <img class="BabyShuttle" src="src/06.ui/assets/img/Baby.webp" />
+              </div>
+              <span class="text-large text-light-grey">B</span>
+            </div>
+
+            <div class="border"></div>
+            <div class="container-img">
+              <span class="text-large text-light-grey">A</span>
+              <div class="container-img-BabyShuttle-Lateral">
+                <div class="triangle-up-green" id="movement-lift-up"></div>
+                <div class="triangle-down" id="movement-lift-down"></div>
+                <div
+                  class="triangle-right-green"
+                  id="movement-carrier-bwd"
+                ></div>
+                <div class="triangle-left" id="movement-carrier-fwd"></div>
+                <div class="sensor green" id="sensor-lift-up">A</div>
+                <div class="sensor" id="sensor-lift-down">B</div>
+                <div class="sensor" id="sensor-side-Goods-Close-side-A">I</div>
+                <div class="sensor" id="sensor-side-Goods-Close-side-B">L</div>
+                <div class="sensor" id="sensor-On-Mother">M</div>
+                <img
+                  class="BabyShuttleLateral hidden"
+                  id="BabyShuttleLateralDown"
+                  src="src/06.ui/assets/img/BabyLateralDown.webp"
+                />
+                <img
+                  class="BabyShuttleLateral show"
+                  id="BabyShuttleLateralUp"
+                  src="src/06.ui/assets/img/BabyLateralUp.webp"
+                />
+              </div>
+              <span class="text-large text-light-grey">B</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="container-position">
+              <div class="title-column text-blue">Columns</div>
+              <div class="title-row text-blue">Rows</div>
+              <div id="actual-position-section2" class="actual-position">
+                <table id="chessboard-section2">
+                  <thead>
+                    <tr>
+                      <div class="container-area text-light-grey">
+                        <div>A</div>
+                        <div>B</div>
+                        <div>C</div>
+                        <div>D</div>
+                        <div>E</div>
+                        <div>F</div>
                       </div>
+                      <th></th>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>3</th>
+                      <th>4</th>
+                      <th>5</th>
+                      <th>6</th>
+                      <th>7</th>
+                      <th>8</th>
+                      <th>9</th>
+                      <th>10</th>
+                      <th>11</th>
+                      <th>12</th>
+                      <th>13</th>
+                      <th>14</th>
+                      <th>15</th>
+                      <th>16</th>
+                      <th>17</th>
+                      <th>18</th>
+                      <th>19</th>
+                      <th>20</th>
+                      <th>21</th>
+                      <th>22</th>
+                      <th>23</th>
+                      <th>24</th>
+                      <th>25</th>
+                      <th>26</th>
+                      <th>27</th>
+                      <th>28</th>
+                      <th>29</th>
+                      <th>30</th>
+                      <th>31</th>
+                      <th>32</th>
+                      <th>33</th>
+                      <th>34</th>
+                      <!-- <th>35</th>
+                      <th>36</th>
+                      <th>37</th>
+                      <th>38</th> -->
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <!-- <h5>JOYSTICK</h5> -->
+            <div id="joystick-section" class="joystick">
+              <div class="btn-top joystick-btn">
+                <div id="btn_circle_out_UP" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button id="btn_UP" class="btn_cmd">
+                      <img src="src/06.ui/assets/icons/up-arrow.webp" />
+                    </button>
                   </div>
-                  <!-- Command STOP  -->
-                  <div class="btn_cmd_container ">
-                      <div id="btn_circle_out_STOP"  class="btn_circle_outlet" >
-                          <div class="btn_circle_inlet">
-                              <button id="buttonStop" class="btn_cmd text-small text-grey">
-                                  STOP
-                              </button>
-                          </div>
+                </div>
+              </div>
+
+              <div class="btn-right joystick-btn">
+                <div id="btn_circle_out_RIGHT" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button id="btn_RIGHT" class="btn_cmd">
+                      <img src="src/06.ui/assets/icons/up-arrow.webp" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="btn-down joystick-btn">
+                <div id="btn_circle_out_DOWN" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button id="btn_DOWN" class="btn_cmd">
+                      <img src="src/06.ui/assets/icons/up-arrow.webp" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="btn-left joystick-btn">
+                <div id="btn_circle_out_LEFT" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button id="btn_LEFT" class="btn_cmd text-small">
+                      <img src="src/06.ui/assets/icons/up-arrow.webp" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="btn-center joystick-btn">
+                <div id="btn_circle_out_CENTER" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button id="btn_CENTER" class="btn_cmd text-light-grey">
+                      GO
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="container-data-shuttle text-light-grey">
+              <div
+                id="carrier-speedometer"
+                class="Widget-row text-light-grey"
+              ></div>
+
+              <div class="border-vertical"></div>
+
+              <div class="Widget-row">
+                <div class="container-data-shuttle-text">
+                  <h3>
+                    Current Position: <br /><span
+                      id="current-position"
+                      class="text-blue"
+                      >1233 mm</span
+                    >
+                  </h3>
+                  <h3>
+                    Current Logical Position: <br /><span
+                      id="current-logical-position"
+                      class="text-blue"
+                      >LA01R001A03</span
+                    >
+                  </h3>
+                  <h3>
+                    Status Positioning: <br /><span
+                      id="status-positioning"
+                      class="text-blue"
+                      >In Position</span
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="container-positioning text-light-grey"
+              id="commandsLogicalPhysical-sections"
+            >
+              <div class="container-logical-positioning">
+                <button
+                  id="buttonSelectionLogicalPosition"
+                  class="btn-normal text-grey"
+                >
+                  Logical
+                </button>
+                <div class="container-logical-positioning-data">
+                  <h3>
+                    Direction:
+                    <span class="text-blue">
+                      <div class="dropdown">
+                        <button
+                          class="dropdown-toggle btn-normal text-blue"
+                          type="button"
+                          id="dropdown-toggle_Section3"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          A
+                        </button>
+                        <div
+                          class="dropdown-menu"
+                          id="dropdown-menu_Section3"
+                          aria-labelledby="dropdown-toggle_Section3"
+                        >
+                          <a class="dropdown-item" href="#" data-value="A"
+                            >A: Left</a
+                          >
+                          <a class="dropdown-item" href="#" data-value="B"
+                            >B: Right</a
+                          >
+                        </div>
                       </div>
-                  </div>
+                    </span>
+                  </h3>
+                  <h3>
+                    Row: <span id="section2-row" class="text-blue"></span>
+                  </h3>
+                  <h3>
+                    Column: <span id="section2-col" class="text-blue"></span>
+                  </h3>
+                </div>
+                <h3 id="section2-logical-position" class="text-blue">
+                  Undefined
+                </h3>
+                <button
+                  id="buttonConfirmLogicalPosition"
+                  class="btn-normal text-grey"
+                >
+                  Confirm
+                </button>
+                <p>Position to reach:</p>
+                <h3 id="section2-logical-position-mm" class="text-blue"></h3>
               </div>
-       
-              <!-- Command RESET  -->
-              <div class="container-reset">
-                  <button id="buttonReset" class="text-small btn-normal text-grey">
-                      RESET
-                  </button>
+
+              <div class="container-physical-positioning">
+                <button
+                  id="buttonSelectionPhysicalPosition"
+                  class="btn-normal text-grey"
+                >
+                  Physical
+                </button>
+                <div class="container-physical-positioning-data">
+                  <input
+                    id="setPositionPhysical"
+                    class="input"
+                    type="number"
+                    placeholder="Set position"
+                  />
+                </div>
+                <h3 id="current-set-position" class="text-blue">1234 mm</h3>
+                <button
+                  id="buttonConfirmPhysicalPosition"
+                  class="btn-normal text-grey"
+                >
+                  Confirm
+                </button>
               </div>
             </div>
-            <div class="card">
-              <div class="steps-container" id="steps-section">
-                <div style="border-bottom: 1px solid grey; width: 60%;">
-                  <h5 class="text-grey text-medium">Current Task: <span id="current-task" class="text-blue">Pickup</span></h5>
-                </div>
-                <h5 class="text-grey text-medium" >Current Step: <span id="current-step" class="text-blue">Step 0: Init</span></h5>
+          </div>
+        </section>
 
-                <div class="btn-group dropup">
-                  <button id="buttonSelectionSteps" type="button" class="btn-normal text-grey text-medium dropup-toggle" aria-haspopup="true" aria-expanded="false">
-                    Steps&nbsp<span class="caret">&nbsp<img src="src/06.ui/assets/icons/up-arrow.webp"></span>
-                  </button>
-                  <div id="SelectionSteps" class="dropup-menu">
-                    <a href="#" data-option="5">Step 5: Go to Mother</a>
-                    <a href="#" data-option="4">Step 4: Go to First Position</a>
-                    <a href="#" data-option="3">Step 3: Lift Up</a>
-                    <a href="#" data-option="2">Step 2: Go to position</a>
-                    <a href="#" data-option="1">Step 1: Lift Down</a>
-                    <a href="#" data-option="0">Step 0: Init</a>
+        <section class="section" id="section3">
+          <div class="card" id="singleSetRow">
+            <h3 class="card-title-section3">SINGLE SET ROW</h3>
+            <div class="SetRowInfo">
+              <div class="info">
+                <label for="logicalPosition">Logical Position</label>
+                <div id="logicalPositionInput">
+                  A-L01R
+                  <input
+                    type="text"
+                    id="logicalPosition_Row_input"
+                    placeholder="Row"
+                  />
+                  <div class="dropdown">
+                    <button
+                      class="dropdown-toggle btn-normal text-blue"
+                      type="button"
+                      id="dropdown-toggle_Section_Position"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      A
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      id="dropdown-menu_Section_Position"
+                      aria-labelledby="dropdown-toggle_Position"
+                    >
+                      <a class="dropdown-item" href="#" data-value="A"
+                        >A: Left</a
+                      >
+                      <a class="dropdown-item" href="#" data-value="B"
+                        >B: Right</a
+                      >
+                    </div>
                   </div>
-                  <input type="text" id="selectedOption" class="form-control text-medium" placeholder="" readonly> 
-                  <input type="text" id="selectedStep" class="invisible" placeholder="" readonly>  
-                  <button id="buttonChangeStepConfirm" class="btn-normal text-grey text-small">Confirm</button>
+                  <input
+                    type="text"
+                    id="logicalPosition_Col_input"
+                    placeholder="Col"
+                  />
                 </div>
+                <button
+                  class="btn-normal text-grey text-small"
+                  id="buttonSetPosition"
+                >
+                  Read
+                </button>
               </div>
-            </div>       
-          </section>
-          <section class="section" id="section2" >
-            <div class="card container-shuttle-img">
-              
-              <div class="container-img">
-                <span class="text-large text-light-grey">A</span>
-                <div class="container-img-BabyShuttle">
-                  <button id="buttonOpenLegend" class="btn-normal"><img class="BabyShuttle" src="src/06.ui/assets/icons/info.webp"></button>
-                  <div class="sensor" id="sensor-Before-Cargo-side-A">C</div>
-                  <div class="sensor" id="sensor-After-Cargo-side-A">D</div>
-                  <div class="sensor" id="sensor-Before-Cargo-side-B">E</div>
-                  <div class="sensor" id="sensor-After-Cargo-side-B">F</div>
-                  <div class="sensor" id="sensor-Mother-detects-side-A">G</div>
-                  <div class="sensor" id="sensor-Mother-detects-side-B">H</div>
-                  
-                  <div id="battery-container" class="battery-container">
-                    <h1 id="sensorBatteryLabel"></h1>
-                    <div class="sensorBattery" id="sensorBattery"></div>
-                  </div>
-
-                  <img class="BabyShuttle" src="src/06.ui/assets/img/Baby.webp">
-                </div>
-                <span class="text-large text-light-grey">B</span>
+              <div class="info positionsDiv">
+                <label>Position Saved</label>
+                <span id="positionSaved">12358 mm</span>
               </div>
-              
-
-                <div class="border"></div>
-                <div class="container-img">
-                  <span class="text-large text-light-grey">A</span>
-                  <div class="container-img-BabyShuttle-Lateral">
-                    <div class="triangle-up-green" id="movement-lift-up"></div>
-                    <div class="triangle-down" id="movement-lift-down"></div>
-                    <div class="triangle-right-green" id="movement-carrier-bwd"></div>
-                    <div class="triangle-left" id="movement-carrier-fwd"></div>
-                    <div class="sensor green" id="sensor-lift-up">A</div>
-                    <div class="sensor" id="sensor-lift-down">B</div>
-                    <div class="sensor" id="sensor-side-Goods-Close-side-A">I</div>
-                    <div class="sensor" id="sensor-side-Goods-Close-side-B">L</div>
-                    <div class="sensor" id="sensor-On-Mother">M</div>
-                    <img class="BabyShuttleLateral hidden " id="BabyShuttleLateralDown" src="src/06.ui/assets/img/BabyLateralDown.webp">
-                    <img class="BabyShuttleLateral   show " id="BabyShuttleLateralUp" src="src/06.ui/assets/img/BabyLateralUp.webp">
-                  </div>
-                  <span class="text-large text-light-grey">B</span>
-                </div>
-        
+              <hr id="hr-section3" />
+              <div class="info">
+                <label>Actual Position</label>
+                <span id="actualPosition">0.0mm</span>
+                <button
+                  class="btn-normal text-grey text-small"
+                  id="buttonCopyPosition"
+                >
+                  Copy Position
+                </button>
+              </div>
+              <div class="info">
+                <label>Physical Position To Be Set</label>
+                <span id="physicalPosition">0.0mm</span>
+                <input
+                type="text"
+                id="positionInput"
+                placeholder="Set position"
+              />
+              </div>
+              <div class="info" id="positionsInputDiv">
+                <label for="positionInput"></label>
+                <span></span>
+                <button
+                  class="btn-normal text-grey text-small"
+                  id="buttonSetPosition"
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
-            <div class="card">
-              <div class="container-position">
+          </div>
+          <div class="card">
+            <!-- <div class="container-position">
               <div class="title-column text-blue"> Columns
                  </div>
               <div class="title-row text-blue"> Rows </div>
@@ -286,98 +666,47 @@
                       <th>31</th>
                       <th>32</th>
                       <th>33</th>
-                      <th>34</th>
-                      <!-- <th>35</th>
+                      <th>34</th> -->
+            <!-- <th>35</th>  This no
                       <th>36</th>
                       <th>37</th>
-                      <th>38</th> -->
-                    </tr>
+                      <th>38</th>        up here no-->
+            <!-- </tr>
                   </thead>
                   <tbody>
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> -->
           </div>
-            <div class="card">
-              <!-- <h5>JOYSTICK</h5> -->
-                <div id="joystick-section" class="joystick">
-
-                    <div class="btn-top joystick-btn">
-                        <div id="btn_circle_out_UP" class="btn_circle_outlet" >
-                            <div class="btn_circle_inlet">
-                                <button id="btn_UP" class="btn_cmd">
-                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="btn-right joystick-btn">
-                        <div id="btn_circle_out_RIGHT" class="btn_circle_outlet " >
-                            <div class="btn_circle_inlet">
-                                <button id="btn_RIGHT" class="btn_cmd ">
-                                    <img src="src/06.ui/assets/icons/up-arrow.webp">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="btn-down joystick-btn">
-                        <div id="btn_circle_out_DOWN" class="btn_circle_outlet " >
-                            <div class="btn_circle_inlet">
-                                <button id="btn_DOWN" class="btn_cmd ">
-                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="btn-left joystick-btn">
-                        <div id="btn_circle_out_LEFT" class="btn_circle_outlet " >
-                            <div class="btn_circle_inlet">
-                                <button id="btn_LEFT" class="btn_cmd text-small">
-                                  <img src="src/06.ui/assets/icons/up-arrow.webp">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="btn-center joystick-btn">
-                      <div id="btn_circle_out_CENTER" class="btn_circle_outlet " >
-                          <div class="btn_circle_inlet">
-                              <button id="btn_CENTER" class="btn_cmd text-light-grey">
-                                GO
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-
+          <div class="card">
+            <div id="joystick-section3">Joystick</div>
+          </div>
+          <div class="card" id="multipleSetRows">
+            <h3 class="card-title-section3">MULTIPLE SET ROWS</h3>
+            <div class="SetRowInfo">
+              <div class="info">
+                <label for="sourceRow">Source Row</label>
+                <input type="text" id="sourceRow" placeholder="Row" />
+              </div>
+              <div class="info">
+                <label>Copy From Rows:</label>
+                <div id="copyFromToDiv">
+                  <input type="text" id="copyFromRows" placeholder="Row" />
+                  <span>To</span>
+                  <input type="text" id="copyToRows" placeholder="Row" />
                 </div>
-
-                
-
-            </div>
-            <div class="card">              
-              <div class="container-data-shuttle  text-light-grey">
-
-                <div id="carrier-speedometer" class="Widget-row text-light-grey" >
-                </div>
-                
-                <div class="border-vertical"></div>
-
-                <div class="Widget-row " >
-                  <div class="container-data-shuttle-text">
-                    <h3>Current Position: <br><span id="current-position" class="text-blue">1233 mm</span></h3>
-                    <h3>Current Logical Position: <br><span id="current-logical-position" class="text-blue">LA01R001A03</span></h3>
-                    <h3>Status Positioning: <br><span id="status-positioning" class="text-blue">In Position</span></span></h3>
-                  </div>
-                </div>
-
+                <button
+                  class="btn-normal text-grey text-small"
+                  id="buttonConfirmCopy"
+                >
+                  Confirm
+                </button>
               </div>
             </div>
-            <div class="card">
-              <div class="container-positioning text-light-grey" id="commandsLogicalPhysical-sections">
+          </div>
+          <div class="card">
+            <!-- <div class="container-positioning text-light-grey" id="commandsLogicalPhysical-sections">
 
                 <div class="container-logical-positioning">
                   <button id="buttonSelectionLogicalPosition" class="btn-normal text-grey">
@@ -425,166 +754,21 @@
                 </div>
 
 
-              </div>
-
-
-
-            </div>
-
-
-
-          </section>
-          
-          <section class="section" id="section3" >
-            <div class="card container-shuttle-img">
-                <span class="text-large"> Next </span>
-        
-            </div>
-            <div class="card">
-              <div class="container-position">
-              <div class="title-column text-blue"> Columns
-                 </div>
-              <div class="title-row text-blue"> Rows </div>
-              <div id="actual-position-section2" class="actual-position">
-                <table id="chessboard-section2">
-                  <thead>
-                    <tr>
-                      <div class="container-area text-light-grey">                        
-                        <div>A</div>
-                        <div>B</div>
-                        <div>C</div>
-                        <div>D</div>
-                        <div>E</div>
-                        <div>F</div>
-                      </div>
-                      <th></th>
-                      <th>1</th>
-                      <th>2</th>
-                      <th>3</th>
-                      <th>4</th>
-                      <th>5</th>
-                      <th>6</th>
-                      <th>7</th>
-                      <th>8</th>
-                      <th>9</th>
-                      <th>10</th>
-                      <th>11</th>
-                      <th>12</th>
-                      <th>13</th>
-                      <th>14</th>
-                      <th>15</th>
-                      <th>16</th>
-                      <th>17</th>
-                      <th>18</th>
-                      <th>19</th>
-                      <th>20</th>
-                      <th>21</th>
-                      <th>22</th>
-                      <th>23</th>
-                      <th>24</th>
-                      <th>25</th>
-                      <th>26</th>
-                      <th>27</th>
-                      <th>28</th>
-                      <th>29</th>
-                      <th>30</th>
-                      <th>31</th>
-                      <th>32</th>
-                      <th>33</th>
-                      <th>34</th>
-                      <!-- <th>35</th>
-                      <th>36</th>
-                      <th>37</th>
-                      <th>38</th> -->
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+              </div> -->
           </div>
-            <div class="card">
-             <div id="joystick-section3">
-              Joystick
-             </div>
+        </section>
 
-                
-
-            </div>
-            <div class="card">              
-             <span class="text-large"> Next </span>
-            </div>
-            <div class="card">
-              <div class="container-positioning text-light-grey" id="commandsLogicalPhysical-sections">
-
-                <div class="container-logical-positioning">
-                  <button id="buttonSelectionLogicalPosition" class="btn-normal text-grey">
-                    Logical
-                  </button>
-                  <div class="container-logical-positioning-data">
-                    <h3>Direction: <span class="text-blue">
-                      <div class="dropdown">
-                          <button class="dropdown-toggle btn-normal text-blue" type="button" id="dropdown-toggle_Section3" aria-haspopup="true" aria-expanded="false">
-                              A 
-                          </button>
-                          <div class="dropdown-menu" id="dropdown-menu_Section3" aria-labelledby="dropdown-toggle_Section3">
-                            <a class="dropdown-item" href="#" data-value="A">A: Left</a>
-                            <a class="dropdown-item" href="#" data-value="B">B: Right</a>
-                          </div>
-                      </div>
-                    </span></h3>
-                    <h3>Row: <span id="section2-row" class="text-blue"></span></h3>
-                    <h3>Column: <span id="section2-col" class="text-blue"></span></h3>
-                  </div>
-                  <h3 id="section2-logical-position" class="text-blue">Undefined</h3>
-                  <button id="buttonConfirmLogicalPosition" class="btn-normal text-grey ">
-                    Confirm
-                  </button> 
-                  <p>Position to reach:</p>
-                  <h3 id="section2-logical-position-mm" class="text-blue"></h3>
-                </div>
-                
-                <div class="container-physical-positioning">
-                  <button id="buttonSelectionPhysicalPosition" class="btn-normal text-grey">
-                    Physical
-                  </button>
-                  <div class="container-physical-positioning-data">
-                    <input 
-                        id="setPositionPhysical"
-                        class="input"
-                        type="number"
-                        placeholder="Set position"
-                    />
-                  </div>
-                  <h3 id="current-set-position" class="text-blue">1234 mm</h3>
-                  <button id="buttonConfirmPhysicalPosition" class="btn-normal text-grey">
-                    Confirm
-                  </button> 
-                </div>
-
-
-              </div>
-
-
-
-            </div>
-
-
-
-          </section>
-
-
-          <section class="section" id="section4" >
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card">Section #4</div>
-            <div class="card"></div>
-            <div class="card"></div>
-          </section>
-          <section class="section" id="section5" >
-            <div class="card"> <table id="alarmTable">
+        <section class="section" id="section4">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card">Section #4</div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </section>
+        <section class="section" id="section5">
+          <div class="card">
+            <table id="alarmTable">
               <thead>
                 <tr>
                   <th id="alarmIDth">ID</th>
@@ -595,107 +779,137 @@
               <tbody>
                 <!-- Alarms will be inserted here -->
               </tbody>
-            </table></div>
-            <!-- <div class="card"></div>
+            </table>
+          </div>
+          <!-- <div class="card"></div>
             <div class="card"></div>
             <div class="card">Section #5</div>
             <div class="card"></div>
             <div class="card"></div> -->
-          </section>
-          <section class="section" id="section6">
-            <!-- Card 1: WMS to PLC -->
-            <div class="card">
-              <h2 id="title1">WMS to PLC</h2>
-              <form id="form1">
-                  <div id="formGroup1">
-                      <label for="message_id_input">Id</label>
-                      <input type="text" id="message_id_input">
+        </section>
+        <section class="section" id="section6">
+          <!-- Card 1: WMS to PLC -->
+          <div class="card">
+            <h2 id="title1">WMS to PLC</h2>
+            <form id="form1">
+              <div id="formGroup1">
+                <label for="message_id_input">Id</label>
+                <input type="text" id="message_id_input" />
+              </div>
+              <div id="formGroup2">
+                <label for="message_taskNumber_input">Task Number</label>
+                <input type="text" id="message_taskNumber_input" />
+              </div>
+              <div id="formGroup3">
+                <label for="message_coordinate_input">Coordinate</label>
+                <div id="coordinateInput">
+                  A-L01R
+                  <input
+                    type="text"
+                    id="message_coordinateRow_input"
+                    placeholder="Row"
+                  />
+                  <div class="dropdown">
+                    <button
+                      class="dropdown-toggle btn-normal text-blue"
+                      type="button"
+                      id="dropdown-toggle_Section5"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      A
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      id="dropdown-menu_Section5"
+                      aria-labelledby="dropdown-toggle_Section5"
+                    >
+                      <a class="dropdown-item" href="#" data-value="A"
+                        >A: Left</a
+                      >
+                      <a class="dropdown-item" href="#" data-value="B"
+                        >B: Right</a
+                      >
+                    </div>
                   </div>
-                  <div id="formGroup2">
-                      <label for="message_taskNumber_input">Task Number</label>
-                      <input type="text" id="message_taskNumber_input">
-                  </div>
-                  <div id="formGroup3">
-                      <label for="message_coordinate_input">Coordinate</label>
-                      <div id="coordinateInput">
-                          A-L01R
-                          <input type="text" id="message_coordinateRow_input" placeholder="Row">
-                          <div class="dropdown">
-                            <button class="dropdown-toggle btn-normal text-blue" type="button" id="dropdown-toggle_Section5" aria-haspopup="true" aria-expanded="false">
-                                A 
-                            </button>
-                            <div class="dropdown-menu" id="dropdown-menu_Section5" aria-labelledby="dropdown-toggle_Section5">
-                              <a class="dropdown-item" href="#" data-value="A">A: Left</a>
-                              <a class="dropdown-item" href="#" data-value="B">B: Right</a>
-                            </div>
-                        </div>
-                          <input type="text" id="message_coordinateCol_input" placeholder="Col">
-                      </div>
-                  </div>
-                  <div id="formGroup4">
-                      <label for="message_echoStatus_input">ECHOStatus</label>
-                      <input type="text" id="message_echoStatus_input">
-                  </div>
-                  <button class="btn-normal text-grey text-small" type="submit" id="buttonWMSConfirm">Confirm</button>
-              </form>
-            </div>
-        
-            <!-- Card 2: PLC to WMS -->
-            <div class="card">
-              <h2 id="title2">PLC to WMS</h2>
-              <div id="displayForm">
+                  <input
+                    type="text"
+                    id="message_coordinateCol_input"
+                    placeholder="Col"
+                  />
+                </div>
+              </div>
+              <div id="formGroup4">
+                <label for="message_echoStatus_input">ECHOStatus</label>
+                <input type="text" id="message_echoStatus_input" />
+              </div>
+              <button
+                class="btn-normal text-grey text-small"
+                type="submit"
+                id="buttonWMSConfirm"
+              >
+                Confirm
+              </button>
+            </form>
+          </div>
+
+          <!-- Card 2: PLC to WMS -->
+          <div class="card">
+            <h2 id="title2">PLC to WMS</h2>
+            <div id="displayForm">
               <div id="displayGroup1">
-                  <label>Id</label>
-                  <span id="message_id"></span>
+                <label>Id</label>
+                <span id="message_id"></span>
               </div>
               <div id="displayGroup2">
-                  <label>TaskNumber</label>
-                  <span id="message_taskNumber"></span>
+                <label>TaskNumber</label>
+                <span id="message_taskNumber"></span>
               </div>
               <div id="displayGroup3">
-                  <label>Coordinate</label>
-                  <span id="message_coordinate"></span>
+                <label>Coordinate</label>
+                <span id="message_coordinate"></span>
               </div>
               <div id="displayGroup4">
-                  <label>Result</label>
-                  <span id="message_result"></span>
+                <label>Result</label>
+                <span id="message_result"></span>
               </div>
               <div id="displayGroup5">
-                  <label>ErrorCode</label>
-                  <span id="message_errorCode" ></span>
+                <label>ErrorCode</label>
+                <span id="message_errorCode"></span>
               </div>
               <div id="displayGroup6">
-                  <label>TaskStatus</label>
-                  <span id="message_taskStatus"></span>
+                <label>TaskStatus</label>
+                <span id="message_taskStatus"></span>
               </div>
             </div>
-            </div>
+          </div>
         </section>
-        
-
-        </main>
+      </main>
     </div>
 
-    <div class="popup " id="popup">
+    <div class="popup" id="popup">
       <div class="inner-popup">
         <h2 id="popupTitle" class="text-large">WARNING</h2>
-        <p id="popupMessage">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <p id="popupMessage">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
         <button id="buttonClosePopup">Close</button>
       </div>
     </div>
 
-    <div class="popup " id="login">
+    <div class="popup" id="login">
       <div class="inner-popup inner-login">
-        <h2  class="text-large">Login</h2>
+        <h2 class="text-large">Login</h2>
 
         <div class="container-input-login">
-          <div class="inputbox"> 
-            <input id="user"  type="text" required>
+          <div class="inputbox">
+            <input id="user" type="text" required />
             <label>User</label>
           </div>
           <div class="inputbox">
-            <input id="password" type="password" required> 
-            <label>Password</label> 
+            <input id="password" type="password" required />
+            <label>Password</label>
           </div>
         </div>
 
@@ -703,10 +917,9 @@
           <button id="login-logout">Log In</button>
           <button id="buttonCloseLogin">Close</button>
         </div>
-
       </div>
     </div>
 
     <script type="module" src="src/app.js"></script>
-</body>
+  </body>
 </html>

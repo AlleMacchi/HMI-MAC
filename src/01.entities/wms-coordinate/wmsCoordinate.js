@@ -20,8 +20,8 @@ class WMSCoordinate {
         const rowNumber = parseInt(match[1], 10);
         const columnNumber = parseInt(match[2], 10);
         
-        console.log('rowNumber', rowNumber);
-        console.log('columnNumber', columnNumber);
+        // console.log('rowNumber', rowNumber);
+        // console.log('columnNumber', columnNumber);
 
         if (
           !rowNumber ||

@@ -18,10 +18,10 @@
 @import url("layouts/section6.css");
 @import url("pages/section1.css");
 @import url("pages/section2.css");
-/* @import url("pages/section3.css");
+@import url("pages/section3.css");
 @import url("pages/section4.css");
 @import url("pages/section5.css");
-@import url("pages/section6.css"); */
+@import url("pages/section6.css");
 @import url("components/popup.css");
 @import url("components/button.css");
 @import url("components/dropup.css");
