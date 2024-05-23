@@ -3,12 +3,13 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
 export class PressAndHoldButton {
-    constructor(id,elementId,entity, elementUI,timeToHold = 0) {
+    constructor(id,elementId,entity, elementUI, validateFn = () => true,timeToHold = 0) {
         this.element = document.getElementById(elementId);
         this.elementUI = elementUI;
         this.pressed = false;
         this.id = id;
         this.entity = entity;
+        this.validateFn = validateFn;
         this.timeToHold = timeToHold;
 
         const repository = new UpdateValueRepository(plcCommunicationManager);
@@ -27,6 +28,13 @@ export class PressAndHoldButton {
 
     handleMouseDown(event) {
         event.preventDefault();
+
+        // Validate before proceeding
+        if (!this.validateFn()) {
+            console.error('Validation failed');
+            return;
+        }
+        
         this.setValue(true);
         this.elementUI.showPressed();
     }
