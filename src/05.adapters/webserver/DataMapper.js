@@ -113,7 +113,16 @@ const WebServerDataMapper = {
         CarrierActSpeed: decodedString(data.Array_12),
         CarrierActPosition_mm: decodedString(data.Array_13),
         TaskNumber: decodedString(data.Array_15),
-        BatteryLevel: decodedString(data.Array_16)
+        BatteryLevel: decodedString(data.Array_16),
+        
+        ShuttleToWMS_Message_Id:  decodedString(data.ShuttleToWMS_Message_Id),
+        ShuttleToWMS_Message_TaskNumber:  decodedString(data.ShuttleToWMS_Message_TaskNumber),
+        ShuttleToWMS_Message_Coordinate:  data.ShuttleToWMS_Message_Coordinate,
+        ShuttleToWMS_Message_Result:  decodedString(data.ShuttleToWMS_Message_Result),
+        ShuttleToWMS_Message_ErrorCode:  decodedString(data.ShuttleToWMS_Message_ErrorCode),
+        ShuttleToWMS_Message_TaskStatus:  decodedString(data.ShuttleToWMS_Message_TaskStatus)
+
+
         };
     }
 };

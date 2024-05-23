@@ -1,6 +1,7 @@
 import {userLogin} from '../../00.config/authConfig.js';
 import { configureAccess } from './ConfigureAccess.js';
 import { scrollToSection } from '../component/ButtonsPages.js';
+import { actualPositionUI, actualPositionSection2, dropdown } from '../component/UpdateDisplayData.js';
 
 
 //init user and password
@@ -70,7 +71,9 @@ export function logout() {
   configureAccess(user);
   //display message
 
-  scrollToSection("section1");
+  actualPositionUI.disableAutoScroll();
+  actualPositionSection2.disableAutoScroll();
+  scrollToSection("section1"); 
 }
 
 

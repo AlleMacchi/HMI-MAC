@@ -25,6 +25,7 @@ import { ButtonsPages} from './06.ui/component/ButtonsPages.js'
 import { LoginButton } from './06.ui/component/ButtonLogin.js'
 import { ButtonClosePopup } from './06.ui/component/ButtonClosePopup.js' 
 import { LegendButton } from './06.ui/component/ButtonLegend.js'
+import { ButtonWMSConfirm } from './06.ui/component/ButtonWMSConfirm.js'
 
 
 const App = {
@@ -58,6 +59,7 @@ const App = {
          ButtonClosePopup();
          LegendButton ();
          configureAccess("");
+         ButtonWMSConfirm();
          
     }
     

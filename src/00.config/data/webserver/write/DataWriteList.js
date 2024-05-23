@@ -119,6 +119,31 @@ var DataWriteList = [
         id: 24,
         url: "src/00.config/data/webserver/write/PLCvariables/IOWritePositionRequest.html",
         name: '"HMI_PLC".FromHMI.Position.request'
+    },
+    {
+        id: 25,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSId.html",
+        name: '"WMSToShuttle".Message.Id'
+    },
+    {
+        id: 26,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSTaskNumber.html",
+        name: '"WMSToShuttle".Message.TaskNumber'
+    },
+    {
+        id: 27,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSCoordinate.html",
+        name: '"WMSToShuttle".Message.Coordinate'
+    },
+    {
+        id: 28,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSEchoStatus.html",
+        name: '"WMSToShuttle".Message.EchoStatus'
+    },
+    {
+        id: 29,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSExecute.html",
+        name: '"WMSToShuttle".Message.Execute'
     }
 ];
 
