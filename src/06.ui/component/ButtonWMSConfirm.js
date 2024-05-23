@@ -18,16 +18,8 @@ export function ButtonWMSConfirm(){
     const entity = new WMSConfirm();
     const elementUI = new NormalButtonUI(elementId);
     const timeToHoldExecute = 300;
-    
-    // Instantiate PressAndHoldButton after InputFieldNoLabel
-    const button = new PressAndHoldButton(id, elementId, entity, elementUI, timeToHoldExecute);
 
-    // Attach event listeners for PressAndHoldButton
-    const buttonElement = document.getElementById(elementId);
-    buttonElement.addEventListener('mousedown', button.handleMouseDown);
-    buttonElement.addEventListener('touchstart', button.handleMouseDown);
-    
-
+     
     //Input Message Id
     const inputId_WMSId = 25; // Id use for config DataWriteList.js
     const inputElementId_WMSId = elementId; // Id of button
@@ -60,10 +52,34 @@ export function ButtonWMSConfirm(){
     const inputEntity_WMSEchoStatus = new WMSEchoStatus();
     const input_WMSEchoStatus = new InputFieldNoLabel(inputId_WMSEchoStatus, inputField_WMSEchoStatus, inputElementId_WMSEchoStatus, inputEntity_WMSEchoStatus);
 
+     // Instantiate PressAndHoldButton after InputFieldNoLabel
+   const button = new PressAndHoldButton(id, elementId, entity, elementUI,validateWMSMessage, timeToHoldExecute,);
 
+
+   function validateWMSMessage() {
+    const validate_inputEntity_WMSId = new WMSId(inputId_WMSId, parseFloat(inputEntity_WMSId.value));
+    const validate_inputEntity_WMSTaskNumber = new WMSTaskNumber(inputId_WMSTaskNumber, parseFloat(inputEntity_WMSTaskNumber.value));
+    const validate_inputEntity_WMSCoordinate = new WMSCoordinate(inputId_WMSCoordinate, parseFloat(inputEntity_WMSCoordinate.value));
+    const validate_inputEntity_WMSEchoStatus = new WMSEchoStatus(inputId_WMSEchoStatus, parseFloat(inputEntity_WMSEchoStatus.value));
+
+    const validationErrors = [...validate_inputEntity_WMSId.validate(), ...validate_inputEntity_WMSTaskNumber.validate(), ...validate_inputEntity_WMSCoordinate.validate(), ...validate_inputEntity_WMSEchoStatus.validate()];
+    if (validationErrors.length > 0) {
+        console.error('Validation errors:', validationErrors);
+        return false;
+    }
+    return true;
+    }
+
+   // Attach event listeners for PressAndHoldButton
+   const buttonElement = document.getElementById(elementId);
+   buttonElement.addEventListener('mousedown', button.handleMouseDown);
+   buttonElement.addEventListener('touchstart', button.handleMouseDown);
 
 
     
     return { button, input_WMSId, input_WMSTaskNumber, input_WMSEchoStatus, input_WMSCoordinate};
 
 }
+
+
+

@@ -40,7 +40,7 @@ class InputFieldNoLabelCoordinate {
     try {
       
       this.usecase.update(this.id, value);
-      console.log('value', value);
+      // console.log('value', value);
       const errors = this.entity.validate();
       if (errors.length > 0) {
         inputR.value = '';
