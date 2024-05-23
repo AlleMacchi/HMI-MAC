@@ -138,7 +138,7 @@ var DataWriteList = [
     {
         id: 28,
         url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSEchoStatus.html",
-        name: '"WMSToShuttle".Message.EchoStatus'
+        name: '"WMSToShuttle".Message.ECHOStatus'
     },
     {
         id: 29,

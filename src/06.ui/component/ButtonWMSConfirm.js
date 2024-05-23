@@ -1,6 +1,6 @@
 
 import { NormalButtonUI } from '../js/NormalButtonUI.js';
-import { WMSConfirm } from '../../01.entities/wms-confirm/WMSConfirm.js';
+import {  WMSConfirm } from '../../01.entities/wms-confirm/wmsConfirm.js';
 import { InputFieldNoLabel } from '../../99.utils/ui/InputFieldNoLabel.js';
 import { WMSId } from '../../01.entities/wms-id/wmsId.js';
 import { PressAndHoldButton } from '../../99.utils/ui/PressAndHoldButton.js';
