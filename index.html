@@ -146,7 +146,7 @@
                   <div class="btn_circle_inlet">
                     <button
                       id="buttonStart"
-                      class="btn_cmd text-small text-grey"
+                      class="btn_cmd text-small text-grey buttonStart"
                     >
                       START
                     </button>
@@ -159,7 +159,7 @@
                   <div class="btn_circle_inlet">
                     <button
                       id="buttonStop"
-                      class="btn_cmd text-small text-grey"
+                      class="btn_cmd text-small text-grey buttonStop"
                     >
                       STOP
                     </button>
@@ -170,7 +170,7 @@
 
             <!-- Command RESET  -->
             <div class="container-reset">
-              <button id="buttonReset" class="text-small btn-normal text-grey">
+              <button id="buttonReset" class="text-small btn-normal text-grey buttonReset">
                 RESET
               </button>
             </div>
@@ -598,10 +598,10 @@
                 <label>Physical Position To Be Set</label>
                 <span id="physicalPosition">0.0mm</span>
                 <input
-                type="text"
-                id="positionInput"
-                placeholder="Set position"
-              />
+                  type="text"
+                  id="positionInput"
+                  placeholder="Set position"
+                />
               </div>
               <div class="info" id="positionsInputDiv">
                 <label for="positionInput"></label>
@@ -781,11 +781,46 @@
               </tbody>
             </table>
           </div>
-          <!-- <div class="card"></div>
-            <div class="card"></div>
-            <div class="card">Section #5</div>
-            <div class="card"></div>
-            <div class="card"></div> -->
+          <div class="card">
+            <div id="cardSpaceModifier">
+            <h5 class="text-medium text-light-grey">GENERAL COMMANDS</h5>
+            <div class="container-general-command-btn">
+              <!-- Command START  -->
+              <div class="btn_cmd_container">
+                <div id="btn_circle_out_START" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button
+                      id="buttonStart"
+                      class="btn_cmd text-small text-grey buttonStart"
+                    >
+                      START
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Command STOP  -->
+              <div class="btn_cmd_container">
+                <div id="btn_circle_out_STOP" class="btn_circle_outlet">
+                  <div class="btn_circle_inlet">
+                    <button
+                      id="buttonStop"
+                      class="btn_cmd text-small text-grey buttonStop"
+                    >
+                      STOP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Command RESET  -->
+            <div class="container-reset">
+              <button id="buttonReset" class="text-small btn-normal text-grey buttonReset">
+                RESET
+              </button>
+            </div>
+          </div>
+        </div>
         </section>
         <section class="section" id="section6">
           <!-- Card 1: WMS to PLC -->
