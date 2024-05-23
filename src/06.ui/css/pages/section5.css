@@ -1,0 +1,44 @@
+
+
+#alarmTable{
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+
+
+#alarmTable th{
+    color: var(--white);
+    text-shadow: var(--text-shadow);
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    /* border-radius: 10px 10px 0px 0px; */
+    text-align: left;
+    background-color: var(--black)
+}
+
+#alarmTable th:first-child{
+    border-radius: 10px 0px 0px 0px;
+    width: 25%;
+}
+
+#alarmTable th:nth-child(2){
+    width: 15%;
+}
+
+#alarmTable th:last-child{
+    border-radius: 0px 10px 0px 0px;
+}
+
+#alarmTable td{
+    color: var(--white);
+    text-shadow: white;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    /* box-shadow: var(--card-shadow); */
+    /* border-radius: 0px 0px 10px 10px; */
+}
+
