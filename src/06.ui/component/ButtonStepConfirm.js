@@ -18,7 +18,18 @@ export function StepConfirmButton(){
     const input = new InputFieldNoLabel(inputId, inputField, inputElementId, inputEntity);
 
     // Instantiate PressAndHoldButton after InputFieldNoLabel
-    const button = new PressAndHoldButton(id, elementId, entity, elementUI);
+    const button = new PressAndHoldButton(id, elementId, entity, elementUI, validateNewStep);
+
+    // Validation function for NewStep
+    function validateNewStep() {
+        const newStepInstance = new NewStep(inputId, parseFloat(inputEntity.value), inputEntity.unit);
+        const validationErrors = newStepInstance.validate();
+        if (validationErrors.length > 0) {
+            console.error('Validation errors:', validationErrors);
+            return false;
+        }
+        return true;
+    }
 
     // Attach event listeners for PressAndHoldButton
     const buttonElement = document.getElementById(elementId);
