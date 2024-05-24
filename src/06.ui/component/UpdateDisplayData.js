@@ -8,9 +8,10 @@ import { Dropdown } from '../js/Dropdown.js';
 var direction = 0;
 const actualPositionUI = new MapActualPosition('chessboard','actual-position','row', 'col', '');
 const actualPositionSection2 = new MapActualPosition('chessboard-section2','actual-position-section2','section2-row', 'section2-col','section2-logical-position',GenerateLogicalPositionString,direction,'section2-logical-position-mm');
+const actualPositionSection3 = new MapActualPosition('chessboard-section3','actual-position-section3','section3-row', 'section3-col','section3-logical-position',GenerateLogicalPositionString,direction,'section3-logical-position-mm');
 var dropdown = new Dropdown("dropdown-toggle_Section3", "dropdown-menu_Section3", actualPositionSection2);
 // to Update drop down in Positions
-var dropdown2 = new Dropdown("dropdown-toggle_Section_Position", "dropdown-menu_Section_Position", actualPositionSection2);
+var dropdown2 = new Dropdown("dropdown-toggle_Section_Position", "dropdown-menu_Section_Position", actualPositionSection3);
 // to Update drop down in WMS
 var dropdown3 = new Dropdown("dropdown-toggle_Section5", "dropdown-menu_Section5", actualPositionSection2);
 
@@ -33,9 +34,11 @@ export function UpdateDisplayData(data){
     if (config.isMotherShuttle) {
         actualPositionUI.update(Row ,Col,Row , Col);  
         actualPositionSection2.update(Row ,Col,Row , Col);
+        actualPositionSection3.update(Row ,Col,Row , Col);
     } else {
         actualPositionUI.update(Row ,Col,Row , config.MotherPositionColumn);  
-        actualPositionSection2.update(Row ,Col,Row , config.MotherPositionColumn); 
+        actualPositionSection2.update(Row ,Col,Row , config.MotherPositionColumn);
+        actualPositionSection3.update(Row ,Col,Row , config.MotherPositionColumn); 
     }
     
 
@@ -46,4 +49,4 @@ export function UpdateDisplayData(data){
   
 }
 
-export { actualPositionUI, actualPositionSection2, dropdown, dropdown2, dropdown3};
+export { actualPositionUI, actualPositionSection2,actualPositionSection3, dropdown, dropdown2, dropdown3};

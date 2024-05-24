@@ -43,10 +43,15 @@ const App = {
     ButtonsJoystick(1);
     StepSelection();
     StepConfirmButton();
-    ButtonLogicalPositionConfirm();
-    ButtonPhysicalPositionConfirm();
-    ButtonSelectionLogicalPosition();
-    ButtonSelectionPhysicalPosition();
+    ButtonLogicalPositionConfirm(0);
+    ButtonLogicalPositionConfirm(1);
+    ButtonPhysicalPositionConfirm(0);
+    ButtonPhysicalPositionConfirm(1);
+    ButtonSelectionLogicalPosition(0);
+    ButtonSelectionLogicalPosition(1);
+    ButtonSelectionPhysicalPosition(0);
+    ButtonSelectionPhysicalPosition(1);
+    
     ButtonsPages();
     LoginButton();
     ButtonClosePopup();

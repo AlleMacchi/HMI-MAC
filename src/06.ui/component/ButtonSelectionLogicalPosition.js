@@ -1,15 +1,17 @@
 import { SelLogicalPosition } from '../../01.entities/selection-logical-button/SelLogicalPosition.js';
 import { PressButtonToSetTrue } from '../../99.utils/ui/PressButtonToSetTrue.js'; 
-import { TwoButtonPressedToggle } from '../../99.utils/ui/TwoButtonPressedToggle.js';
+import { TwoButtonPressedToggle, TwoButtonPressedToggleByClass } from '../../99.utils/ui/TwoButtonPressedToggle.js';
+import { PressButtonToSetTrueByClass } from '../../99.utils/ui/PressButtonToSetTrueByClass.js';
 
 
-export function ButtonSelectionLogicalPosition(){
+export function ButtonSelectionLogicalPosition(elementN){
     const id = 10; // Id use for config DataWriteList.js
     const elementId = 'buttonSelectionLogicalPosition'; // Id of button 
     const entity = new SelLogicalPosition();
+    const elementClass = 'buttonSelectionLogicalPosition';
    
 
-    const button = new PressButtonToSetTrue(id, elementId, entity,TwoButtonPressedToggle,'buttonSelectionLogicalPosition','buttonSelectionPhysicalPosition');
+    const button = new PressButtonToSetTrueByClass(id, elementClass,elementN, entity,TwoButtonPressedToggleByClass,'buttonSelectionLogicalPosition','buttonSelectionPhysicalPosition');
 
 
     return button;

@@ -6,10 +6,11 @@ class SetLogicalPosition {
     this.value = value;
     this.currentPositionId = currentPositionId;
     this.isMotherShuttle = isMotherShuttle;
+    // this.inputElementN = inputElementN;
   }
 
   validate() {
-    const currentPositionValue = document.getElementById(this.currentPositionId ).textContent;
+    const currentPositionValue = document.getElementById(this.currentPositionId).textContent;
     const valueToSet = this.value;
 
     const ValueRow = ExtractInfoFromStringPosition(valueToSet).row;

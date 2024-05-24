@@ -1,4 +1,4 @@
-import { actualPositionUI, actualPositionSection2, dropdown } from './UpdateDisplayData.js';
+import { actualPositionUI, actualPositionSection2, actualPositionSection3 } from './UpdateDisplayData.js';
 
 
 
@@ -43,6 +43,7 @@ export function ButtonsPages(){
     document.getElementById("buttonOpenAlarmsPage").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
         actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section5");
         document.querySelectorAll(".buttonNavToPages").forEach(button => {
             button.classList.remove("selected");
@@ -53,6 +54,7 @@ export function ButtonsPages(){
     document.getElementById("buttonSection1").addEventListener("click", function() {
         
         actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section1", function() {
              actualPositionUI.enableAutoScroll();
              
@@ -66,6 +68,7 @@ export function ButtonsPages(){
     document.getElementById("buttonSection2").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
         actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section2");
         
         
@@ -74,20 +77,28 @@ export function ButtonsPages(){
     document.getElementById("buttonSection3").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
         actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section3");
     });
     
     document.getElementById("buttonSection4").addEventListener("click", function() {
         actualPositionUI.disableAutoScroll();
         actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section4");
     });
     
     // document.getElementById("buttonSection5").addEventListener("click", function() {
+    //     actualPositionUI.disableAutoScroll();
+    //     actualPositionSection2.disableAutoScroll();
+    //     actualPositionSection3.disableAutoScroll();
     //     scrollToSection("section5");
     // });
     
     document.getElementById("buttonSection6").addEventListener("click", function() {
+        actualPositionUI.disableAutoScroll();
+        actualPositionSection2.disableAutoScroll();
+        actualPositionSection3.disableAutoScroll();
         scrollToSection("section6");
     });
 }
