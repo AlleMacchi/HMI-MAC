@@ -75,6 +75,7 @@ export class MapActualPosition {
                         const displayElement = document.getElementById(this.displayPositionId);
                         const displayStoreElement = document.getElementById(this.displayStorePositionId);
                         
+                        
                         if (colIndex !== 0) {
                             const txtRow = document.getElementById(this.rowElementId);
                             if (txtRow) {
@@ -114,6 +115,17 @@ export class MapActualPosition {
                                 const displayElement = document.getElementById(this.displayPositionId);
                                 if (displayElement) {
                                     displayElement.innerHTML = this.callback(this.RowSelected, this.ColSelected, this.direction);
+                                    if(this.tableId == 'chessboard-section3'){
+                                       const logicalPosString_section3 = document.getElementById('logicalPosition_section3')
+                                       const logicalPosDir_section3 = document.getElementById('logicalPosDir_section3')
+                                       const logicalPosRow_section3 = document.getElementById('logicalPosRow_section3')
+                                       const logicalPosCol_section3 = document.getElementById('logicalPosCol_section3')
+
+                                       logicalPosString_section3.innerHTML = displayElement.innerHTML;
+                                       logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
+                                        logicalPosRow_section3.innerHTML = this.RowSelected;
+                                        logicalPosCol_section3.innerHTML = this.ColSelected;
+                                    }
                                     // Exit from click event
                                     return;
                                 }

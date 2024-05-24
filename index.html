@@ -536,7 +536,21 @@
             <div class="SetRowInfo">
               <div class="info">
                 <label for="logicalPosition">Logical Position</label>
-                <span>LA01R001A03</span>
+                <span id="logicalPosition_section3">Not Selected</span>
+              </div>
+              <div class="info"> 
+                <label>
+                  Direction: <span id="logicalPosDir_section3" class="text-blue"></span>
+                </label>
+                <label>
+                Row: <span id="logicalPosRow_section3" class="text-blue"></span>
+              </label>
+              <label>
+                Column: <span id="logicalPosCol_section3" class="text-blue"></span>
+              </label></div>
+              <div class="info positionsDiv">
+                <label>Position Saved</label>
+                <span id="positionSaved">0 mm</span>
                 <button
                   class="btn-normal text-grey text-small"
                   id="buttonSetPosition"
@@ -544,11 +558,7 @@
                   Read
                 </button>
               </div>
-              <div class="info positionsDiv">
-                <label>Position Saved</label>
-                <span id="positionSaved">12358 mm</span>
-              </div>
-              <hr id="hr-section3" />
+              <!-- <hr id="hr-section3" /> -->
               <div class="info">
                 <label>Actual Position</label>
                 <span id="actualPosition">0.0mm</span>
