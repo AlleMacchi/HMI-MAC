@@ -116,3 +116,42 @@
     background-color: transparent;
     color: var(--white);
   }
+
+
+
+  #chessboard-section3 {
+    height: 1000px;
+    width: 1000px;
+    border-collapse: collapse;
+  }
+  
+  #chessboard-section3 td,th {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px;
+    text-align: center;
+
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  
+  #chessboard-section3 th {
+    position: sticky;
+    top: 20px;
+    background-color: transparent;
+    color: var(--white);
+  }
+  
+  #chessboard-section3 th:first-child {
+    left: 0;
+    z-index: 1;
+  }
+  
+  #chessboard-section3 td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: transparent;
+    color: var(--white);
+  }
+
+  

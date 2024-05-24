@@ -3,8 +3,8 @@ import { UpdateValueRepository } from '../../03.repositories/entities/UpdateValu
 import { plcCommunicationManager } from '../../02.usecases/communication/PLCcommunication.js';
 
 export class PressAndHoldButtonByClass {
-    constructor(id,elementId,elementN, entity, elementUI, validateFn = () => true,timeToHold = 0) {
-        this.element = document.getElementsByClassName(elementId)[elementN];
+    constructor(id,elementClass,elementN, entity, elementUI, validateFn = () => true,timeToHold = 0) {
+        this.element = document.getElementsByClassName(elementClass)[elementN];
         this.elementUI = elementUI;
         this.pressed = false;
         this.id = id;
