@@ -121,7 +121,7 @@ class InputFieldNoLabelString {
             throw new Error(errorMessage);
           }
         }
-        this.usecaseReadSavePositionNoBoolean.update(23,logicalPosition);
+        this.usecaseReadSavePositionNoBoolean.update(21,logicalPosition);
         this.usecase.update(this.id, value);
         this.usecaseReadSavePosition.update(23,true);
       }
