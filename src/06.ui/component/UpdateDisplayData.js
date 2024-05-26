@@ -17,6 +17,7 @@ var dropdown3 = new Dropdown("dropdown-toggle_Section5", "dropdown-menu_Section5
 
 export function UpdateDisplayData(data){
     const currentPosition = document.getElementById('current-position');
+    const actualPositionMMSection3 = document.getElementById('actual-position-mm-section3');
     const currentLogicalPosition = document.getElementById('current-logical-position');
     const currentStatus = document.getElementById('status-positioning');
 
@@ -25,6 +26,7 @@ export function UpdateDisplayData(data){
     const Dir = data.StatusCarrierActPositon_logicalDir;
 
     currentPosition.innerHTML = data.CarrierActPosition_mm + ' mm';
+    actualPositionMMSection3.innerHTML = data.CarrierActPosition_mm + ' mm';
     if (Row !=0 && Col !=0 ) {
         currentLogicalPosition.innerHTML =  GenerateLogicalPositionString(Row,Col,Dir);
     } else {

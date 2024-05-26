@@ -13,14 +13,20 @@ class SetLogicalPosition {
     const currentPositionValue = document.getElementById(this.currentPositionId).textContent;
     const valueToSet = this.value;
 
-    const ValueRow = ExtractInfoFromStringPosition(valueToSet).row;
-    const ValueCol = ExtractInfoFromStringPosition(valueToSet).column;
-    const ValueDir = ExtractInfoFromStringPosition(valueToSet).direction;
-
-    const CurrentRow = ExtractInfoFromStringPosition(currentPositionValue).row;
-    const CurrentCol = ExtractInfoFromStringPosition(currentPositionValue).column;
-
     const errors = [];
+    if (typeof valueToSet == "number") {
+      errors.push("The value must be a string.");
+    }
+    if (typeof valueToSet == "string") {
+      const regex = /^A-L01R\d{3}[AB]\d{2}$/;
+      if (!valueToSet.match(regex)) {
+        errors.push(
+          "Please select a position on the table of Rows and Columns."
+        );
+      }
+      return errors;
+    }
+
     if (valueToSet !=null || currentPositionValue !=null) { 
       if (this.isMotherShuttle) 
         {
@@ -40,6 +46,16 @@ class SetLogicalPosition {
     }else{
       errors.push("Data invalid.");
     }
+
+    const ValueRow = ExtractInfoFromStringPosition(valueToSet).row;
+    const ValueCol = ExtractInfoFromStringPosition(valueToSet).column;
+    const ValueDir = ExtractInfoFromStringPosition(valueToSet).direction;
+
+    const CurrentRow = ExtractInfoFromStringPosition(currentPositionValue).row;
+    const CurrentCol = ExtractInfoFromStringPosition(currentPositionValue).column;
+
+
+    
     return errors;
   }
 }

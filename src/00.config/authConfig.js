@@ -8,20 +8,22 @@ const userLogin = {
 
 // configure controls by html id
 
-const controls = [
-  "joystick-section",
+const controlsId = [
   "steps-section",
-  "commandsLogicalPhysical-sections",
   "buttonSection6"
 ];
 
+
+const controlsClass = [
+  "joystick-section",
+  "commandsLogicalPhysical-sections",
+];
+
+
 //Configure isable controls list based on the user and controls ids
-const controlsToDisable = {
+const controlsIdToDisable = {
   operator: [
-    "selector-section",
-    "joystick-section",
     "steps-section",
-    "commandsLogicalPhysical-sections",
     "buttonSection6"
   ],
   supervisor: [
@@ -33,4 +35,15 @@ const controlsToDisable = {
   PRG: []
 };
 
-export { userLogin, controls, controlsToDisable };
+
+const controlsClassToDisable = {
+  operator: [
+    "joystick-section",
+    "commandsLogicalPhysical-sections",
+  ],
+  supervisor: [],
+  maintenance: [],
+  PRG: []
+};
+
+export { userLogin, controlsId, controlsIdToDisable, controlsClass, controlsClassToDisable};

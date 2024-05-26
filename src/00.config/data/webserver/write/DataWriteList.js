@@ -144,7 +144,46 @@ var DataWriteList = [
         id: 29,
         url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWMSExecute.html",
         name: '"WMSToShuttle".Message.Execute'
+    },
+    {
+        id: 30,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteSourceRow.html",
+        name: '"HMI_PLC".FromHMI.Position.sourceRow'
+    },
+    {
+        id: 31,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteFromRow.html",
+        name: '"HMI_PLC".FromHMI.Position.fromRow'
+    },
+    {
+        id: 32,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteToRow.html",
+        name: '"HMI_PLC".FromHMI.Position.toRow'
+    },
+    {
+        id: 33,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteSourceCol.html",
+        name: '"HMI_PLC".FromHMI.Position.sourceCol'
+    },
+    {
+        id: 34,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteFromCol.html",
+        name: '"HMI_PLC".FromHMI.Position.fromCol'
+    },
+    {
+        id: 35,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteToCol.html",
+        name: '"HMI_PLC".FromHMI.Position.toCol'
+    },
+    {
+        id: 36,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteUpdateMulti.html",
+        name: '"HMI_PLC".FromHMI.Position.updateMulti'
     }
+
+
+
+
 ];
 
 export { DataWriteList };

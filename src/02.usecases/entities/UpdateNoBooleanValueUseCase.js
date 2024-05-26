@@ -15,6 +15,7 @@ class UpdateNoBooleanValueUseCase{
       if (errors.length > 0) {
           const errorMessage = errors.join('<br>');
           ShowPopup(errorMessage);
+          throw new Error(errorMessage);
           return;
       } else {
           this.repository.update(id, value);

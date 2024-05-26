@@ -120,11 +120,23 @@ export class MapActualPosition {
                                        const logicalPosDir_section3 = document.getElementById('logicalPosDir_section3')
                                        const logicalPosRow_section3 = document.getElementById('logicalPosRow_section3')
                                        const logicalPosCol_section3 = document.getElementById('logicalPosCol_section3')
-
-                                       logicalPosString_section3.innerHTML = displayElement.innerHTML;
-                                       logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
+                                        const positionSavedLabel = document.getElementById('positionSavedMM');
+                                        const positionToBeSetLabelmm = document.getElementById('physicalPosition');
+                                        const positionToBeSetLabeinput = document.getElementById('positionInput');
+                                        const SourceRowInput = document.getElementById('sourceRowInput');
+                                        const MessageMultiConfirm = document.getElementById('messageSpan');
+                                        
+                                        positionSavedLabel.textContent = '-';
+                                        positionToBeSetLabelmm.textContent = '-';
+                                        positionToBeSetLabeinput.value = '';
+                                        logicalPosString_section3.innerHTML = displayElement.innerHTML;
+                                        logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
                                         logicalPosRow_section3.innerHTML = this.RowSelected;
                                         logicalPosCol_section3.innerHTML = this.ColSelected;
+                                        SourceRowInput.value = this.RowSelected;
+                                        MessageMultiConfirm.innerHTML = '-';
+
+
                                     }
                                     // Exit from click event
                                     return;
