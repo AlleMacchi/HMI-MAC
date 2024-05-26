@@ -106,8 +106,11 @@ class InputFieldsMultiWithLabel {
         this.usecase.update(this.sourceId, sourceValue);
         this.usecase.update(this.fromId, fromValue);
         this.usecase.update(this.toId, toValue);
+        
+        setTimeout(() => {
         this.updateSet.update(this.id,true);
-      
+        }, 300);
+
       this.request = true;
             
       if (this.displayId != null) {

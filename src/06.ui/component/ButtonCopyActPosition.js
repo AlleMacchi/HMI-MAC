@@ -37,7 +37,7 @@ function CopyActPosition(fromId, toId) {
     console.log("Content to copy:", number);
 
     // Set the extracted number to the 'to' input field's value
-    copyTo.value = number;
+    copyTo.value = parseFloat(number);
 
     // Log the updated value
     console.log("Updated input value:", copyTo.value);

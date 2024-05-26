@@ -5,6 +5,7 @@ import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 import { ReadSavedPosition } from '../../01.entities/read-saved-position/ReadSavedPosition.js';
 import { UpdateBooleanValueUseCase } from '../../02.usecases/entities/UpdateBooleanValueUseCase.js';
 import { ShowPopup } from './Popup.js';
+import { SetPhysicalPosition } from '../../01.entities/set-physical-position/SetPhysicalPosition.js';
 
 class InputFieldNoLabelString {
   constructor(id, inputId, elementId, entity, elementUI, displayId) {
@@ -85,14 +86,13 @@ class InputFieldNoLabelString {
     this.elementUI.showUnpressed();
     const input = document.getElementById(this.inputId);
     let value = '';
-    let logicalPosition = '';
+    let logicalPosition = logicalPosition = document.getElementById('logicalPosition_section3').textContent;
+    
     if (input.tagName === 'INPUT') {
       if(this.id == 22){
       value = parseFloat(input.value);
-      logicalPosition = document.getElementById('logicalPosition_section3').textContent;
     }else{ 
-        value = input.value;
-        
+        value = input.value;  
       }
     }else{
       // in this case value and logicalPosition are the same
@@ -102,7 +102,15 @@ class InputFieldNoLabelString {
     
     
     try {
-      const errors = this.entity.validate();
+      
+      //checking before writing will trhow an error if the value is not valid before try writing
+      // the other Object were not passed paramenter To Do another validate where pass parameters (poly)
+      // this is for the Physical set position (id )
+      const tempEnitySetPhysicalPosition = new SetPhysicalPosition(1, value);
+      tempEnitySetPhysicalPosition.validate();
+      // this is for the logical set position
+      const tempEnitylogicalPosition = new ReadSavedPosition(1, logicalPosition);
+      tempEnitySetPhysicalPosition.validate();
 
       if ( this.id == 21){
         this.usecase.update(this.id, value);
@@ -110,17 +118,6 @@ class InputFieldNoLabelString {
       }
 
       if ( this.id == 22){
-        if (typeof logicalPosition == "string") {
-          const regex = /^A-L01R\d{3}[AB]\d{2}$/;
-          if (!logicalPosition.match(regex)) {
-            errors.push(
-              "Please select a position on the table of Rows and Columns."
-            );
-            const errorMessage = errors.join('<br>');
-            ShowPopup(errorMessage);
-            throw new Error(errorMessage);
-          }
-        }
         this.usecaseReadSavePositionNoBoolean.update(21,logicalPosition);
         this.usecase.update(this.id, value);
         this.usecaseReadSavePosition.update(23,true);
@@ -133,6 +130,7 @@ class InputFieldNoLabelString {
         savedPosition.innerHTML = '-';
       }
 
+      const errors = this.entity.validate();
       if (errors.length > 0) {
         this.elementUI.showUnpressed();
         const Position = document.getElementById(this.displayId);

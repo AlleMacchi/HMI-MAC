@@ -16,6 +16,9 @@ class ReadSavedPosition {
         errors.push(
           "Please select a position on the table of Rows and Columns."
         );
+        const errorMessage = errors.join('<br>');
+          ShowPopup(errorMessage);
+          throw new Error(errorMessage);
       }
     }
 
