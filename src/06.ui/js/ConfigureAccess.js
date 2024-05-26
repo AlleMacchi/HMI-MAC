@@ -1,4 +1,4 @@
-import {  controls, controlsToDisable} from '../../00.config/authConfig.js'
+import {  controlsId, controlsIdToDisable, controlsClass, controlsClassToDisable} from '../../00.config/authConfig.js'
 export function configureAccess(user) {
     // if no login then operator
     if (user == "") {
@@ -17,7 +17,7 @@ export function configureAccess(user) {
     // console.log("Access level: ", user);
   
     // Enable all Controls (from previous interactions)
-    controls.forEach((id) => {
+    controlsId.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
         element.disabled = false;
@@ -26,10 +26,22 @@ export function configureAccess(user) {
         element.style.cursor = "auto";
       }
     });
+
+    controlsClass.forEach((className) => {
+      const elements = document.getElementsByClassName(className);
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].disabled = false;
+        elements[i].style.opacity = 1;
+        elements[i].style.pointerEvents = "auto";
+        elements[i].style.cursor = "auto";
+      }
+    });
+
+
   
   
     // Disable buttons based on the user and the realted list
-    controlsToDisable[user].forEach((id) => {
+    controlsIdToDisable[user].forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
         element.disabled = true;
@@ -38,4 +50,16 @@ export function configureAccess(user) {
         element.style.cursor = "not-allowed";
       }
     });
+
+    controlsClassToDisable[user].forEach((className) => {
+      const elements = document.getElementsByClassName(className);
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].disabled = true;
+        elements[i].style.opacity = 0.3;
+        elements[i].style.pointerEvents = "none";
+        elements[i].style.cursor = "not-allowed";
+      }
+    });
+
+
   }
