@@ -1,8 +1,6 @@
 import config from '../../00.config/config.js';
 import { SetLogicalPosition} from '../../01.entities/set-logical-position/SetLogicalPosition.js'
-import { InputFieldNoLabelString } from '../../99.utils/ui/InputFieldNoLabelString.js'; 
 import { InputFieldNoLabelStringByClass } from '../../99.utils/ui/InputFieldNoLabelStringByClass.js';
-import { NormalButtonUI } from '../js/NormalButtonUI.js';
 import { NormalButtonUIByClass } from '../js/NormalButtonUIByClass.js';
 
 export function ButtonLogicalPositionConfirm(elementN){

@@ -43,7 +43,6 @@ export function ButtonWMSConfirm(){
     const inputCol = 'message_coordinateCol_input';
     const inputEntity_WMSCoordinate = new WMSCoordinate();
     const input_WMSCoordinate = new InputFieldNoLabelCoordinate(inputId_WMSCoordinate, inputRow , inputDir, inputCol, inputElementId_WMSCoordinate, inputEntity_WMSCoordinate);
-    // const input_WMSCoordinate = new InputFieldNoLabelString(inputId_WMSCoordinate,inputField_WMSCoordinate , inputElementId_WMSCoordinate, inputEntity_WMSCoordinate, elementUI);
 
     //Input Echo Status
     const inputId_WMSEchoStatus = 28; // Id use for config DataWriteList.js

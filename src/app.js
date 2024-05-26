@@ -12,11 +12,6 @@ import { ButtonLogicalPositionConfirm } from "./06.ui/component/ButtonLogicalPos
 import { ButtonPhysicalPositionConfirm } from "./06.ui/component/ButtonPhysicalPositionConfirm.js";
 import { ButtonSelectionLogicalPosition } from "./06.ui/component/ButtonSelectionLogicalPosition.js";
 import { ButtonSelectionPhysicalPosition } from "./06.ui/component/ButtonSelectionPhysicalPosition.js";
-import { ButtonJoystickUp } from "./06.ui/component/ButtonJoystickUp.js";
-import { ButtonJoystickDown } from "./06.ui/component/ButtonJoystickDown.js";
-import { ButtonJoystickLeft } from "./06.ui/component/ButtonJoystickLeft.js";
-import { ButtonJoystickRight } from "./06.ui/component/ButtonJoystickRight.js";
-import { ButtonJoystickCenter } from "./06.ui/component/ButtonJoystickCenter.js";
 import { configureAccess } from "./06.ui/js/ConfigureAccess.js";
 import { ButtonsPages } from "./06.ui/component/ButtonsPages.js";
 import { LoginButton } from "./06.ui/component/ButtonLogin.js";
@@ -25,6 +20,9 @@ import { LegendButton } from "./06.ui/component/ButtonLegend.js";
 import { ButtonWMSConfirm } from "./06.ui/component/ButtonWMSConfirm.js";
 import { ButtonsCommand } from "./06.ui/component/ButtonsCommand.js";
 import { ButtonsJoystick } from "./06.ui/component/ButtonsJoystick.js";
+import { ButtonReadPositionMM } from "./06.ui/component/ButtonReadPositionMM.js";
+import { ButtonCopyActPosition } from "./06.ui/component/ButtonCopyActPosition.js";
+import { ButtonSetPhysicalPositionConfirm } from "./06.ui/component/ButtonSetPhysicalPositionConfirm.js";
 
 const App = {
   init: function () {
@@ -36,7 +34,7 @@ const App = {
       UpdateDisplay();
     }, 1000);
   },
-  components: function (data) {
+  components: function () {
     ButtonsCommand(0);
     ButtonsCommand(1);
     ButtonsJoystick(0);
@@ -51,7 +49,9 @@ const App = {
     ButtonSelectionLogicalPosition(1);
     ButtonSelectionPhysicalPosition(0);
     ButtonSelectionPhysicalPosition(1);
-    
+    ButtonReadPositionMM();
+    ButtonCopyActPosition();
+    ButtonSetPhysicalPositionConfirm();
     ButtonsPages();
     LoginButton();
     ButtonClosePopup();

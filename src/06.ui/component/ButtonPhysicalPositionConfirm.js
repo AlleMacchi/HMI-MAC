@@ -8,7 +8,7 @@ export function ButtonPhysicalPositionConfirm(elementN){
     const elementUI = new NormalButtonUI(elementId);
     const elementClass = 'buttonConfirmPhysicalPosition';
 
-    const inputId = 17; // Id use for config DataWriteList.js
+    const inputId = 17; // Id use for config 17.js
     const inputElementId = elementId; // Id of button 
     const inputField = 'setPositionPhysical';
     const inputEntity = new SetPhysicalPosition(inputId,0,'mm');

@@ -537,6 +537,7 @@
               <div class="info">
                 <label for="logicalPosition">Logical Position</label>
                 <span id="logicalPosition_section3">Not Selected</span>
+                <div id="NoButton"></div>
               </div>
               <div class="info"> 
                 <label>
@@ -550,10 +551,10 @@
               </label></div>
               <div class="info positionsDiv">
                 <label>Position Saved</label>
-                <span id="positionSaved">0 mm</span>
+                <span id="positionSavedMM">-</span>
                 <button
                   class="btn-normal text-grey text-small"
-                  id="buttonSetPosition"
+                  id="buttonShowPositionMM"
                 >
                   Read
                 </button>
@@ -561,7 +562,7 @@
               <!-- <hr id="hr-section3" /> -->
               <div class="info">
                 <label>Actual Position</label>
-                <span id="actualPosition">0.0mm</span>
+                <span id="actual-position-mm-section3">mm</span>
                 <button
                   class="btn-normal text-grey text-small"
                   id="buttonCopyPosition"
@@ -571,7 +572,7 @@
               </div>
               <div class="info">
                 <label>Physical Position To Be Set</label>
-                <span id="physicalPosition">0.0mm</span>
+                <span id="physicalPosition">-</span>
                 <input
                   type="text"
                   id="positionInput"
@@ -711,9 +712,10 @@
           <div class="card" id="multipleSetRows">
             <h3 class="card-title-section3">MULTIPLE SET ROWS</h3>
             <div class="SetRowInfo">
-              <div class="info">
+              <div class="info info-noButton">
                 <label for="sourceRow">Source Row</label>
                 <input type="text" id="sourceRow" placeholder="Row" />
+                <div id="NoButton"></div>
               </div>
               <div class="info">
                 <label>Copy From Rows:</label>
