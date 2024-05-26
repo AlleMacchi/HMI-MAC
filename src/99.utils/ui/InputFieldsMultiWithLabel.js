@@ -92,16 +92,34 @@ class InputFieldsMultiWithLabel {
     
     try {
 
-        if ( fromValue > toValue){
-            ShowPopup('The "From" Row value must be less than the "To" Row value.');
-            return;
-        }
+        let errorsArr = [];  
+        
 
         const allInputs = [sourceValue, fromValue, toValue];
         allInputs.forEach((input, index) => {
             const tempRow = new Row(index, input);
-            tempRow.validate(index,input);
-        });
+            errorsArr.push(...tempRow.validate(index,input));
+          });
+        
+          if ( fromValue > toValue){
+            errorsArr.push('The "From" Row value must be less than the "To" Row value.');
+        }
+        
+        const errorsSet = new Set(errorsArr);
+        let errors = [...errorsSet];
+        if (errors.length > 0) {
+          this.elementUI.showUnpressed();
+          const messageConfirm = document.getElementById(this.displayId);
+          messageConfirm.innerHTML = '-';
+          ShowPopup(errors.join('<br>'));
+          return;
+        }
+
+
+        if (this.displayId != null) {
+          const messageConfirm = document.getElementById(this.displayId);
+          messageConfirm.innerHTML = '-';
+        }
         
         this.usecase.update(this.sourceId, sourceValue);
         this.usecase.update(this.fromId, fromValue);
@@ -113,19 +131,8 @@ class InputFieldsMultiWithLabel {
 
       this.request = true;
             
-      if (this.displayId != null) {
-        const messageConfirm = document.getElementById(this.displayId);
-        messageConfirm.innerHTML = '-';
-      }
     
-    // Already all checked
-    //   const errors = this.entity.validate();
-    //   if (errors.length > 0) {
-    //     this.elementUI.showUnpressed();
-    //     const messageConfirm = document.getElementById(this.displayId);
-    //     messageConfirm.innerHTML = '-';
-        
-    //   }
+      
       
     } catch (error) {
       console.error('Error setting value:', error);

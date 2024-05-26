@@ -86,8 +86,10 @@ class InputFieldNoLabelString {
     this.elementUI.showUnpressed();
     const input = document.getElementById(this.inputId);
     let value = '';
-    let logicalPosition = logicalPosition = document.getElementById('logicalPosition_section3').textContent;
+    let logicalPosition = document.getElementById('logicalPosition_section3').textContent;
     
+    // if the input is an input field, get the value not the textContent
+
     if (input.tagName === 'INPUT') {
       if(this.id == 22){
       value = parseFloat(input.value);
@@ -103,14 +105,30 @@ class InputFieldNoLabelString {
     
     try {
       
+      let errors = [];
       //checking before writing will trhow an error if the value is not valid before try writing
       // the other Object were not passed paramenter To Do another validate where pass parameters (poly)
       // this is for the Physical set position (id )
-      const tempEnitySetPhysicalPosition = new SetPhysicalPosition(1, value);
-      tempEnitySetPhysicalPosition.validate();
-      // this is for the logical set position
-      const tempEnitylogicalPosition = new ReadSavedPosition(1, logicalPosition);
-      tempEnitySetPhysicalPosition.validate();
+      
+      if ( this.id == 21){
+                const tempEntitylogicalPosition = new ReadSavedPosition(1, logicalPosition);
+        errors.push(...tempEntitylogicalPosition.validate());
+      }
+
+      if ( this.id == 22){
+        const tempEntitySetPhysicalPosition = new SetPhysicalPosition(1, value);
+        const tempEntitylogicalPosition = new ReadSavedPosition(1, logicalPosition);
+        errors.push(...tempEntitylogicalPosition.validate(),...tempEntitySetPhysicalPosition.validate());      
+      }
+
+      const Position = document.getElementById(this.displayId);
+      
+      if (errors.length > 0) {
+        this.elementUI.showUnpressed();
+        Position.innerHTML = '-';
+        ShowPopup(errors.join('<br>'));
+        return;
+      }
 
       if ( this.id == 21){
         this.usecase.update(this.id, value);
@@ -130,7 +148,7 @@ class InputFieldNoLabelString {
         savedPosition.innerHTML = '-';
       }
 
-      const errors = this.entity.validate();
+      errors.push(...this.entity.validate());
       if (errors.length > 0) {
         this.elementUI.showUnpressed();
         const Position = document.getElementById(this.displayId);

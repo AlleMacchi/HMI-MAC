@@ -31,12 +31,6 @@ class Row {
       if (this.value < 0 || this.value > config.maxRow) {
         errors.push(`The row number ${this.value} is out of the allowed range (1-${config.maxRow}).`);
       }
-      
-      if (errors.length > 0) {
-        const errorMessage = errors.join('<br>');
-        ShowPopup(errorMessage);
-        throw new Error(errorMessage);
-      }
 
       return errors;
     }
