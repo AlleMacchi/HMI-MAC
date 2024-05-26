@@ -5,11 +5,17 @@ import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 import { ReadSavedPosition } from '../../01.entities/read-saved-position/ReadSavedPosition.js';
 import { UpdateBooleanValueUseCase } from '../../02.usecases/entities/UpdateBooleanValueUseCase.js';
 import { ShowPopup } from './Popup.js';
+import { Row } from '../../01.entities/row/Row.js';
 
-class InputFieldNoLabelString {
-  constructor(id, inputId, elementId, entity, elementUI, displayId) {
-    this.id = id;
-    this.inputId = inputId;
+class InputFieldsMultiWithLabel {
+  constructor(sourceId,fromId,toId,updateId,inputSourceId,inputFromId,inputToId, elementId, entity,elementUI, displayId) {
+    this.id = updateId;
+    this.sourceId = sourceId;
+    this.fromId = fromId;
+    this.toId = toId;
+    this.inputSourceId = inputSourceId;
+    this.inputFromId = inputFromId;
+    this.inputToId = inputToId;
     this.elementId = elementId;
     this.entity = entity;
     this.elementUI = elementUI;
@@ -23,12 +29,10 @@ class InputFieldNoLabelString {
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.findOne = this.findOne.bind(this);
     this.request = false;
-    this.intervalId = setInterval(this.updatePositionLabel.bind(this), 1000);
+    this.intervalId = setInterval(this.updateMessageLabel.bind(this), 1000);
     
     this.element = document.getElementById(this.elementId);
-    this.readSavePositionEntity = new ReadSavedPosition();
-    this.usecaseReadSavePositionNoBoolean = new UpdateNoBooleanValueUseCase(this.repository, this.readSavePositionEntity);
-    this.usecaseReadSavePosition = new UpdateBooleanValueUseCase(this.repository, this.readSavePositionEntity);
+    this.updateSet = new UpdateBooleanValueUseCase(this.repository, this.entity);
 
     this.element.addEventListener('mousedown', this.handleMouseDown);
     this.element.addEventListener('touchstart', this.handleMouseDown);
@@ -47,22 +51,16 @@ class InputFieldNoLabelString {
     }
   }
 
-  async updatePositionLabel() {
+  async updateMessageLabel() {
     if (this.request) {
       const PositionResult = await this.findOne(1);  
       const Result = decodedString( PositionResult.PLC_PositionResult); 
       if (Result > 0 && Result < 99) {
-        const PositionResult_mm = await this.findOne(2);
-        const Position = document.getElementById(this.displayId);
-        Position.innerHTML = PositionResult_mm.PLC_PositionResult_mm + ' mm';
-        if ( this.id == 21){
-          this.usecaseReadSavePosition.update(24,false);
-        }
-  
-        if ( this.id == 22){
-          this.usecaseReadSavePosition.update(23,false);
-        }
-
+        const messageConfirm = document.getElementById(this.displayId);
+        messageConfirm.innerHTML = 'Done';
+        
+        this.updateSet.update(36,false);
+        
         this.request = false;
 
         // const valueIn_mm = decodedString(PositionResult_mm.PLC_PositionResult_mm);
@@ -83,62 +81,48 @@ class InputFieldNoLabelString {
   async handleMouseUp(event) {
     event.preventDefault();
     this.elementUI.showUnpressed();
-    const input = document.getElementById(this.inputId);
-    let value = '';
-    let logicalPosition = '';
-    if (input.tagName === 'INPUT') {
-      if(this.id == 22){
-      value = parseFloat(input.value);
-      logicalPosition = document.getElementById('logicalPosition_section3').textContent;
-    }else{ 
-        value = input.value;
-        
-      }
-    }else{
-      // in this case value and logicalPosition are the same
-      value = input.textContent;
-    }
+    const sourceInput = document.getElementById(this.inputSourceId);
+    const fromInput = document.getElementById(this.inputFromId);
+    const toInput = document.getElementById(this.inputToId);
+
+    let sourceValue = parseFloat(sourceInput.value);
+    let fromValue = parseFloat(fromInput.value);
+    let toValue = parseFloat(toInput.value);
     this.pressed = false;
     
-    
     try {
-      const errors = this.entity.validate();
 
-      if ( this.id == 21){
-        this.usecase.update(this.id, value);
-        this.usecaseReadSavePosition.update(24,true);
-      }
-
-      if ( this.id == 22){
-        if (typeof logicalPosition == "string") {
-          const regex = /^A-L01R\d{3}[AB]\d{2}$/;
-          if (!logicalPosition.match(regex)) {
-            errors.push(
-              "Please select a position on the table of Rows and Columns."
-            );
-            const errorMessage = errors.join('<br>');
-            ShowPopup(errorMessage);
-            throw new Error(errorMessage);
-          }
+        if ( fromValue > toValue){
+            ShowPopup('The "From" Row value must be less than the "To" Row value.');
+            return;
         }
-        this.usecaseReadSavePositionNoBoolean.update(21,logicalPosition);
-        this.usecase.update(this.id, value);
-        this.usecaseReadSavePosition.update(23,true);
-      }
-  
+
+        const allInputs = [sourceValue, fromValue, toValue];
+        allInputs.forEach((input, index) => {
+            const tempRow = new Row(index, input);
+            tempRow.validate(index,input);
+        });
+        
+        this.usecase.update(this.sourceId, sourceValue);
+        this.usecase.update(this.fromId, fromValue);
+        this.usecase.update(this.toId, toValue);
+        this.updateSet.update(this.id,true);
+      
       this.request = true;
             
       if (this.displayId != null) {
-        const savedPosition = document.getElementById(this.displayId);
-        savedPosition.innerHTML = '-';
+        const messageConfirm = document.getElementById(this.displayId);
+        messageConfirm.innerHTML = '-';
       }
-
-      if (errors.length > 0) {
-        this.elementUI.showUnpressed();
-        const Position = document.getElementById(this.displayId);
-        Position.innerHTML = '-';
+    
+    // Already all checked
+    //   const errors = this.entity.validate();
+    //   if (errors.length > 0) {
+    //     this.elementUI.showUnpressed();
+    //     const messageConfirm = document.getElementById(this.displayId);
+    //     messageConfirm.innerHTML = '-';
         
-      }
+    //   }
       
     } catch (error) {
       console.error('Error setting value:', error);
@@ -155,4 +139,4 @@ class InputFieldNoLabelString {
 
 }
 
-export { InputFieldNoLabelString };
+export { InputFieldsMultiWithLabel };

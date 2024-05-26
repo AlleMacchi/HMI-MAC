@@ -123,14 +123,19 @@ export class MapActualPosition {
                                         const positionSavedLabel = document.getElementById('positionSavedMM');
                                         const positionToBeSetLabelmm = document.getElementById('physicalPosition');
                                         const positionToBeSetLabeinput = document.getElementById('positionInput');
-
+                                        const SourceRowInput = document.getElementById('sourceRowInput');
+                                        const MessageMultiConfirm = document.getElementById('messageSpan');
+                                        
                                         positionSavedLabel.textContent = '-';
                                         positionToBeSetLabelmm.textContent = '-';
                                         positionToBeSetLabeinput.value = '';
-                                       logicalPosString_section3.innerHTML = displayElement.innerHTML;
-                                       logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
+                                        logicalPosString_section3.innerHTML = displayElement.innerHTML;
+                                        logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
                                         logicalPosRow_section3.innerHTML = this.RowSelected;
                                         logicalPosCol_section3.innerHTML = this.ColSelected;
+                                        SourceRowInput.value = this.RowSelected;
+                                        MessageMultiConfirm.innerHTML = '-';
+
 
                                     }
                                     // Exit from click event

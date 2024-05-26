@@ -23,6 +23,7 @@ import { ButtonsJoystick } from "./06.ui/component/ButtonsJoystick.js";
 import { ButtonReadPositionMM } from "./06.ui/component/ButtonReadPositionMM.js";
 import { ButtonCopyActPosition } from "./06.ui/component/ButtonCopyActPosition.js";
 import { ButtonSetPhysicalPositionConfirm } from "./06.ui/component/ButtonSetPhysicalPositionConfirm.js";
+import { ButtonMultiPosConfirm } from "./06.ui/component/ButtonMultiPosConfirm.js";
 
 const App = {
   init: function () {
@@ -51,6 +52,7 @@ const App = {
     ButtonSelectionPhysicalPosition(1);
     ButtonReadPositionMM();
     ButtonCopyActPosition();
+    ButtonMultiPosConfirm();
     ButtonSetPhysicalPositionConfirm();
     ButtonsPages();
     LoginButton();
