@@ -448,14 +448,14 @@
                     Current Position: <br /><span
                       id="current-position"
                       class="text-blue"
-                      >1233 mm</span
+                      >-</span
                     >
                   </h3>
                   <h3>
                     Current Logical Position: <br /><span
                       id="current-logical-position"
                       class="text-blue current-logical-position"
-                      >LA01R001A03</span
+                      >-</span
                     >
                   </h3>
                   <h3>
@@ -604,7 +604,7 @@
               <!-- <hr id="hr-section3" /> -->
               <div class="info">
                 <label>Actual Position</label>
-                <span id="actual-position-mm-section3">mm</span>
+                <span id="actual-position-mm-section3">-</span>
                 <button
                   class="btn-normal text-grey text-small"
                   id="buttonCopyPosition"
@@ -771,17 +771,17 @@
             <h3 class="card-title-section3">MULTIPLE SET</h3>
             <div class="SetRowInfo">
               <div class="info info-noButton">
-                <label for="sourceRow">Source Row</label>
-                <input type="number" id="sourceRowInput" placeholder="Row" />
+                <label id="sourceLabel" for="sourceRow">Source Row</label>
+                <input type="number" id="sourceInput" placeholder="Row" />
                 <div id="NoButton"></div>
               </div>
               <div class="info">
-                <label>Copy Rows:</label>
+                <label id="copyLabel">Copy Rows:</label>
                 <div id="copyFromToDiv">
                   <span>From</span>
-                  <input type="number" id="copyFromRows" placeholder="Row" />
+                  <input type="number" id="copyFromInput" placeholder="Row" />
                   <span>To</span>
-                  <input type="number" id="copyToRows" placeholder="Row" />
+                  <input type="number" id="copyToInput" placeholder="Row" />
                 </div>
               </div>
               <div class="info" id="confirmMultiDiv">

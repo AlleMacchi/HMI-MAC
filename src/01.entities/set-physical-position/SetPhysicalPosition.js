@@ -16,6 +16,7 @@ class SetPhysicalPosition {
     if (this.value === 0) {
       errors.push("The physical position cannot be zero.");
     }
+
     return errors;
   }
 

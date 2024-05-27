@@ -2,7 +2,9 @@ import { copyActPosition } from "../../01.entities/copy-act-position-button/copy
 import { ButtonNoWrite } from "../../99.utils/ui/ButtonNoWrite.js";
 import { NormalButtonUI } from "../js/NormalButtonUI.js";
 import { Row } from "../../01.entities/row/Row.js";
+import { Column } from "../../01.entities/column/Column.js";
 import { InputFieldsMultiWithLabel } from "../../99.utils/ui/InputFieldsMultiWithLabel.js";
+import config from "../../00.config/config.js";
 
 
 
@@ -11,14 +13,27 @@ export function ButtonMultiPosConfirm(){
     const elementId = 'buttonConfirmCopy'; // Id of button 
     const elementUI = new NormalButtonUI(elementId);
 
-    const sourceId = 30; // Id use for config 17.js
-    const FromId = 31;
-    const ToId = 32;
+    let sourceId = null;
+    let FromId = null;
+    let ToId = null;
     const updateId = 36;
-    const inputSourceId = 'sourceRowInput';
-    const inputFromId = 'copyFromRows';
-    const inputToId = 'copyToRows';
-    const inputEntity = new Row();
+    const inputSourceId = 'sourceInput';
+    const inputFromId = 'copyFromInput';
+    const inputToId = 'copyToInput';
+    let inputEntity = {}; 
+
+    if(config.isMotherShuttle){
+        inputEntity = new Column();
+        sourceId = 33;
+        FromId = 34;
+        ToId = 35;
+    }else{
+        inputEntity = new Row();
+        sourceId = 30;
+        FromId = 31;
+        ToId = 32;
+    }
+    
     const messageConfirm = 'messageSpan'; 
 
     // const input = new InputFieldWithLabelByClass(inputId, inputField, inputElementClass,elementN, displayClass, inputEntity);
