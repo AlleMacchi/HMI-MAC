@@ -55,6 +55,8 @@ class InputFieldNoLabelString {
       if (Result > 0 && Result < 99) {
         const PositionResult_mm = await this.findOne(2);
         const Position = document.getElementById(this.displayId);
+        const PositionSavedLabel = document.getElementById('positionSavedMM');
+        PositionSavedLabel.innerHTML = '-';
         Position.innerHTML = PositionResult_mm.PLC_PositionResult_mm + ' mm';
         if ( this.id == 21){
           this.usecaseReadSavePosition.update(24,false);
@@ -132,13 +134,17 @@ class InputFieldNoLabelString {
 
       if ( this.id == 21){
         this.usecase.update(this.id, value);
+        setTimeout(() => {
         this.usecaseReadSavePosition.update(24,true);
+        }, 300);
       }
 
       if ( this.id == 22){
         this.usecaseReadSavePositionNoBoolean.update(21,logicalPosition);
         this.usecase.update(this.id, value);
+        setTimeout(() => {
         this.usecaseReadSavePosition.update(23,true);
+        }, 300);
       }
   
       this.request = true;

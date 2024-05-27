@@ -92,7 +92,7 @@ label {
 
 #coordinateInput input, #rowSelect {
     width: 100%;
-    max-width: 15%;
+    max-width: 20%;
     font-size: 16px;
     width: 100%;
     /* height: clamp(1.5rem, 1rem + 1.3571vw, 5rem); */

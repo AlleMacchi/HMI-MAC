@@ -8,6 +8,7 @@ import { InputFieldNoLabelCoordinate } from '../../99.utils/ui/inputFieldNoLabel
 import { WMSTaskNumber } from '../../01.entities/wms-taskNumber/wmsTaskNumber.js';
 import { WMSCoordinate } from '../../01.entities/wms-coordinate/wmsCoordinate.js';
 import { WMSEchoStatus } from '../../01.entities/wms-echo-status/wmsEchoStatus.js';
+import { ShowPopup } from '../../99.utils/ui/Popup.js';
 
 
 
@@ -58,12 +59,13 @@ export function ButtonWMSConfirm(){
    function validateWMSMessage() {
     const validate_inputEntity_WMSId = new WMSId(inputId_WMSId, parseFloat(inputEntity_WMSId.value));
     const validate_inputEntity_WMSTaskNumber = new WMSTaskNumber(inputId_WMSTaskNumber, parseFloat(inputEntity_WMSTaskNumber.value));
-    const validate_inputEntity_WMSCoordinate = new WMSCoordinate(inputId_WMSCoordinate, parseFloat(inputEntity_WMSCoordinate.value));
+    const validate_inputEntity_WMSCoordinate = new WMSCoordinate(inputId_WMSCoordinate, inputEntity_WMSCoordinate.value);
     const validate_inputEntity_WMSEchoStatus = new WMSEchoStatus(inputId_WMSEchoStatus, parseFloat(inputEntity_WMSEchoStatus.value));
 
     const validationErrors = [...validate_inputEntity_WMSId.validate(), ...validate_inputEntity_WMSTaskNumber.validate(), ...validate_inputEntity_WMSCoordinate.validate(), ...validate_inputEntity_WMSEchoStatus.validate()];
     if (validationErrors.length > 0) {
         console.error('Validation errors:', validationErrors);
+        ShowPopup(validationErrors.join('<br>'));
         return false;
     }
     return true;
