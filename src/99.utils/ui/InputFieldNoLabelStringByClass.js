@@ -82,10 +82,13 @@ class InputFieldNoLabelStringByClass {
     this.pressed = false;
     
     try {
+      
       this.usecase.update(this.id, value);
-      this.usecaseReadSavePosition.update(24,true);
-      this.request = true;
       this.usecase.update(21, value);
+      setTimeout(() => {
+      this.usecaseReadSavePosition.update(24,true);
+      }, 300);
+      this.request = true;
             
       if (this.elementValuePosition != null) {
         const valueToReach = document.getElementsByClassName(this.elementValuePosition)[this.elementN];

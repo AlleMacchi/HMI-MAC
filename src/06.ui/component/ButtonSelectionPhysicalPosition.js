@@ -2,7 +2,7 @@ import { SelPhysicalPosition } from '../../01.entities/selection-physical-button
 import { PressButtonToSetFalse } from '../../99.utils/ui/PressButtonToSetFalse.js'; 
 import { PressAndHoldButtonByClass } from '../../99.utils/ui/PressAndHoldButtonByClass.js';
 import { PressButtonToSetFalseByClass } from '../../99.utils/ui/PressButtonToSetFalseByClass.js';
-import { TwoButtonPressedToggle, TwoButtonPressedToggleByClass } from '../../99.utils/ui/TwoButtonPressedToggle.js';
+import { TwoButtonPressedToggle, TwoButtonPressedToggleByClass, TwoButtonPressedToggleByClassWithDisable } from '../../99.utils/ui/TwoButtonPressedToggle.js';
 
 export function ButtonSelectionPhysicalPosition(elementN){
     const id = 10; // Id use for config DataWriteList.js
@@ -12,6 +12,6 @@ export function ButtonSelectionPhysicalPosition(elementN){
 
 
 
-    const button = new PressButtonToSetFalseByClass(id, elementClass,elementN, entity,TwoButtonPressedToggleByClass,'buttonSelectionPhysicalPosition','buttonSelectionLogicalPosition');
+    const button = new PressButtonToSetFalseByClass(id, elementClass,elementN, entity,TwoButtonPressedToggleByClassWithDisable,'buttonSelectionPhysicalPosition','buttonSelectionLogicalPosition');
     return button;
 }

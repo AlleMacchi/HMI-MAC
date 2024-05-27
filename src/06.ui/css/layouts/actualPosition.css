@@ -42,7 +42,7 @@
     text-align: center; /* Center text horizontally */
     text-transform: capitalize; /* Capitalize text */
     white-space: nowrap; /* Keep the text in a single line */
-    font-size: 1.2em; /* Adjust font size as needed */
+    /* font-size: 1.2em; Adjust font size as needed */
 }
 
 .actual-position{

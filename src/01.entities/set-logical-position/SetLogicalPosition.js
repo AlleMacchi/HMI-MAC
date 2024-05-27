@@ -23,9 +23,18 @@ class SetLogicalPosition {
         errors.push(
           "Please select a position on the table of Rows and Columns."
         );
+        return errors;
       }
-      return errors;
     }
+
+
+    const ValueRow = ExtractInfoFromStringPosition(valueToSet).row;
+    const ValueCol = ExtractInfoFromStringPosition(valueToSet).column;
+    const ValueDir = ExtractInfoFromStringPosition(valueToSet).direction;
+
+    const CurrentRow = ExtractInfoFromStringPosition(currentPositionValue).row;
+    const CurrentCol = ExtractInfoFromStringPosition(currentPositionValue).column;
+
 
     if (valueToSet !=null || currentPositionValue !=null) { 
       if (this.isMotherShuttle) 
@@ -46,14 +55,6 @@ class SetLogicalPosition {
     }else{
       errors.push("Data invalid.");
     }
-
-    const ValueRow = ExtractInfoFromStringPosition(valueToSet).row;
-    const ValueCol = ExtractInfoFromStringPosition(valueToSet).column;
-    const ValueDir = ExtractInfoFromStringPosition(valueToSet).direction;
-
-    const CurrentRow = ExtractInfoFromStringPosition(currentPositionValue).row;
-    const CurrentCol = ExtractInfoFromStringPosition(currentPositionValue).column;
-
 
     
     return errors;
