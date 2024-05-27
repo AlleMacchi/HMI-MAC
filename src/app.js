@@ -24,11 +24,13 @@ import { ButtonReadPositionMM } from "./06.ui/component/ButtonReadPositionMM.js"
 import { ButtonCopyActPosition } from "./06.ui/component/ButtonCopyActPosition.js";
 import { ButtonSetPhysicalPositionConfirm } from "./06.ui/component/ButtonSetPhysicalPositionConfirm.js";
 import { ButtonMultiPosConfirm } from "./06.ui/component/ButtonMultiPosConfirm.js";
+import { InitMotherBabyUI } from "./06.ui/js/InitMotherBabyUI.js";
 
 const App = {
   init: function () {
     plcCommunicationManager.init();
     InitButtonsPages();
+    InitMotherBabyUI()
   },
   readData: function () {
     setInterval(async function () {

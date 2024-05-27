@@ -6,6 +6,7 @@ import { ReadSavedPosition } from '../../01.entities/read-saved-position/ReadSav
 import { UpdateBooleanValueUseCase } from '../../02.usecases/entities/UpdateBooleanValueUseCase.js';
 import { ShowPopup } from './Popup.js';
 import { Row } from '../../01.entities/row/Row.js';
+import { Column } from '../../01.entities/column/Column.js';
 
 class InputFieldsMultiWithLabel {
   constructor(sourceId,fromId,toId,updateId,inputSourceId,inputFromId,inputToId, elementId, entity,elementUI, displayId) {
@@ -95,14 +96,24 @@ class InputFieldsMultiWithLabel {
         let errorsArr = [];  
         
 
+        
         const allInputs = [sourceValue, fromValue, toValue];
         allInputs.forEach((input, index) => {
-            const tempRow = new Row(index, input);
+            
+          if (this.entity instanceof Row){
+          const tempRow = new Row(index, input);
             errorsArr.push(...tempRow.validate(index,input));
+          }
+
+          if(this.entity instanceof Column){
+            const tempColumn = new Column(index, input);
+            errorsArr.push(...tempColumn.validate(index,input));
+          }
+
           });
         
           if ( fromValue > toValue){
-            errorsArr.push('The "From" Row value must be less than the "To" Row value.');
+            errorsArr.push('The "From" input value must be less than the "To" input value.');
         }
         
         const errorsSet = new Set(errorsArr);
