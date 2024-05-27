@@ -8,7 +8,7 @@ class WMSEchoStatus {
     const errors = [];
 
     if (
-      !this.value ||
+      // !this.value ||
       isNaN(this.value) ||
       this.value === undefined ||
       this.value === null ||
@@ -20,9 +20,9 @@ class WMSEchoStatus {
     if (typeof this.value !== "number") {
       errors.push("The value must be numeric.");
     }
-    if (this.value === 0) {
-      errors.push("The physical position cannot be zero.");
-    }
+    // if (this.value === 0) {
+    //   errors.push("The physical position cannot be zero.");
+    // }
     return errors;
   }
 }
