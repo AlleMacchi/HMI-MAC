@@ -123,7 +123,7 @@ export class MapActualPosition {
                                         const positionSavedLabel = document.getElementById('positionSavedMM');
                                         const positionToBeSetLabelmm = document.getElementById('physicalPosition');
                                         const positionToBeSetLabeinput = document.getElementById('positionInput');
-                                        const SourceRowInput = document.getElementById('sourceRowInput');
+                                        const SourceRowInput = document.getElementById('sourceInput');
                                         const MessageMultiConfirm = document.getElementById('messageSpan');
                                         
                                         positionSavedLabel.textContent = '-';
