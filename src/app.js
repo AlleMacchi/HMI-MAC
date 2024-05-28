@@ -25,6 +25,8 @@ import { ButtonCopyActPosition } from "./06.ui/component/ButtonCopyActPosition.j
 import { ButtonSetPhysicalPositionConfirm } from "./06.ui/component/ButtonSetPhysicalPositionConfirm.js";
 import { ButtonMultiPosConfirm } from "./06.ui/component/ButtonMultiPosConfirm.js";
 import { InitMotherBabyUI } from "./06.ui/js/InitMotherBabyUI.js";
+import { ButtonConfirmMinBattery } from "./06.ui/component/ButtonConfirmMinBattery.js";
+import { ButtonConfirmMaxBattery } from "./06.ui/component/ButtonConfirmMaxBattery.js";
 
 const App = {
   init: function () {
@@ -61,6 +63,8 @@ const App = {
     ButtonClosePopup();
     LegendButton();
     configureAccess("");
+    ButtonConfirmMinBattery();
+    ButtonConfirmMaxBattery();
     ButtonWMSConfirm();
   },
 };

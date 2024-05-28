@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PRG</title>
     <link rel="stylesheet" href="src/06.ui/css/main.css" />
   </head>
   <body>
@@ -896,11 +896,76 @@
           </div>
         </section>
 
-        <section class="section" id="section4">
+        <section class="section" id="section4-Baby">
           <div class="card"></div>
           <div class="card"></div>
           <div class="card"></div>
-          <div class="card">Section #4</div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </section>
+        
+        <section class="section" id="section4-Mother">
+          <div class="card">
+            <h1 id="title">Settings</h1>
+            <div id="setting-section" class="container-go-position">
+              <div class="min_container">
+                <div id="min_container_labels">
+                  <h4 id="setting-label">
+                    Minimum battery<br />
+                    level to start charging
+                  </h4>
+                  <span id="Minimum-level-value">-</span>
+                </div>
+                <form class="form setting-form">
+                  <input
+                    id="Minimum-level-input"
+                    class="form_input"
+                    type="number"
+                    min="0"
+                    max="100"
+                    placeholder="Set Min"
+                  />
+                  <button
+                    id="btn-minimum-level"
+                    class="text-small btn-normal text-grey"
+                    type="submit"
+                  >
+                    Confirm
+                  </button>
+                </form>
+              </div>
+              <div class="max_container">
+                <div id="max_container_labels">
+                  <h4 id="setting-label">
+                    Maximum battery<br />
+                    level to stop charging
+                  </h4>
+                  <span id="Maximum-level-value">-</span>
+                </div>
+                <form class="form setting-form">
+                  <input
+                    id="Maximum-level-input"
+                    class="form_input"
+                    type="number"
+                    min="0"
+                    max="100"
+                    placeholder="Set Max"
+                  />
+                  <button
+                    id="btn-maximum-level"
+                    class="text-small btn-normal text-grey"
+                    type="submit"
+                  >
+                    Confirm
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
           <div class="card"></div>
           <div class="card"></div>
         </section>

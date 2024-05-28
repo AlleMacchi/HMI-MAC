@@ -34,13 +34,13 @@ export function UpdateDisplayData(data){
     }
 
     if (config.isMotherShuttle) {
-        actualPositionUI.update(Row ,Col,Row , Col);  
-        actualPositionSection2.update(Row ,Col,Row , Col);
-        actualPositionSection3.update(Row ,Col,Row , Col);
+        actualPositionUI.update(Row ,Col,Row , Col, data.ShuttleOnBoardTheMother);  
+        actualPositionSection2.update(Row ,Col,Row , Col, data.ShuttleOnBoardTheMother);
+        actualPositionSection3.update(Row ,Col,Row , Col, data.ShuttleOnBoardTheMother);
     } else {
-        actualPositionUI.update(Row ,Col,Row , config.MotherPositionColumn);  
-        actualPositionSection2.update(Row ,Col,Row , config.MotherPositionColumn);
-        actualPositionSection3.update(Row ,Col,Row , config.MotherPositionColumn); 
+        actualPositionUI.update(Row ,Col,Row , config.MotherPositionColumn, data.ShuttleOnBoardTheMother);  
+        actualPositionSection2.update(Row ,Col,Row , config.MotherPositionColumn, data.ShuttleOnBoardTheMother);
+        actualPositionSection3.update(Row ,Col,Row , config.MotherPositionColumn, data.ShuttleOnBoardTheMother);
     }
     
 

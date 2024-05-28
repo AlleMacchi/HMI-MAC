@@ -6,7 +6,9 @@ const WebServerDataMapper = {
             SelPhysicalLogical: decodedString(data.SelPhysicalLogical),
             BabyNo: data.AGV_No,
             PositionToReach_mm: data.PositionToReach_mm,
-            PositionToReach_logical: data.PositionToReach_logical
+            PositionToReach_logical: data.PositionToReach_logical,
+            BatteryMinStartCharging: data.BatteryMinStartCharging,
+            BatteryMaxStopCharging: data.BatteryMaxStopCharging,
         };
     }
 };

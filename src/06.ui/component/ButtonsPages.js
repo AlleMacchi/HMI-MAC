@@ -81,13 +81,6 @@ export function ButtonsPages(){
         scrollToSection("section3");
     });
     
-    document.getElementById("buttonSection4").addEventListener("click", function() {
-        actualPositionUI.disableAutoScroll();
-        actualPositionSection2.disableAutoScroll();
-        actualPositionSection3.disableAutoScroll();
-        scrollToSection("section4");
-    });
-    
     // document.getElementById("buttonSection5").addEventListener("click", function() {
     //     actualPositionUI.disableAutoScroll();
     //     actualPositionSection2.disableAutoScroll();
