@@ -5,6 +5,8 @@ export function UpdateDisplayInit(data) {
   const SetPhysicalPosition = document.getElementsByClassName('current-set-position');
   const SetLogicalPosition2 = document.getElementById('section2-logical-position');
   const SetLogicalPosition3 = document.getElementById('section3-logical-position');
+  const BatteryMinStartCharging = document.getElementById('Minimum-level-value');
+  const BatteryMaxStopCharging = document.getElementById('Maximum-level-value');
   
   AGVnumber.innerText = data.BabyNo;
 
@@ -33,5 +35,8 @@ export function UpdateDisplayInit(data) {
 
     SetLogicalPosition2.innerHTML = data.PositionToReach_logical;
     SetLogicalPosition3.innerHTML = data.PositionToReach_logical;
+    BatteryMinStartCharging.innerHTML = data.BatteryMinStartCharging + '%';
+    BatteryMaxStopCharging.innerHTML = data.BatteryMaxStopCharging + '%';
+
   
 }

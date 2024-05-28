@@ -1,5 +1,6 @@
 import config from '../../00.config/config.js';
 
+
 export class MapActualPosition {
     constructor(tableId, containerId, rowElementId, colElementId, displayPositionId, callback, direction, displayStorePositionId) {
         if (typeof callback === 'function') {
@@ -56,6 +57,9 @@ export class MapActualPosition {
     
     }
     async initializeChessboard() {
+        
+        
+     
         const tbody = document.querySelector(`#${this.tableId} tbody`);
         for (let i = 1; i <= this.qtRow; i++) {
             const row = document.createElement("tr");
@@ -123,7 +127,7 @@ export class MapActualPosition {
                                         const positionSavedLabel = document.getElementById('positionSavedMM');
                                         const positionToBeSetLabelmm = document.getElementById('physicalPosition');
                                         const positionToBeSetLabeinput = document.getElementById('positionInput');
-                                        const SourceRowInput = document.getElementById('sourceInput');
+                                        const SourceInput = document.getElementById('sourceInput');
                                         const MessageMultiConfirm = document.getElementById('messageSpan');
                                         
                                         positionSavedLabel.textContent = '-';
@@ -133,7 +137,7 @@ export class MapActualPosition {
                                         logicalPosDir_section3.innerHTML = this.direction == 0 ? "A" : "B" ;;
                                         logicalPosRow_section3.innerHTML = this.RowSelected;
                                         logicalPosCol_section3.innerHTML = this.ColSelected;
-                                        SourceRowInput.value = this.RowSelected;
+                                        SourceInput.value = config.isMotherShuttle ? config.MotherPositionColumn : this.RowSelected;
                                         MessageMultiConfirm.innerHTML = '-';
 
 
@@ -188,7 +192,7 @@ export class MapActualPosition {
     // =================================================================================
     //          MANAGEMENT THE ANIMATION / VISUALIZATION OF SHUTTLES
     // =================================================================================
-    highlightSquare(row, col, rowMother, colMother) {
+    async highlightSquare(row, col, rowMother, colMother, isShuttleOnBoardTheMother) {
         const allCells = document.querySelectorAll(`#${this.tableId}  tbody tr td`);
         const firstColumn = document.querySelectorAll(`#${this.tableId}  tbody td:first-child`);
         const cell = document.querySelector(`#${this.tableId}  tbody tr:nth-child(${row}) td:nth-child(${col + 1})`);
@@ -211,7 +215,8 @@ export class MapActualPosition {
         cell.style.backgroundSize = "contain"; 
         cell.style.backgroundRepeat = "no-repeat"; 
         cell.style.backgroundPosition = "center";
-
+        
+    
         // Only Mother
         cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherSmall.webp')";
         cellMother.style.backgroundSize = "contain"; 
@@ -220,11 +225,17 @@ export class MapActualPosition {
 
         // Mother and Baby together
         if (row == rowMother && col == colMother) {
-            cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherAndBabySmall.webp')";
+            if(config.isMotherShuttle && !isShuttleOnBoardTheMother){
+                cellMother.style.backgroundImage  = "url('src/06.ui/assets/img/MotherSmall.webp')";
+            }else{
+                cellMother.style.backgroundImage = "url('src/06.ui/assets/img/MotherAndBabySmall.webp')";
+            }
             cellMother.style.backgroundSize = "contain"; 
             cellMother.style.backgroundRepeat = "no-repeat"; 
             cellMother.style.backgroundPosition = "center";
         }
+        
+        
 
         // =================================================================================
         // Color backgorund of first column of row line
@@ -278,9 +289,9 @@ export class MapActualPosition {
     // =================================================================================
     //          UPDATE POSITION
     // =================================================================================
-    async update(row = 1, col = 1, rowMother = 1, colMother = 1 ) {     
+    async update(row = 1, col = 1, rowMother = 1, colMother = 1, isShuttleOnBoardTheMother ) {     
         await this.initPromise;
-        this.highlightSquare(row, col , rowMother, colMother);
+        this.highlightSquare(row, col , rowMother, colMother, isShuttleOnBoardTheMother);
     }
 
     // =================================================================================

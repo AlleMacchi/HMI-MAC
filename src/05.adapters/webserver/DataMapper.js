@@ -37,6 +37,16 @@ const WebServerDataMapper = {
         ShuttleOnBoardTheMother: bitArr2[14],
         LifterIsMovingDown: bitArr2[15],
 
+        BabyOnBoard: bitArr2[8],
+        BabyLimitLeft: bitArr2[9],
+        BabyLimitRight: bitArr2[10],
+        WiFiControlActivated: bitArr2[11],
+        PalletStopLeft:  bitArr2[12],
+        PalletStopRight: bitArr2[13],
+        PalletLimitLeft: bitArr2[14],
+        PalletLimitRight: bitArr2[15],
+        
+
         ActualStep: decodedString(data.Array_3),
         StatusCarrierActPositon_logicalRow: decodedString(data.Array_4),
         StatusCarrierActPositon_logicalCol: decodedString(data.Array_5),

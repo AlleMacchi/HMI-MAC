@@ -8,7 +8,7 @@
     font-weight: 600;
 }
 
-#form1 , #displayForm{
+#WMSform1 , #displayForm{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,7 +38,7 @@ label {
     flex: 3;
 }
 
-#form1 input, select {
+#WMSform1 input, select {
     width: 100%;
     max-width: 10%;
     padding: 5px;

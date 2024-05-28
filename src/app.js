@@ -16,7 +16,6 @@ import { configureAccess } from "./06.ui/js/ConfigureAccess.js";
 import { ButtonsPages } from "./06.ui/component/ButtonsPages.js";
 import { LoginButton } from "./06.ui/component/ButtonLogin.js";
 import { ButtonClosePopup } from "./06.ui/component/ButtonClosePopup.js";
-import { LegendButton } from "./06.ui/component/ButtonLegend.js";
 import { ButtonWMSConfirm } from "./06.ui/component/ButtonWMSConfirm.js";
 import { ButtonsCommand } from "./06.ui/component/ButtonsCommand.js";
 import { ButtonsJoystick } from "./06.ui/component/ButtonsJoystick.js";
@@ -25,6 +24,8 @@ import { ButtonCopyActPosition } from "./06.ui/component/ButtonCopyActPosition.j
 import { ButtonSetPhysicalPositionConfirm } from "./06.ui/component/ButtonSetPhysicalPositionConfirm.js";
 import { ButtonMultiPosConfirm } from "./06.ui/component/ButtonMultiPosConfirm.js";
 import { InitMotherBabyUI } from "./06.ui/js/InitMotherBabyUI.js";
+import { ButtonConfirmMinBattery } from "./06.ui/component/ButtonConfirmMinBattery.js";
+import { ButtonConfirmMaxBattery } from "./06.ui/component/ButtonConfirmMaxBattery.js";
 
 const App = {
   init: function () {
@@ -59,8 +60,9 @@ const App = {
     ButtonsPages();
     LoginButton();
     ButtonClosePopup();
-    LegendButton();
     configureAccess("");
+    ButtonConfirmMinBattery();
+    ButtonConfirmMaxBattery();
     ButtonWMSConfirm();
   },
 };
