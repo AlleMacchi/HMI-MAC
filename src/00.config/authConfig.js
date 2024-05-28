@@ -10,7 +10,8 @@ const userLogin = {
 
 const controlsId = [
   "steps-section",
-  "buttonSection6"
+  "buttonSection6",
+  "setting-section",
 ];
 
 
@@ -24,10 +25,12 @@ const controlsClass = [
 const controlsIdToDisable = {
   operator: [
     "steps-section",
-    "buttonSection6"
+    "buttonSection6",
+    "setting-section"
   ],
   supervisor: [
-    "buttonSection6"
+    "buttonSection6",
+    "setting-section"
   ],
   maintenance: [
     "buttonSection6"
