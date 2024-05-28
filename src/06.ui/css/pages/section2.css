@@ -19,12 +19,14 @@
 }
 
 .container-img{
-    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;  
 }
+
+
+
 .container-img>span{
     margin: 5%;
 }
@@ -89,7 +91,7 @@
 }
 
 .green{
-    background: green;
+    background: green !important;
 }
 
 .triangle-up-green{
@@ -413,3 +415,158 @@
 #current-set-position{
     margin: 1% 0;
 }
+
+
+/* =========================================== */
+/* Mother Image card */
+/* =========================================== */
+
+
+/* Class applied  */
+/* .container-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+} */
+
+
+
+#container-Mother-img1{
+ margin: 3%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 85%;
+ height: 100%;
+ position: relative;
+}
+
+#telecomando{
+    position: absolute;
+    top: 15%;
+    left: -22%;
+    z-index: 999;
+}
+
+.container-img-MotherShuttle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.MotherShuttle{
+    width: 90%;
+    height: 100%;
+    position: relative;
+}
+
+.MotherSensor {
+    position: absolute;
+    height: clamp(0.625rem, 0.2923rem + 0.7981vw, 1.25rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: grey;
+    border: solid 1px black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.5rem, 0.1754rem + 0.4789vw, 1rem);
+    z-index: 99;
+}
+
+#btn_Charger{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    position: absolute;
+    top: 10;
+    left: 10;
+    z-index: 99;
+    width: 40%;
+    height: 10%;
+    padding: 2% 5%;
+}
+
+/* A */
+#sensor-baby-on-board {
+    top: 30%; /* Adjust according to image */
+    left: 50%; /* Centering the sensor at half the width of the container */
+    transform: translate(-50%, -50%); /* Center the div exactly at the position */
+}
+
+/* B */
+#sensor-baby-limit-left {
+    top: 80%; /* Bottom left corner */
+    left: 31%;
+    transform: translate(-50%, -50%);
+}
+
+/* C */
+#sensor-baby-limit-right {
+    top: 80%; /* Bottom right corner */
+    right: 28.5%;
+    transform: translate(50%, -50%);
+}
+
+/* D */
+#sensor-wifi-control-activated {
+    top: 20%; /* Near the top, adjust as needed */
+    left: -32%; /* Near the left, adjust as needed */
+}
+
+/* E */
+#sensor-pallet-stop-left {
+    top: 18%; /* Upper left corner of the upper container part */
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+/* F */
+#sensor-pallet-stop-right {
+    top: 18.1%; /* Upper right corner of the upper container part */
+    right: 28.7%;
+    transform: translate(50%, -50%);
+}
+
+/* G */
+#sensor-pallet-limit-left {
+    bottom: 20%; /* Lower left corner of the bottom container part */
+    left: 20%;
+    transform: translate(-50%, 50%);
+}
+
+/* H */
+#sensor-pallet-limit-right {
+    bottom: 20%; /* Lower right corner of the bottom container part */
+    right: 18%;
+    transform: translate(50%, 50%);
+}
+
+
+
+@media only screen and (max-width : 1000px)  {  /* targeting high-density screens similar to iPhones */
+    .container-img-MotherShuttle {
+        width: 100%; /* Adjust width to ensure it fits within the viewport */
+        height: auto; /* Adjust height automatically based on content */
+          }
+
+    .MotherShuttle{
+        width: 100%; /* Full width to maximize visibility */
+        max-width: 95px; /* Limit max width to keep elements discernible */
+            }
+
+   
+    #telecomando {
+        width: 10%; /* Smaller width for controls to fit them in the view */
+        position: absolute; /* Positioning it absolutely to avoid layout shifts */
+        top: 15%; /* Position at the top within the card */
+        left: -19%; /* Maintain a small left offset */
+    }
+
+}
+
+
+/* =========================================== */

@@ -6,12 +6,14 @@ const userLogin = {
   PRG: { password: "Prg007", user: "PRG" },
 };
 
-// configure controls by html id
+// configure controls by html id which allow the enable
 
 const controlsId = [
   "steps-section",
   "buttonSection6",
   "setting-section",
+  "btn_Charger",
+  "WMSform1",
 ];
 
 
@@ -26,11 +28,15 @@ const controlsIdToDisable = {
   operator: [
     "steps-section",
     "buttonSection6",
-    "setting-section"
+    "setting-section",
+    "btn_Charger",
+    "WMSform1"
   ],
   supervisor: [
     "buttonSection6",
-    "setting-section"
+    "setting-section",
+    "btn_Charger",
+    "WMSform1"
   ],
   maintenance: [
     "buttonSection6"

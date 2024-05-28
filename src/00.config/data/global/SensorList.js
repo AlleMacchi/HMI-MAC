@@ -53,6 +53,46 @@ var DataSensorsList = [
         id: 11,
         displayId: "sensor-On-Mother",
         value: "ShuttleOnBoardTheMother"
+    },
+    {
+        id: 12,
+        displayId: "sensor-baby-on-board",
+        value: "BabyOnBoard"
+    },
+    {
+        id: 13,
+        displayId: "sensor-baby-limit-left",
+        value: "BabyLimitLeft"
+    },
+    {
+        id: 14,
+        displayId: "sensor-baby-limit-right",
+        value: "BabyLimitRight"
+    },
+    {
+        id: 15,
+        displayId: "sensor-wifi-control-activated",
+        value: "WiFiControlActivated"
+    },
+    {
+        id: 16,
+        displayId: "sensor-pallet-stop-left",
+        value: "PalletStopLeft"
+    },
+    {
+        id: 17,
+        displayId: "sensor-pallet-stop-right",
+        value: "PalletStopRight"
+    },
+    {
+        id: 18,
+        displayId: "sensor-pallet-limit-left",
+        value: "PalletLimitLeft"
+    },
+    {
+        id: 19,
+        displayId: "sensor-pallet-limit-right",
+        value: "PalletLimitRight"
     }
 ];
 

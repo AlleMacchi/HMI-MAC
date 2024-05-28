@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PRG</title>
-    <link rel="icon" type="image/x-icon" href="src/06.ui/assets/img/PRG_favicon.webp">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="src/06.ui/assets/img/PRG_favicon.webp"
+    />
     <link rel="stylesheet" href="src/06.ui/css/main.css" />
   </head>
   <body>
@@ -244,10 +248,56 @@
         </section>
         <section class="section" id="section2">
           <div class="card container-shuttle-img">
-            <div class="container-img">
+            <div id="container-Mother-img1" class="container-img">
+              <span class="text-large text-light-grey">A</span>
+              <div class="container-img-MotherShuttle">
+                <button
+                  id="buttonOpenLegend"
+                  class="btn-normal buttonOpenLegend mobile-modifier"
+                >
+                  <img
+                    class="MotherShuttle"
+                    src="src/06.ui/assets/icons/info.webp"
+                  />
+                </button>
+                <img
+                id="telecomando"
+                class=""
+                src="src/06.ui/assets/img/Telecomando.png"
+              />
+                <div class="MotherSensor" id="sensor-baby-on-board">A</div>
+                <div class="MotherSensor" id="sensor-baby-limit-left">B</div>
+                <div class="MotherSensor" id="sensor-baby-limit-right">C</div>
+                <div class="MotherSensor" id="sensor-wifi-control-activated">
+                  D
+                </div>
+                <div class="MotherSensor" id="sensor-pallet-stop-left">E</div>
+                <div class="MotherSensor" id="sensor-pallet-stop-right">F</div>
+                <div class="MotherSensor" id="sensor-pallet-limit-left">G</div>
+                <div class="MotherSensor" id="sensor-pallet-limit-right">H</div>
+
+                <button
+                  id="btn_Charger"
+                  class="text-small btn-normal text-grey"
+                >
+                  Charger
+                </button>
+
+                <img
+                  class="MotherShuttle"
+                  src="src/06.ui/assets/img/Mother.webp"
+                />
+              </div>
+              <span class="text-large text-light-grey">B</span>
+            </div>
+
+            <div id="container-Baby-img1" class="container-img">
               <span class="text-large text-light-grey">A</span>
               <div class="container-img-BabyShuttle">
-                <button id="buttonOpenLegend" class="btn-normal">
+                <button
+                  id="buttonOpenLegend"
+                  class="btn-normal buttonOpenLegend"
+                >
                   <img
                     class="BabyShuttle"
                     src="src/06.ui/assets/icons/info.webp"
@@ -269,9 +319,8 @@
               </div>
               <span class="text-large text-light-grey">B</span>
             </div>
-
-            <div class="border"></div>
-            <div class="container-img">
+            <div id="container-Baby-img2" class="border"></div>
+            <div id="container-Baby-img3" class="container-img">
               <span class="text-large text-light-grey">A</span>
               <div class="container-img-BabyShuttle-Lateral">
                 <div class="triangle-up-green" id="movement-lift-up"></div>
@@ -905,7 +954,7 @@
           <div class="card"></div>
           <div class="card"></div>
         </section>
-        
+
         <section class="section" id="section4-Mother">
           <div class="card">
             <h1 id="title">Settings</h1>
@@ -1039,7 +1088,7 @@
           <!-- Card 1: WMS to PLC -->
           <div class="card">
             <h2 id="title1">WMS to PLC</h2>
-            <form id="form1">
+            <form id="WMSform1">
               <div id="formGroup1">
                 <label for="message_id_input">Id</label>
                 <input type="text" id="message_id_input" />

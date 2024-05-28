@@ -16,7 +16,6 @@ import { configureAccess } from "./06.ui/js/ConfigureAccess.js";
 import { ButtonsPages } from "./06.ui/component/ButtonsPages.js";
 import { LoginButton } from "./06.ui/component/ButtonLogin.js";
 import { ButtonClosePopup } from "./06.ui/component/ButtonClosePopup.js";
-import { LegendButton } from "./06.ui/component/ButtonLegend.js";
 import { ButtonWMSConfirm } from "./06.ui/component/ButtonWMSConfirm.js";
 import { ButtonsCommand } from "./06.ui/component/ButtonsCommand.js";
 import { ButtonsJoystick } from "./06.ui/component/ButtonsJoystick.js";
@@ -61,7 +60,6 @@ const App = {
     ButtonsPages();
     LoginButton();
     ButtonClosePopup();
-    LegendButton();
     configureAccess("");
     ButtonConfirmMinBattery();
     ButtonConfirmMaxBattery();
