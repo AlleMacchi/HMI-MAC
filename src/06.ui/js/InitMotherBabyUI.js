@@ -9,6 +9,8 @@ export function InitMotherBabyUI() {
 
 function updateSettingNavButtonMotherBaby() {
   if (config.isMotherShuttle) {
+    document.getElementById("section4-Baby").style.display = "none";
+    // document.getElementById("section4-Mother").style.display = "block";
     document
       .getElementById("buttonSection4")
       .addEventListener("click", function () {
@@ -18,6 +20,7 @@ function updateSettingNavButtonMotherBaby() {
         scrollToSection("section4-Mother");
       });
   } else {
+    document.getElementById("section4-Mother").style.display = "none";
     document
       .getElementById("buttonSection4")
       .addEventListener("click", function () {
