@@ -179,11 +179,12 @@ var DataWriteList = [
         id: 36,
         url: "src/00.config/data/webserver/write/PLCvariables/IOWriteUpdateMulti.html",
         name: '"HMI_PLC".FromHMI.Position.updateMulti'
+    },
+    {
+        id: 37,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWatchdog.html",
+        name: '"HMI_PLC".FromHMI.Watchdog'
     }
-
-
-
-
 ];
 
 export { DataWriteList };

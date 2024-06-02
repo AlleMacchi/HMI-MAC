@@ -3,7 +3,7 @@ const config = {
     maxColumns: 34, // Maximum number of columns
     communicationType: "PLCWebServer", // Type of communication (PLCWebServer, OPCUA)
     isMotherShuttle: true, // Specifies if it's the Mother Shuttle
-    MotherPositionColumn: 10
+    MotherPositionColumn: null
   };
   
   export default config;

@@ -9,6 +9,7 @@ const WebServerDataMapper = {
             PositionToReach_logical: data.PositionToReach_logical,
             BatteryMinStartCharging: data.BatteryMinStartCharging,
             BatteryMaxStopCharging: data.BatteryMaxStopCharging,
+            ColumnOfMotherShuttle: decodedString(data.ColumnOfMotherShuttle),
         };
     }
 };

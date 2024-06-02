@@ -1,3 +1,4 @@
+import { UpdateDisplayWatchdog } from '../../06.ui/component/UpdateDisplayWatchdog.js';
 import { readBits, decodedString } from '../../99.utils/global/dataUtils.js';
 
 const WebServerDataMapper = {
@@ -131,7 +132,6 @@ const WebServerDataMapper = {
         ShuttleToWMS_Message_Result:  decodedString(data.ShuttleToWMS_Message_Result),
         ShuttleToWMS_Message_ErrorCode:  decodedString(data.ShuttleToWMS_Message_ErrorCode),
         ShuttleToWMS_Message_TaskStatus:  decodedString(data.ShuttleToWMS_Message_TaskStatus)
-
 
         };
     }

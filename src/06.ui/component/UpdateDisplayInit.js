@@ -1,3 +1,5 @@
+import config from "../../00.config/config.js";
+
 export function UpdateDisplayInit(data) {
   const AGVnumber = document.getElementById('agv-n');
   const SelLogical = document.getElementById('buttonSelectionLogicalPosition');
@@ -7,7 +9,8 @@ export function UpdateDisplayInit(data) {
   const SetLogicalPosition3 = document.getElementById('section3-logical-position');
   const BatteryMinStartCharging = document.getElementById('Minimum-level-value');
   const BatteryMaxStopCharging = document.getElementById('Maximum-level-value');
-  
+  console.log(data);
+  config.MotherPositionColumn = data.ColumnOfMotherShuttle;
   AGVnumber.innerText = data.BabyNo;
 
   if (data.SelPhysicalLogical) {
