@@ -11,6 +11,8 @@ export class PressAndHoldButtonByClass {
         this.entity = entity;
         this.validateFn = validateFn;
         this.timeToHold = timeToHold;
+        this.intervalId = null; // Add this line to store the interval ID
+        this.bit = false; // Add this line to store the bit state
 
         const repository = new UpdateValueRepository(plcCommunicationManager);
         this.usecase = new UpdateBooleanValueUseCase(repository, this.entity);
@@ -37,18 +39,22 @@ export class PressAndHoldButtonByClass {
         
         this.setValue(true);
         this.elementUI.showPressed();
+        this.toggleBit();
+        this.intervalId = setInterval(this.toggleBit.bind(this), 1000);
     }
 
     handleMouseUp(event) {
         event.preventDefault();
         this.setValue(false);
         this.elementUI.showUnpressed();
+        clearInterval(this.intervalId);
     }
 
     handleMouseLeave(event) {
         if (this.pressed) {
             this.setValue(false);
             this.elementUI.showUnpressed();
+            clearInterval(this.intervalId);
         }
     }
 
@@ -62,4 +68,14 @@ export class PressAndHoldButtonByClass {
             console.error('Error setting:', error);
         }
     }
+
+    toggleBit() {
+        this.bit = !this.bit;
+        try {
+            this.usecase.update(37, this.bit);
+        } catch (error) {
+            console.error('Error updating bit state:', error);
+        }
+    }
+    
 }
