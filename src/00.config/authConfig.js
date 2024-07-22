@@ -14,13 +14,16 @@ const controlsId = [
   "setting-section",
   "btn_Charger",
   "WMSform1",
+  "buttonSelectionBypassOn",
+  "buttonSelectionBypassOff",
+  "buttonSelectionBypassOn2",
+  "buttonSelectionBypassOff2"
 ];
 
 
 const controlsClass = [
   "joystick-section",
   "commandsLogicalPhysical-sections",
-  "bypass",
 ];
 
 
@@ -33,7 +36,9 @@ const controlsIdToDisable = {
     "btn_Charger",
     "WMSform1",
     "buttonSelectionBypassOn",
-    "buttonSelectionBypassOff"
+    "buttonSelectionBypassOff",
+    "buttonSelectionBypassOn2",
+    "buttonSelectionBypassOff2"
   ],
   supervisor: [
     "buttonSection6",
@@ -41,7 +46,9 @@ const controlsIdToDisable = {
     "btn_Charger",
     "WMSform1",
     "buttonSelectionBypassOn",
-    "buttonSelectionBypassOff"
+    "buttonSelectionBypassOff",
+    "buttonSelectionBypassOn2",
+    "buttonSelectionBypassOff2"
   ],
   maintenance: [
     "buttonSection6"

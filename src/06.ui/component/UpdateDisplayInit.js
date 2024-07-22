@@ -1,6 +1,12 @@
 import config from "../../00.config/config.js";
 
 export function UpdateDisplayInit(data) {
+  const SelMan = document.getElementById('btn_sel_man');
+  const SelAuto = document.getElementById('btn_sel_auto');
+  const BypassOn1 = document.getElementById('buttonSelectionBypassOn');
+  const BypassOff1 = document.getElementById('buttonSelectionBypassOff');
+  const BypassOn2 = document.getElementById('buttonSelectionBypassOn2');
+  const BypassOff2 = document.getElementById('buttonSelectionBypassOff2');
   const AGVnumber = document.getElementById('agv-n');
   const SelLogical = document.getElementById('buttonSelectionLogicalPosition');
   const SelPhysical = document.getElementsByClassName('buttonSelectionPhysicalPosition');
@@ -12,6 +18,26 @@ export function UpdateDisplayInit(data) {
   console.log(data);
   config.MotherPositionColumn = data.ColumnOfMotherShuttle;
   AGVnumber.innerText = data.BabyNo;
+
+  if (data.StatusMode){
+    SelMan.classList.remove('pressed');
+    SelAuto.classList.add('pressed');
+  }else{
+    SelAuto.classList.remove('pressed');
+    SelMan.classList.add('pressed');
+  }
+
+  if (data.Bypass){
+    BypassOn1.classList.add('pressed');
+    BypassOn2.classList.add('pressed');
+    BypassOff1.classList.remove('pressed');
+    BypassOff2.classList.remove('pressed');
+  }else{
+    BypassOn1.classList.remove('pressed');
+    BypassOn2.classList.remove('pressed');
+    BypassOff1.classList.add('pressed');
+    BypassOff2.classList.add('pressed');
+  }
 
   if (data.SelPhysicalLogical) {
     for (let i = 0; i < SelLogical.length; i++) {

@@ -26,3 +26,18 @@
     width: 50%;
     min-height: 30px;
 }
+
+.ManAuto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+
+}
+
+.ManAuto>.btn-normal{
+    min-height: 30px;
+}

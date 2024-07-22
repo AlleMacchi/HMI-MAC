@@ -11,7 +11,7 @@ export function ButtonSelectionBypassOn(elementN){
     const elementClass = 'buttonSelectionBypassOn';
    
 
-    const button = new PressButtonToSetTrueByClass(id, elementClass,elementN, entity,TwoButtonPressedToggleByClassWithDisable,'buttonSelectionLogicalPosition','buttonSelectionPhysicalPosition');
+    const button = new PressButtonToSetTrueByClass(id, elementClass,elementN, entity,TwoButtonPressedToggleByClass,'buttonSelectionBypassOn','buttonSelectionBypassOff');
 
 
     return button;

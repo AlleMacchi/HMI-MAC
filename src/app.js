@@ -28,6 +28,8 @@ import { ButtonConfirmMinBattery } from "./06.ui/component/ButtonConfirmMinBatte
 import { ButtonConfirmMaxBattery } from "./06.ui/component/ButtonConfirmMaxBattery.js";
 import { ButtonSelectionBypassOn } from "./06.ui/component/ButtonSelectionBypassOn.js";
 import { ButtonSelectionBypassOff } from "./06.ui/component/ButtonSelectionBypassOff.js";
+import { ButtonSelectionAutomatic } from "./06.ui/component/ButtonSelectionAutomatic.js";
+import { ButtonSelectionManual } from "./06.ui/component/ButtonSelectionManual.js";
 
 const App = {
   init: function () {
@@ -70,6 +72,8 @@ const App = {
     ButtonSelectionBypassOn(1);
     ButtonSelectionBypassOff(0);
     ButtonSelectionBypassOff(1);
+    ButtonSelectionAutomatic();
+    ButtonSelectionManual();
   },
 };
 
