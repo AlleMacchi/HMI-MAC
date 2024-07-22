@@ -26,6 +26,8 @@ import { ButtonMultiPosConfirm } from "./06.ui/component/ButtonMultiPosConfirm.j
 import { InitMotherBabyUI } from "./06.ui/js/InitMotherBabyUI.js";
 import { ButtonConfirmMinBattery } from "./06.ui/component/ButtonConfirmMinBattery.js";
 import { ButtonConfirmMaxBattery } from "./06.ui/component/ButtonConfirmMaxBattery.js";
+import { ButtonSelectionBypassOn } from "./06.ui/component/ButtonSelectionBypassOn.js";
+import { ButtonSelectionBypassOff } from "./06.ui/component/ButtonSelectionBypassOff.js";
 
 const App = {
   init: function () {
@@ -64,6 +66,10 @@ const App = {
     ButtonConfirmMinBattery();
     ButtonConfirmMaxBattery();
     ButtonWMSConfirm();
+    ButtonSelectionBypassOn(0);
+    ButtonSelectionBypassOn(1);
+    ButtonSelectionBypassOff(0);
+    ButtonSelectionBypassOff(1);
   },
 };
 

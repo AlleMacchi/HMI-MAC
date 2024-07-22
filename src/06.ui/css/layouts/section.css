@@ -14,3 +14,15 @@
     box-shadow: var(--card-shadow);
     border-radius: 10px;
 }
+
+.bypass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bypass>.btn-normal{
+    width: 50%;
+    min-height: 30px;
+}

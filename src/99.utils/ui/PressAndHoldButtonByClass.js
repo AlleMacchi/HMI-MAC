@@ -39,22 +39,22 @@ export class PressAndHoldButtonByClass {
         
         this.setValue(true);
         this.elementUI.showPressed();
-        this.toggleBit();
-        this.intervalId = setInterval(this.toggleBit.bind(this), 1000);
+   //     this.toggleBit();
+   //     this.intervalId = setInterval(this.toggleBit.bind(this), 1000);
     }
 
     handleMouseUp(event) {
         event.preventDefault();
         this.setValue(false);
         this.elementUI.showUnpressed();
-        clearInterval(this.intervalId);
+  //      clearInterval(this.intervalId);
     }
 
     handleMouseLeave(event) {
         if (this.pressed) {
             this.setValue(false);
             this.elementUI.showUnpressed();
-            clearInterval(this.intervalId);
+    //        clearInterval(this.intervalId);
         }
     }
 

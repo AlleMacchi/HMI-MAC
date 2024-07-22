@@ -184,6 +184,11 @@ var DataWriteList = [
         id: 37,
         url: "src/00.config/data/webserver/write/PLCvariables/IOWriteWatchdog.html",
         name: '"HMI_PLC".FromHMI.Watchdog'
+    },
+    {
+        id: 38,
+        url: "src/00.config/data/webserver/write/PLCvariables/IOWriteBypass.html",
+        name: '"HMI_PLC".FromHMI.Command.Bypass'
     }
 ];
 

@@ -20,6 +20,7 @@ const controlsId = [
 const controlsClass = [
   "joystick-section",
   "commandsLogicalPhysical-sections",
+  "bypass",
 ];
 
 
@@ -30,13 +31,17 @@ const controlsIdToDisable = {
     "buttonSection6",
     "setting-section",
     "btn_Charger",
-    "WMSform1"
+    "WMSform1",
+    "buttonSelectionBypassOn",
+    "buttonSelectionBypassOff"
   ],
   supervisor: [
     "buttonSection6",
     "setting-section",
     "btn_Charger",
-    "WMSform1"
+    "WMSform1",
+    "buttonSelectionBypassOn",
+    "buttonSelectionBypassOff"
   ],
   maintenance: [
     "buttonSection6"
