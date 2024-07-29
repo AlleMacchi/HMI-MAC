@@ -12,7 +12,6 @@ import { UpdateDisplayMovements } from './UpdateDisplayMovements.js';
 import { UpdateDisplayData } from './UpdateDisplayData.js';
 import { UpdateAlarms } from './UpdateAlarms.js';
 import { updateWMS } from "./UpdateWMS.js";
-import { UpdateDisplayWatchdog } from "./UpdateDisplayWatchdog.js";
 
 export async function UpdateDisplay() {
     const GetValues = new GetValuesUseCase(plcCommunicationManager);

@@ -13,9 +13,9 @@ class SetPhysicalPosition {
     if (this.value < -1000000 || this.value > 1000000 || isNaN(this.value)) {
       errors.push("The value must be between -1.000.000 and 1.000.000.");
     }
-    if (this.value === 0) {
-      errors.push("The physical position cannot be zero.");
-    }
+    // if (this.value === 0) {
+    //   errors.push("The physical position cannot be zero.");
+    // }
 
     return errors;
   }

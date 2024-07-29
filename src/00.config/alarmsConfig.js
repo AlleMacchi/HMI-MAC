@@ -20,8 +20,8 @@ const alarmsBabyConfig = [
     { id: "Alarm_Controller_015", type: "", description: "" },
 
     { id: "Alarm_Controller_100", type: "Warning", description: "Communication with WMS lost" }, //Controller[1].bit0 Warning: Communication with WMS lost
-    { id: "Alarm_Controller_101", type: "", description: "" },
-    { id: "Alarm_Controller_102", type: "", description: "" },
+    { id: "Alarm_Controller_101", type: "Warning", description: "Communication with Mother Shuttle lost" },
+    { id: "Alarm_Controller_102", type: "Warning", description: "Local Control in Manual Mode" },
     { id: "Alarm_Controller_103", type: "", description: "" },
     { id: "Alarm_Controller_104", type: "", description: "" },
     { id: "Alarm_Controller_105", type: "", description: "" },
@@ -92,7 +92,7 @@ const alarmsMotherConfig = [
     { id: "Alarm_Controller_100", type: "Warning", description: "Selection Maintenance WiFi Controller activated" }, // Controller[1].bit0 Warning: Selection Maintenance WiFi Controller activated
     { id: "Alarm_Controller_101", type: "Warning", description: "Communication with WMS lost" }, // Controller[1].bit1 Warning: Communication with WMS lost
     { id: "Alarm_Controller_102", type: "Warning", description: "Communication with Baby Shuttle lost" }, // Controller[1].bit2 Warning: Communication with Baby Shuttle lost
-    { id: "Alarm_Controller_103", type: "", description: "" },
+    { id: "Alarm_Controller_103", type: "Warning", description: "Local Control in Manual Mode" },
     { id: "Alarm_Controller_104", type: "", description: "" },
     { id: "Alarm_Controller_105", type: "", description: "" },
     { id: "Alarm_Controller_106", type: "", description: "" },

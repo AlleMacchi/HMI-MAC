@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="src/06.ui/css/main.css" />
   </head>
   <body>
+    <div id="loadingMessage">Loading, please wait...</div>
+    <div id="content" style="display: none;">
     <div id="warning">
       Please rotate your device to landscape mode for the best experience.
     </div>
@@ -551,10 +553,16 @@
             </div>
           </div>
           <div class="card">
+
+            <div class="card ActualSelectionLogicalPhysicalContainer text-grey">
+              <h4>Actual Selection:&nbsp</h4>
+              <p id="LogicalOrPhysycal1" class="text-blue">Logical</p>
+            </div>
+
             <div
               class="container-positioning text-light-grey commandsLogicalPhysical-sections"
               id="commandsLogicalPhysical-sections"
-            >
+            >          
               <div class="container-logical-positioning">
                 <button
                   id="buttonSelectionLogicalPosition"
@@ -778,7 +786,7 @@
           </div>
           <div class="card">
 
-            <div class="card bypass">                
+            <div class="card bypass bypassHide">                
               <button
                 id="buttonSelectionBypassOff2"
                 class="btn-normal text-grey buttonSelectionBypassOff"
@@ -895,6 +903,12 @@
             </div>
           </div>
           <div class="card">
+
+            <div class="card ActualSelectionLogicalPhysicalContainer text-grey">
+              <h4>Actual Selection:&nbsp</h4>
+              <p id="LogicalOrPhysycal2" class="text-blue">Logical</p>
+            </div>
+
             <div
               class="container-positioning text-light-grey commandsLogicalPhysical-sections"
               id="commandsLogicalPhysical-sections"
@@ -1265,5 +1279,6 @@
     </div>
 
     <script type="module" src="src/app.js"></script>
+  </div>
   </body>
 </html>

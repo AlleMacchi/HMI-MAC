@@ -21,6 +21,9 @@ export function UpdateDisplayData(data){
     const currentLogicalPosition = document.getElementById('current-logical-position');
     const currentStatus = document.getElementById('status-positioning');
 
+    const ActualSelectioLogicalPhysical1 = document.getElementById('LogicalOrPhysycal1');
+    const ActualSelectioLogicalPhysical2 = document.getElementById('LogicalOrPhysycal2');
+
     const Row = data.StatusCarrierActPositon_logicalRow;
     const Col = data.StatusCarrierActPositon_logicalCol;
     const Dir = data.StatusCarrierActPositon_logicalDir;
@@ -49,6 +52,14 @@ export function UpdateDisplayData(data){
    else if (data.CarrierIsFault){currentStatus.innerHTML = 'Is Fault';}
    else {currentStatus.innerHTML = 'Unknown';}
   
+   if (data.ActSelPhysicalLogical) {
+    ActualSelectioLogicalPhysical1.innerHTML= "Logical";
+    ActualSelectioLogicalPhysical2.innerHTML= "Logical";
+  } else {
+    ActualSelectioLogicalPhysical1.innerHTML= "Physical";
+    ActualSelectioLogicalPhysical2.innerHTML= "Physical";
+  }
+
 }
 
 export { actualPositionUI, actualPositionSection2,actualPositionSection3, dropdown, dropdown2, dropdown3};

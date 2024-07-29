@@ -5,8 +5,8 @@ export function UpdateDisplayInit(data) {
   const SelAuto = document.getElementById('btn_sel_auto');
   const BypassOn1 = document.getElementById('buttonSelectionBypassOn');
   const BypassOff1 = document.getElementById('buttonSelectionBypassOff');
-  const BypassOn2 = document.getElementById('buttonSelectionBypassOn2');
-  const BypassOff2 = document.getElementById('buttonSelectionBypassOff2');
+  // const BypassOn2 = document.getElementById('buttonSelectionBypassOn2');
+  // const BypassOff2 = document.getElementById('buttonSelectionBypassOff2');
   const AGVnumber = document.getElementById('agv-n');
   const SelLogical = document.getElementById('buttonSelectionLogicalPosition');
   const SelPhysical = document.getElementsByClassName('buttonSelectionPhysicalPosition');
@@ -15,11 +15,23 @@ export function UpdateDisplayInit(data) {
   const SetLogicalPosition3 = document.getElementById('section3-logical-position');
   const BatteryMinStartCharging = document.getElementById('Minimum-level-value');
   const BatteryMaxStopCharging = document.getElementById('Maximum-level-value');
+  const ActualSelectioLogicalPhysical1 = document.getElementById('LogicalOrPhysycal1');
+  const ActualSelectioLogicalPhysical2 = document.getElementById('LogicalOrPhysycal2');
+
   console.log(data);
   config.MotherPositionColumn = data.ColumnOfMotherShuttle;
   AGVnumber.innerText = data.BabyNo;
 
-  if (data.StatusMode){
+  if (data.ActSelPhysicalLogical) {
+    ActualSelectioLogicalPhysical1.innerHTML= "Logical";
+    ActualSelectioLogicalPhysical2.innerHTML= "Logical";
+  } else {
+    ActualSelectioLogicalPhysical1.innerHTML= "Physical";
+    ActualSelectioLogicalPhysical2.innerHTML= "Physical";
+  }
+
+  console.log('SelManAuto: ' + data.SelManAuto);
+  if (data.SelManAuto){
     SelMan.classList.remove('pressed');
     SelAuto.classList.add('pressed');
   }else{
@@ -29,14 +41,14 @@ export function UpdateDisplayInit(data) {
 
   if (data.Bypass){
     BypassOn1.classList.add('pressed');
-    BypassOn2.classList.add('pressed');
+ //   BypassOn2.classList.add('pressed');
     BypassOff1.classList.remove('pressed');
-    BypassOff2.classList.remove('pressed');
+ //   BypassOff2.classList.remove('pressed');
   }else{
     BypassOn1.classList.remove('pressed');
-    BypassOn2.classList.remove('pressed');
+ //   BypassOn2.classList.remove('pressed');
     BypassOff1.classList.add('pressed');
-    BypassOff2.classList.add('pressed');
+ //   BypassOff2.classList.add('pressed');
   }
 
   if (data.SelPhysicalLogical) {

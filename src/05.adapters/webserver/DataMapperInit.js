@@ -7,8 +7,10 @@ const WebServerDataMapper = {
         const decodedArray17 = decodedString(data.Array_17);
         const bitArr17 = readBits(decodedArray17);
         return {
+            SelManAuto: bitArr17[1],
             StatusMode: bitArr2[0],
             Bypass: bitArr17[0],
+            ActSelPhysicalLogical: bitArr17[2],
             SelPhysicalLogical: decodedString(data.SelPhysicalLogical),
             BabyNo: data.AGV_No,
             PositionToReach_mm: data.PositionToReach_mm,

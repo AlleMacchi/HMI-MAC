@@ -80,7 +80,7 @@ export function logout() {
 // Configure idle time to logout
 
 let idleTime = 0; // in seconds
-let idleLimit = 300; // in seconds
+let idleLimit = 1800; // in seconds
 let isTabActive = true; // Assume the tab is active initially
 // Reset the idle timer on any of these events
 function resetIdleTimer() {

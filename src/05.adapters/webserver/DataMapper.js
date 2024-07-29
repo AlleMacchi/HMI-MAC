@@ -17,8 +17,13 @@ const WebServerDataMapper = {
 
         const decodedArray11 = decodedString(data.Array_11);
         const bitArr11 = readBits(decodedArray11);
-    
+
+        const decodedArray17 = decodedString(data.Array_17);
+        const bitArr17 = readBits(decodedArray17);
+
         return {
+            
+        ActSelPhysicalLogical: bitArr17[2],
         StatusMachine: decodedString(data.Array_1),
 
         StatusMode: bitArr2[0],

@@ -41,3 +41,14 @@
 .ManAuto>.btn-normal{
     min-height: 30px;
 }
+
+.bypassHide{
+    visibility: hidden;
+    display:none;
+}
+
+.ActualSelectionLogicalPhysicalContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

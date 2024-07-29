@@ -78,7 +78,14 @@ const App = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  var loadingMessage = document.getElementById("loadingMessage");
+  var content = document.getElementById("content");
+
+  loadingMessage.style.display = 'none';
+  content.style.display = 'block';
+  
   App.init();
   App.readData();
   App.components();
+
 });
